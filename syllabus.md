@@ -20,10 +20,11 @@ aside:
 
 ### Meeting Time and Course Staff
 
-- **Class-10: Monday 8AM - 10:30AM**  (1957 E B17) with Dr Kinga Dobolyi (instructor)
-- **Lab-30: Monday 2:10PM - 3:20PM** (SEH 4040) with Marlena Alvino (LA) and Grady McPeak (GTA)
-- **Lab-31: Wednesday 3:35PM - 4:45PM** (TOMP 405) with Connor Burnett (UTA)
-- **Lab-32: Wednesday 3:35PM - 4:45PM** (SEH 4040) with Dania Abdallah (LA) and Grady McPeak (GTA) 
+* Lecture: FNGR 208
+  * Mon. 8AM - 10:30AM 
+* Lab
+  * Wed. 11:00AM - 12:25PM (TOMP 405, section 30)
+  * Wed. 11:00AM - 12:25PM (SEH 4040, section 31)
 
 ## Course Details 
 
@@ -137,27 +138,13 @@ Essentially, you must attend at least 50% of the meetings to earn full participa
 
 ## Submission/Late Work Policy
 
-All assignments, except for Worksheets, will have two deadlines: the **early** deadline and the **final** deadline. Students submitting by the early deadline will earn a **10 point bonus** on that assignment. Submission by the final deadline is graded as regular with no deductions or additions. 
-
-**Assignments will not be accepted after the final deadline.**
-
-The final deadline is often 4 days following the early deadline. For example, if an assignment is due on Friday 11:59pm, that is the early deadline. The final deadline is Tuesday 11:59pm. However, some assignments may not have an early deadline, or there may only be a day between the early and final deadlines.
-
-Worksheets are always due on Sunday and do not have an early and final deadline. 
-
-### One Time, Deadline Amnesty
-
-Every student is allowed a two day, no-questions asked extension beyond the final deadline to be used ONE TIME throughout the semester. To request an amnesty, email the instructor.
-
-**Amnesty cannot be used for Project 3**
-
-If you have a compelling reason to need further amnesties, you should discuss this with your instructor. The reason must be compelling.
+We do not accept late work in this course. If you have a reason you need an extension (illness, unplanned emergency, etc.) please email the professor at least 12 hours before the deadline. Extensions will be offered at professor discretion.
 
 ## Class Communication
 
-We will use two primary forms of communication in this class: email announcements and [Ed](https://edstem.org/us/courses/22310/discussion/). You are responsible for remaining up to date on any information sent by email or posted to Ed. This may include clarifications to assignments, updates on grading rubrics, and changes in office hours. 
+We will use two primary forms of communication in this class: email announcements and [Ed](https://edstem.org/us/courses/31676/discussion/). You are responsible for remaining up to date on any information sent by email or posted to Ed. This may include clarifications to assignments, updates on grading rubrics, and changes in office hours. 
 
-For all general course information, questions, and clarifications, you should preference to using ED. An instructor, TA, or even your fellow classmate can then answer a question. You can even post your questions anonymously. 
+For all general course information, questions, and clarifications, you should preference to using Ed. An instructor, TA, or even your fellow classmate can then answer a question. You can even post your questions anonymously. 
 
 If you have personal, individual issues you'd like addressed, you should send those by  email to the course instructor. However, all course related topics should be directed to Ed.
 
@@ -170,7 +157,7 @@ We also have an [anonymous feedback form](https://forms.gle/fzfc5oCBgDgwiNjn6) a
 
 ### Illness policy
 
-If you are ill and it will cause you to miss class, lab, or an assignment, you should let your course instructor know in advance, if possible. It is your responsibility to catch up with any missed material. For extended absences due to illness, you should provide a doctors note. If you are to miss an exam or project deadline due to illness, you should also provide a doctors note and a plan to make up those assignments. 
+If you are ill and it will cause you to miss class, lab, or an assignment, you should let your course instructor know in advance, if possible. It is your responsibility to catch up with any missed material. For extended absences due to illness, you should provide a doctors note. If you are to miss an exam or project deadline due to illness, you should also provide a doctors note and a plan to make up those assignments. Makeups and extensions are offered at the professor's discretion.
 
 ### Academic Integrity policy
 
