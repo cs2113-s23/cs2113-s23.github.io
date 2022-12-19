@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CS2113 Software Egineering - Fall 2022
+title: CS2113 Software Egineering - Spring 2023
 ---
 ## Teaching Staff
 <div class="wrapper" markdown="0"><div class="footer-col-wrapper">
@@ -16,51 +16,51 @@ title: CS2113 Software Egineering - Fall 2022
             </li>                
         </ul>
         <ul class="contact-list">
-            <li><b>Grady McPeak</b> (GTA)</li>
-            <li><a href="mailto:gradymcpeak@gwu.edu">gradymcpeak@gwu.edu</a> </li>
+            <li><b>TBA</b> (GTA)</li>
+            <li><a href="mailto:TBA@gwu.edu">TBA@gwu.edu</a> </li>
             <li>Office Hours:
                 <ul>
-                <li> Mondays 11am-1pm in SEH 4040</li>
+                <li> TBA</li>
                 </ul>
             </li>
         </ul>
         <ul class="contact-list">
-            <li><b>Rishabh Khanna</b> (GTA - grading)</li>
-            <li><a href="mailto:rishabhkh015@gwu.edu">rishabhkh015@gwu.edu</a> </li>
+            <li><b>TBA</b> (GTA - grading)</li>
+            <li><a href="mailto:TBA@gwu.edu">TBA@gwu.edu</a> </li>
         </ul>
     </div>    
     <div class="footer-col two-col-2">
         <ul class="contact-list">
-            <li><b>Marlee Alvino</b> (UTA)</li>
+            <li><b>TBA</b> (UTA)</li>
             <li><a href="mailto:"></a></li>
             <li> Office Hours: 
                 <ul>
-                <li> Tuesdays 9am-11am on the 4th floor lobby of SEH, and answering questions on Ed</li>
+                <li> TBA</li>
                 </ul>
             </li>
         </ul>
         <ul class="contact-list">
-            <li><b>Connor Burnett</b> (UTA)</li>
+            <li><b>TBA</b> (UTA)</li>
             <li><a href="mailto:"></a></li>
             <li> Office Hours:
                 <ul>
-                <li> Wednesdays 2:10-3:30 in TOMP 402</li>
+                <li> </li>
                 </ul>
             </li>
         </ul>
         <ul class="contact-list">
-            <li><b>Dania Abdallah</b> (LA)</li>
+            <li><b>TBA</b> (LA)</li>
             <li> Office Hours:
                 <ul>
-                <li> Wednesdays 5-7pm and Fridays 2-4pm in SEH 4040</li>
+                <li> TBA</li>
                 </ul>
             </li>
         </ul>
         <ul class="contact-list">
-            <li><b>Owen Andreasen</b> (LA)</li>
+            <li><b>TBA</b> (LA)</li>
             <li> Office Hours:
                 <ul>
-                <li> Occassional question answering on Ed </li>
+                <li> TBA</li>
                 </ul>
             </li>
         </ul>
@@ -70,12 +70,12 @@ title: CS2113 Software Egineering - Fall 2022
 
 
 ## Class/Lab Info
-* Lecture: 1957 E B17
+* Lecture: FNGR 208
   * Mon. 8AM - 10:30AM 
 * Lab
-  * Mon. 2:10PM - 3:20PM (SEH 4040)
-  * Wed. 3:35PM - 4:45PM (TOMP 405)
-  * Wed. 3:35PM - 4:45PM (SEH 4040)
+  * Wed. 11:00AM - 12:25PM (TOMP 405, section 30)
+  * Wed. 11:00AM - 12:25PM (SEH 4040, section 31)
+
 
 ## Resources
 
