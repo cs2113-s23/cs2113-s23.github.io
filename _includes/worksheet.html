@@ -1,0 +1,43 @@
+{% assign nodes = include.html | split: '<h3' %} {% comment %} </h3> {% endcomment %}
+{% assign count = 0 %}
+
+{% for _node in nodes %}
+
+<!-- Go through each h3 block and count them -->
+{% capture node %}{{ _node | strip }}{% endcapture %}
+
+{% if count == 0 %}
+{{_node}}
+<ol>
+{% else %}
+
+    {% assign _question = _node | split: "</h3>" | last | split: "<h4" | first %}
+    {% assign _solution = _node | split: "</h4>" | last %}
+    
+    <li id='li-q{{count}}'>
+        {{ _question }}
+        <p>
+        </p>
+        
+        {% if page.showsolution %}
+        <p>
+            
+            <a href="javascript:void(0)" onclick="$('#q{{count}}').toggle('slow')">Reveal Solution</a>
+            <div id="q{{count}}" class="sol" style="display:none">
+                {{ _solution }}
+            </div>
+        </p>
+        {% else %}
+        <p>
+        </p>
+        {% endif %}
+    </li>
+    
+
+{% endif %}
+
+{% assign count = count | plus: 1 %}
+
+{% endfor %}
+    
+    
