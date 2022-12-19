@@ -83,5 +83,5 @@ title: CS2113 Software Egineering - Spring 2023
 * [Class Schedule](/schedule.html)
 * [Guides](/guides)
 * [Videos](/videos)
-* [Ed](https://edstem.org/us/courses/22310/discussion/) -- for questions
+* [Ed](https://edstem.org/us/courses/31676/discussion/) -- for questions
 
