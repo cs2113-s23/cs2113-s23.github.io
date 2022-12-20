@@ -87,7 +87,7 @@ Send an email to your grader identifying your github username, so they can assoc
 
 ### Creating a new git repo
 
-There are many ways to do this, but we'll compromise between the github website and the command line. First, in your browser, log in to github.com with your account, click on the icon in the top right, select `Your Repositories`, and then pres the green `New` button in the top right to create a new repo.
+There are many ways to do this, but we'll compromise between the github website and the command line. First, in your browser, log in to github.com with your account, click on the icon in the top right, select `Your Repositories`, and then press the green `New` button in the top right to create a new repo.
 
 Under `Repository name`, type `gitusername-lab0` but replace `gitusername` with your actual git username. Make sure you type it exactly as it is listed here, i.e. `-lab0` must appear after your username. 
 
@@ -142,7 +142,7 @@ If everything goes through smoothly, you can refresh the website of your repo, a
 
 ## Part 4: Making a change
 
-Finally, we're going to update the file we just pushed to git. Change the message in `HelloWorld.java` to include your name. Then, go through the steps above to commit and push those changes (you don't need to add the file to the repo, because it is already there -- only new files need to be added, and only once).
+Finally, we're going to update the file we just pushed to git. Change the string printed in `HelloWorld.java` to include your name. Then, go through the steps above to commit and push those changes (you don't need to add the file to the repo, because it is already there -- only new files need to be added, and only once).
 
 Make sure that when you refresh the browser, you can see your changes there.
 
