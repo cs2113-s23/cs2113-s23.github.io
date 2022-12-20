@@ -5,7 +5,7 @@ title: Schedule
 
 # Course Schedule of Topics and Due Dates
 
-*Due dates are posted <b>early</b>/<b>final</b> deadlines by 11:59pm ET on that date for labs and projects. Worksheets are due as specified.* See the [syllabus](/syllabus) for more details. All dates listed below are tentative and may be adjusted during the semester.
+*Due dates are posted deadlines by 11:59pm ET on that date*. All dates listed below are tentative and may be adjusted during the semester.
 
 
 
@@ -22,8 +22,8 @@ title: Schedule
 | 7    | Mar 20: [J4 - GUIs and Events](j/4) <br>&bull; [J4 Worksheet](worksheet/j4) (Due Sun Mar 26)                                 | Mar 22: [Lab 4 -- GUI Enigma](https://cs2113-f21.github.io/lab/7) (Due Tue Mar 28)                                                                             |
 | 8   | Mar 27: [J5 - Threading and Concurrency](j/5) <br>&bull; [J5 Worksheet](worksheet/j5) (Due Sun Apr 2)                      | Mar 29: Lab 5 -- Threading Lab (Due Tues Apr 4)    |
 | 9   | Apr 3: [J6 - Java IO and Networking](j/6) <br>&bull; J6 Worksheet  (Due Sun Apr 9)                             | Apr 5: [Project 2 -- GWack GUI Simulator](project/3) (Due Tue Apr 18)                                                              |
-| 10   | Apr 10: Exam 2 first 75 minutes<br>Requirements Gathering <br>&bull; J7 Worksheet -- Threaded Animation (Due Sun Apr 16)             | Apr 12: [Project 2 -- GWack Channel Simulator](project/2) (Due Tue Apr 18)                             |
-| 11   | Apr 17: Software Engineering Development<br>Design Patterns and Unit Testing <br>&bull; J8 Worksheet -- Unit Testing (Due Sun Apr)             | Apr 19: Lab 6 -- Final Project proposal brainstorm (Due Fri Dec 2/Tue Dec 6)                                                                    |
+| 10   | Apr 10: Exam 2 first 75 minutes<br>Requirements Gathering           | Apr 12: [Project 2 -- GWack Channel Simulator](project/2) (Due Tue Apr 18)                             |
+| 11   | Apr 17: S1 - Software Engineering Development<br>S2 - Design Patterns and Unit Testing <br>&bull; J7 Worksheet -- Unit Testing (Due Sun Apr 23)             | Apr 19: Lab 6 -- Final Project proposal brainstorm (Due Fri Dec 2/Tue Dec 6)                                                                    |
 | 12   | Apr 24:  Final Project Meetings/Organization (in class)                                                                                         |  Apr 26: Lab -- project prototype presentations to TAs                                                                                                                          | 
 | 13   | May 1:  Student Feedback on prototype presentations                                                                            |                                                                                                                             |
 |    | Final Exam: video of final presentation, code submission, groupswork evals (must address TA feedback)                                                                            |                                                                                                                             |
