@@ -25,7 +25,7 @@ title: Schedule
 | 10   | Apr 10: Exam 2 first 75 minutes<br> S1 - Requirements Gathering           | Apr 12: [Project 2 -- GWack Channel Simulator](project/2) (Due Tue Apr 18)                             |
 | 11   | Apr 17: S2 - Software Engineering Development<br>S3 - Design Patterns and Unit Testing <br>&bull; J7 Worksheet -- Unit Testing (Due Sun Apr 23)             | Apr 19: Lab 6 -- Final Project proposal brainstorm (Due Tue Apr 25)                                                                    |
 | 12   | Apr 24:  Final Project Meetings/Organization (in class)                                                                                         |  Apr 26: Lab -- project prototype presentations to TAs                                                                                                                          | 
-| 13   | May 1:  Student Feedback on prototype presentations                                                                            |                                                                                                                             |
+| 13   | May 1:  Student Feedback on prototype presentations                                                                            | *no lab this week*                                                                                                                             |
 |  14  | Final Exam week: video of final presentation, code submission, groupswork evals (must address TA feedback) turned in by the day and time of the final                                                                           |                                                                                                                             |
 
 
