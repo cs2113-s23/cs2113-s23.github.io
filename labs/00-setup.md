@@ -6,9 +6,9 @@ permalink: lab/0
 *View the video explainer for this lab on [youtube](https://youtu.be/JGwK5nwuAps)*
 
 
-# Lab 0: Git and VSCode Familiarization
+# Lab 0: Git Familiarization
 
-The goal of this lab is to get you more comfortable with using `git`. This lab is worth 2% of your grade, but more importantly, you will not be able to complete latter assignments without finishing this one. 
+The goal of this lab is to get you more comfortable with using `git`. You'll need this lab in order to submit your assignments this semester, which will always be done via `git`.
 
 ## Part 0: Creating a github account and installing software
 
@@ -77,151 +77,83 @@ You can also generate an access token, which you could (should!) use in place of
 
 
 
+## Part 1: Creating your first `git` repo and sharing it with the course staff
 
-## Part 1: Installing VSCode and SSH capabilities
+In order to submit code this semester, you will need to create a repository for each assignment, place your code in there, and upload it. You'll also need to give access to the grading staff. These items will be a part of every project's grading rubric. Let's try it out together for this assignment
 
-In the first part of this class, we will make heavy use of VSCode and SSH to program in C. 
+### Notify us with your github username
 
-You should begin by following [this](/guides/vscode-ssh) guide to set up SSH capabilities on your system. *Ensure that you follow this guide completely and set up your git configuration of email and name!*
+Send an email to your grader identifying your github username, so they can associate that account with this course. 
 
-The rest of this guide assumes that you are SSHed into the server shown in the above guide.
+### Creating a new git repo
 
-## Part 2: Accepting a github classroom assignment and submitting in VScode
+There are many ways to do this, but we'll compromise between the github website and the command line. First, in your browser, log in to github.com with your account, click on the icon in the top right, select `Your Repositories`, and then pres the green `New` button in the top right to create a new repo.
 
-Now that you have a github account and SSH capabilities, the next step is to accept an assignment and join the class organization. Do so by clicking on the following link (or copy and pasting the url) below. Be sure your logged into the github account you created/updated previously.
+Under `Repository name`, type `gitusername-lab0` but replace `gitusername` with your actual git username. Make sure you type it exactly as it is listed here, i.e. `-lab0` must appear after your username. 
 
-Github Classroom Link: [https://classroom.github.com/a/KHrzElMC](https://classroom.github.com/a/KHrzElMC)
+Next, select the toggle button below to be `Private`.
 
-Since this is the first assignment for the class, it will ask you to join the organization. When you do so, please be sure to use your REAL NAME and GW netid for associating with this class so that we can properly grade your assignments.
+Next, press the green `Create repository` button.
 
-Following that, github will automatically fork/clone the assignment into a new repository entitled `lab0-<username>` in the `cs2113-s22` github organization where `<username>` is replaced by your github ID. 
+The page will load the homepage of your repo. Under the `Settings` tab at the top, click on `Collaborators` on the left hand menu, click the green `Add people` button, and add the following collaborators (the grader):
+`TBA`
 
-You might find this youtube tutorial helpful for navigating github classroom submisions.
+This will send an invite (that experies in seven days) to your grader(s). They'll be monitoring their inboxes for these items. This also means you should email the graders first if you have grading questions; the professor is not automatically added to your submissions.
 
-![](https://www.youtube.com/watch?v=10krMetDSWs)
+## Part 2: Checking out your repo
 
+Once you have your new repo set up, click back on the `Code` tab, and copy the URL in the bar at looks similar to `https://github.com/kdobolyi/kdobolyi-lab0.git`
 
-> Requirement Part 1
-> * Join the github classroom
-> * Accept this lab-0 assignment: [https://classroom.github.com/a/KHrzElMC](https://classroom.github.com/a/KHrzElMC)
+In your terminal, navigate to a folder of your choosing, and type (replacing it with your own URL):
+`git clone https://github.com/kdobolyi/kdobolyi-lab0.git`
 
-## Part 3: Markdown and Updates on github 
+This will make a local copy of the (empty) repo in your current directory in a folder called `kdobolyi-lab0` (in my case -- yours will be different).
 
+## Part 3: Adding code to your repo
 
-Follow this [guide](/guides/vscode-git) to checkout the assignment and load it onto the SSH server. Once you have cloned the repository, it will now reside as a local copy on the SSH server. The version of your assignment on the server, and the version that you see on GitHub, are different entities. Any changes that you make to the files in the new folder will not immmediately affect the remote repository (the one on GitHub).
+Next, copy and paste the following Java code into a file in your repo's folder, and call it `HelloWorld.java`:
 
-You can now open the repo in VScode, and open `README.md`.
-
- This extension `.md` indicates that it is formatted in markdown, which is a markup language, like HTML, that describes how to display text. That's what I'm writing this in right now.
-
-*Click on `README.md` to open up that file.*
-
-### Editing in Markdown on github
-
-For example, you can make text bold or italic by enclosing it *'s:
-  * `*italic*` : *italic*
-  * `**bold**` : *bold*
-
-You can make code blocks by using three backticks `. The backtick is the key above the tab button on most keyboards. 
-
-![backtick on the keyboard](https://i.stack.imgur.com/TOn1U.png)
-
-For example, to include C code, you might type something like the *left*, to render something like the *right*. Note the `c` at the top to tell Markdown how to color highlight using C. 
-
-<div class="side-by-side">
-<div class="side-by-side-a">
-<pre>
-```c
-int main(){
-  printf("Hello, World!\n")
+```
+public class HelloWorld{
+   public static void main(String[] args){
+      System.out.println("Hello World!");
+   }
 }
 ```
-</pre>
-</div>
-<div class="side-by-side-b">
-```c
-int main(){
-  printf("Hello, World!\n")
-}
-```
-</div>
-</div>
 
+### Tagging a file to be added to your repo
 
-You can find more about markdown from the [github guide on markdown](https://guides.github.com/features/mastering-markdown/).
+Even though `HelloWorld.java` is in your folder, it is not a part of your repo until you let the server know it exists, and push it to github. This is a three step process. First, we will formally flag this file to be added to the repo with:
+`git add HelloWorld.java`
 
-> Part 3: Requirements
->   1. Complete the instructions in there and commit your changes
->   2. You should be able to see them page reformat on github
+### Commiting your changes
 
-## Part 4: Using VSCode, SSH, and Github to complete a coding assignment
+Next, we need to tell git that we're ready to commit to these changes. You can ask it to commit all recent changes with the following command, which also requires a human-readable message:
+`git commit -a -m "my first attempt"`
 
-Now we integrate VSCode and `git` so that you can complete and submit a basic programming assignment in C. 
+The `-a` flag is telling git to grab all the updated files, and the `-m` flag stands for the required message between quotes.
 
-> Part 4: Requirements
->   1. Start by accepting this assignment: [https://classroom.github.com/a/KHrzElMC](https://classroom.github.com/a/KHrzElMC)
->   2. Follow this [guide](/guides/vscode-git) to checkout the assignment and load it onto the SSH server.
->   3. View the `README.md` to complete the coding assignment
+### Pushing your changes
 
-## Part 5: Adding files and pushing back to github
+All this is great, but it's only flagging this on your local copy of the files; none of this is on the github server yet. To get it there, you have to push your changes with the command:
+`git push`
 
-Still in VSCode from before, in this part of the assignment, you need to add two files and push all your changes back to github.
+If everything goes through smoothly, you can refresh the website of your repo, and you'll see your `HelloWorld.java` file there. If not, find a TA to help you.
 
-To create a file, you can navigate the menu `File->New File` or use the keyboard shortcut &#8984;N or Ctrl-N. Once you create that new file, VSCode allows you to select the language. Modify the file as you see fit, and then save it using `File->Save`, &#8984;S or Ctrl-S. You'll be prompted to give it a name in the command pallet. 
+## Part 4: Making a change
 
-Once the file is saved, you'll see that the repository symbol has updated
+Finally, we're going to update the file we just pushed to git. Change the message in `HelloWorld.java` to include your name. Then, go through the steps above to commit and push those changes (you don't need to add the file to the repo, because it is already there -- only new files need to be added, and only once).
 
-![](/images/vscode-repo-symbol.png)
+Make sure that when you refresh the browser, you can see your changes there.
 
-Click on that, and if you mouse over the file, you will see a `+` symbol. Clicking this will add the file to the next commit. Click it!
+# Grading Rubric
 
-![](/images/vscode-git-add.png)
-
-Next at the top of the panel you will see a &#10003;. Clicking it will perform the commit, and you'll be prompted to provide a message that is somewhat meaningful, like "adding a new file". Then hit enter. Do this now.
-
-Finally, you need to push your changes to github. To do this click the `...` at the top of the panel, selecting **push**. This will push your changes back to github.
-
-![](/images/vscode-git-push.png)
-
-> Part 5: Requirements
-> 1. Create a new file called `bio.txt` that contains 2-to-3 sentences about yourself.
-> 2. Add it to the repo, commit it, and push it to github
-> 3. Go to your github repo on github and verify that the new file is there.
-> 4. Make a small modification to the file, and commit with the message `Part 5 complete!` and push this change to github.
-> 5. Again go to your github repo on github and verify the new file is there.
-
-
-### git on the command line
-
-Note that you can also do all of this from the command line in the integrated terminal within VSCode
-
-```
-git add file.txt        #add a new file to the commit
-git commit -m "message" #perform the commit with the commit message
-git push                #push the commit to github 
-```
-
-## Part 6: Github Issues
-
-We will be using Github issues for communicating about your assignments in this class. Let's quickly practice creating an issue now. At the top bar of options on your repository, click on `Issues`, then click the green button `New Issue`. 
-
-Name your issue "Lab 0 Testing Issues" for the `Title` and then in the body, answer the following questions by copy pasting the below into the box. (Note that the issue box understands markdown, and you can also preview it.)
-
-```
-1. What time locally is it for you right now?
-   > PUT YOUR ANSWER HERE (leave in > for a quote)
-2. How many hours did you spend working on this lab
-   > PUT YOUR ANSWER HERE (leave in > for a quote)
-3. What is your favorite color?
-   > PUT YOUR ANSWER HERE (leave in > for a quote)
-4. What is your favorite ice cream flavor?
-   > PUT YOUR ANSWER HERE (leave in > for a quote)
-5. What is your favorite number? 
-   > PUT YOUR ANSWER HERE (leave in > for a quote)
-```
-
-> Part 5 Requirements:
-> 1. Follow the instructions above and open an issue
-> 2. Answer the questions
-
-
+|Item | Points |
+|github username has been emailed to the grader | 10 |
+|the name of the repo for this lab matches the pattern  `gitusername-lab0` | 10 |
+|the grader has been added as a collaborator to the repo | 10 |
+|the repo has been made private | 10 |
+|there is an initial commit of `HelloWorld.java` | 20 |
+|the initial commit has a useful message | 10 |
+|there is a second commit where `HelloWorld.java` has been correctly modified to include the student's name/username | 20 |
+|the second commit has a unique, useful message | 10 |
