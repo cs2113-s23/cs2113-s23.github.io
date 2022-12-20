@@ -151,7 +151,7 @@ Make sure that when you refresh the browser, you can see your changes there.
 |Item | Points |
 |github username has been emailed to the grader | 10 |
 |the name of the repo for this lab matches the pattern  `gitusername-lab0` | 10 |
-|the grader has been added as a collaborator to the repo | 10 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 10 |
 |the repo has been made private | 10 |
 |there is an initial commit of `HelloWorld.java` | 20 |
 |the initial commit has a useful message | 10 |
