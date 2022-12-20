@@ -98,7 +98,7 @@ Next, press the green `Create repository` button.
 The page will load the homepage of your repo. Under the `Settings` tab at the top, click on `Collaborators` on the left hand menu, click the green `Add people` button, and add the following collaborators (the grader):
 `TBA`
 
-This will send an invite (that experies in seven days) to your grader(s). They'll be monitoring their inboxes for these items. This also means you should email the graders first if you have grading questions; the professor is not automatically added to your submissions.
+This will send an invite (that experies in seven days) to your grader(s). They'll be monitoring their inboxes for these items during lab; you must create this repo in your lab session to ensure the grader accepts the invite. This also means you should email the graders first if you have grading questions; the professor is not automatically added to your submissions.
 
 ## Part 2: Checking out your repo
 
