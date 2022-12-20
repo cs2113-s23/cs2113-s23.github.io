@@ -23,10 +23,10 @@ title: Schedule
 | 8   | Mar 27: [J5 - Threading and Concurrency](j/5) <br>&bull; [J5 Worksheet](worksheet/j5) (Due Sun Apr 2)                      | Mar 29: Lab 5 -- Threading Lab (Due Tues Apr 4)    |
 | 9   | Apr 3: [J6 - Java IO and Networking](j/6) <br>&bull; J6 Worksheet  (Due Sun Apr 9)                             | Apr 5: [Project 2 -- GWack GUI Simulator](project/3) (Due Tue Apr 18)                                                              |
 | 10   | Apr 10: Exam 2 first 75 minutes<br>Requirements Gathering           | Apr 12: [Project 2 -- GWack Channel Simulator](project/2) (Due Tue Apr 18)                             |
-| 11   | Apr 17: S1 - Software Engineering Development<br>S2 - Design Patterns and Unit Testing <br>&bull; J7 Worksheet -- Unit Testing (Due Sun Apr 23)             | Apr 19: Lab 6 -- Final Project proposal brainstorm (Due Fri Dec 2/Tue Dec 6)                                                                    |
+| 11   | Apr 17: S1 - Software Engineering Development<br>S2 - Design Patterns and Unit Testing <br>&bull; J7 Worksheet -- Unit Testing (Due Sun Apr 23)             | Apr 19: Lab 6 -- Final Project proposal brainstorm (Due Tue Apr 25)                                                                    |
 | 12   | Apr 24:  Final Project Meetings/Organization (in class)                                                                                         |  Apr 26: Lab -- project prototype presentations to TAs                                                                                                                          | 
 | 13   | May 1:  Student Feedback on prototype presentations                                                                            |                                                                                                                             |
-|    | Final Exam: video of final presentation, code submission, groupswork evals (must address TA feedback)                                                                            |                                                                                                                             |
+|  14  | Final Exam week: video of final presentation, code submission, groupswork evals (must address TA feedback) turned in by the day and time of the final                                                                           |                                                                                                                             |
 
 
 
