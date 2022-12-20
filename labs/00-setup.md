@@ -157,3 +157,4 @@ Make sure that when you refresh the browser, you can see your changes there.
 |the initial commit has a useful message | 10 |
 |there is a second commit where `HelloWorld.java` has been correctly modified to include the student's name/username | 20 |
 |the second commit has a unique, useful message | 10 |
+| TOTAL | 100 |
