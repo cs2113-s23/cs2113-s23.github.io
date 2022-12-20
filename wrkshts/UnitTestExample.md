@@ -1,6 +1,6 @@
 ---
 layout: worksheet
-permalink: worksheet/UnitTestExample
+permalink: /worksheet/UnitTestExample
 showsolution: False
 ---
 ```
