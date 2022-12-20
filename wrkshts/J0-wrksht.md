@@ -8,9 +8,15 @@ showsolution: False
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-Download the [UnitTestExample.java](worksheet/UnitTestExample)
-
 ## Setup
+
+Create a new repo using all the steps in Lab 0 called `yourgitusername-worksheet-J0`. Then, add the following file to it:
+
+Download the [UnitTestExample.java](UnitTestExample)
+
+## Understanding unit tests
+
+
 
 In order to compile your solutions, you'll need to have `gcc` installed. However, this semester we will all be using the same version of `gcc` on the same operating system, that is, your accounts through SEAS at `ubuntu-vlab01.seas.gwu.edu`. So, instead of having you install `gcc` on your local machine now, we'll lay some groundwork for what will be covered in lab this week in terms of setting up an environment to run your C code on this SEAS cluster.
 
