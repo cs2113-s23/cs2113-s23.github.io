@@ -30,28 +30,17 @@ aside:
 
 ### Course Description 
 
-In this course, students will learn how to write object-oriented code using Java. Concepts will focus on object-oriented thinking, software composition, inheritance and polymorphism, and design patterns. Programming techniques, assignments and lab exercises will focus on Java, specifically, the language and its core libraries. The course will be conducted lab-style with a mix of lecture, lab assignments and projects. The course will also cover an elementary introduction to the C programming language.
+In this course, students will learn how to write object-oriented code using Java. Concepts will focus on object-oriented thinking, software composition, inheritance and polymorphism, and design patterns. Programming techniques, assignments and lab exercises will focus on Java, specifically, the language and its core libraries. The course will be conducted lab-style with a mix of lecture, lab assignments and projects. There will also be an open-ended groupwork assignment at the end of the semester.
 
 ### Learning Outcomes
 By the end of this course, students will be able to:
 
-- Experience programming in C.
-- Understand the relationship of language features to static and dynamic memory.
-- Design Java classes for a challenging problem involving multiple classes.
-- Understand objects: static and dynamic classes, interfaces, abstract classes, inheritance, polymorphism, constructors, Java's object features and syntax, memory representation of objects.
-- Understand application development and design principles.
+- Practice advanced software development with large projects that involve multiple classes, encapsulation, inheritance, and polymorphism.
+- Understand programming language features such as interfaces, abstract classes, generics, and their underlying representation in memory.
+- Experience GUI design and implementation
+- Practice basic networking and IO programming
+- Develop an understanding of software engineering principles
 - Demonstrate skill in problem solving by going from complex word description to implementation.
-
-### Course Outline
-
-- Weeks 1-7: Introductory C programming
-  - Syntax, memory management, libraries, ﬁle IO
-- Weeks 8-11: Intermediate Java programming
-  - Quick review, objects, class hierarchies
-- Weeks 12-15: Advanced Java Topics
-  - GUIs, concurrency/threading, IO, networking, web
-- Throughout: Software engineering techniques
-  - Requirements, Architecture, Design Principles
 
 ## Textbook and Resources
 
@@ -59,13 +48,8 @@ There are **NO REQUIRED** textbooks for this course. Instead we have a list of r
 
 - [Learning Java, 5th Edition](https://learning.oreilly.com/library/view/learning-java-5th/9781492056263/) by Marc Loy, Patrick Niemeyer, Daniel Leuck
 - [Head First Design Patterns, 2nd Edition](https://learning.oreilly.com/library/view/head-first-design/9781492077992/) by Eric Freeman and Elisabeth Robson
-- [Practical C Programming](http://shop.oreilly.com/product/9781565923065.do) by Steve Oualline, published by O'Reilly (3rd edition) 
-  - This text will also be useful in the Comp Arch and Systems Programming courses
-- [Core Java, Volume 1](https://learning.oreilly.com/library/view/core-java-volume/9780135167199/) and [Core Java, Volume 2](https://learning.oreilly.com/library/view/core-java-volume/9780135167175/) by Cay S. Horstmann
 - [Head First Java](http://www.headfirstlabs.com/books/hfjava/) by Kathy Sierra and Bert Bates, published by O'Reilly (2nd edition) 
 - [Java in a Nutshell](http://oreilly.com/catalog/9780596007737), by David Flanagan, O'Reilly Publishing. This book is a handy reference that contains a (rather terse) overview of the language, tools and API's. Initially, a beginner will find it difficult to read, but it's probably the only book you will continue to use even after becoming a Java expert. 
-- For further information, see Prof. Simha's [annotated list of Java books](http://www.seas.gwu.edu/~simhaweb/java/books.html) and [list of Java resources](http://www.seas.gwu.edu/~simhaweb/java/javalinks.html).
-
 
 All books listed here are available **for free** via [Safari Tech Books](https://learning.oreilly.com/home/) via the GWU library. Just create an account with your GWU email. You can also find a ton more books and resources there. 
 
@@ -86,18 +70,18 @@ Having completed the pre-reqs, you are expected to submit well-written code:
 - Select readable variable names and method names.
 - Use consistent indentation (preferred: two or four spaces).
 - Submit code that compiles on the class server (**non-compiling code will not be graded**).
-  - Additionally, your code should be compile in a standard, pre-described way for the class (e.g., via `gcc` or `javac` without additional libraries)
+  - Additionally, your code should be compile in a standard, pre-described way for the class (e.g., javac` without additional libraries, except perhaps the final project)
 - Be able to describe and answer questions about your code when prompted.
 
 ## Grading 
 
 ### Grading Breakdown
    * 8%: Self-Guided Worksheets
-   * 2%: Lab 0 (1x)
-   * 28%: Labs (7x 4% each)
-   * 30%: Projects (3x 10% each)
-   * 30%: Exams (2x 15% each)
-   * 2%: Participation/Attendence
+   * 1%: Lab 0
+   * 20%: Labs 1+ 
+   * 30%: Projects
+   * 40%: Exams (2x 20% each)
+   * 1%: Participation/Attendence
 
    
 ### Self-Guided Worksheets
@@ -106,7 +90,7 @@ Each lecture will be accompanied by a *self-guided worksheet*. This worksheet is
 
 ### Labs
 
-Labs are short-to-medium size programming assignments that are designed to reinforce lecture and prepare you for projects. Labs 1-7 are each worth 4% of your grade for a total of 28%. Note that Lab 0, orientation and familiarization lab, is worth 2% of your grade. 
+Labs are short-to-medium size programming assignments that are designed to reinforce lecture and prepare you for projects. 
 
 ### Projects
 
@@ -114,27 +98,11 @@ There are three projects for this class. Each worth 10% of your grade, for a tot
 
 ### Exams
 
-There are two non-comprehensive exams in this class that cover the C programming unit and the Java programming unit. Each exam is worth 15% of your grade, for a total 30%.
+There are two non-comprehensive exams in this class during the semester, each worth 20% of your grade.
 
 ### Participation/Attendance
 
-Participation is worth 2% of your grade. You earn participation credit by attending lecture (1%) and lab (1%). There are 23 opportunities to participate (11 lectures and 12 labs).
-
-Your participation grade is calculated as follows:
-* Lecture (1%)
-  * Attend 0-3 lectures 0%
-  * Attend 4-5 lectures 0.5%
-  * Attend 6-7 lectures 1%
-  * Attend 8-10 lectures 1.5% (bonus)
-  * Attend 11 lectures 2%  (bonus)
-* Lab (1%)
-  * Attend 0-3 labs 0%
-  * Attend 4-5 labs 0.5%
-  * Attend 6-7 labs 1%
-  * Attend 8-11 labs 1.5% (bonus)
-  * Attend 12 labs 2% (bonus)
-
-Essentially, you must attend at least 50% of the meetings to earn full participation. If you attend more, than you can earn bonus, up to 2% on your final grade.
+Participation is worth 1% of your grade. You earn participation credit by attending lecture and lab.
 
 ## Submission/Late Work Policy
 
@@ -173,19 +141,26 @@ You may:
 
 - Discuss general approaches to solving the homework problems with other students, but the pen-to-paper, fingers-to-keyboard work should be your own. 
   - No! You may not collaboratively write a homework answer and write your names on it and turn it in. 
-- Have another student look at a specific snippet of your code (e.g., 10 lines) to help you debug a programming error.
 
-You may NOT:
+You may NOT (except for the group project):
 
 - Copy code to or from other students or people outside of the class.
+- Have another student look at a specific snippet of your code (e.g., 10 lines) to help you debug a programming error.
 - Have someone else write code for you.
 - Copy code from the internet, unless you specifically reference the source and can explain how it works. This should be a tiny minority of the code you submit.
-- Write code as a group and then submit identical or slightly modified versions---if you discuss general approaches to solving a problem together, you still must be writing up your own independent solution.
+- Write code as a group and then submit identical or slightly modified versions -- if you discuss general approaches to solving a problem together, you still must be writing up your own independent solution.
 
 The [Academic Integrity Code](https://github.com/GWU-CSCI3411-Fall16/hw-0-gparmer/blob/master/cs_integrity.md) will apply to this course. Please read through the code carefully. *Penalties for violating the code or the policies described here include failing this course*, and are elaborated in the [GW Academic Integrity Code](https://studentconduct.gwu.edu/code-academic-integrity). Note that the _minimum_ punishment is failure of the assignment. Additional actions could include failure of the class, suspension, or expulsion. 
 
 
 **Please note that in the context of this class, all projects and labs are considering programming/coding assignments. Many actions fall under the <u>"You may NOT"</u> list above**
+
+
+### Groupwork
+
+We will have an in-class, group-based project towards the end of the semester. The project grade will be based on what the group produces. For example, if all team members feel their teammate contributed equally, that teammate recieves all the points for the project earned by the groupwork. If the team feels that a teammate only contributed 50% effort, that teammate will recieve only half the points of the project earned by the groupwork. **Please email the instructor ASAP if you or your team are having trouble with your team members, so we can make arrangements to monitor and resolve the situation (which may involve breaking up teams).** Groupwork disputes will be resolved using git logs only.
+
+Please visit the CS department's [JEDI student resources page](https://www.cs.seas.gwu.edu/justice-equity-diversity-and-inclusion-resources) for information around Justice, Equity, Diversity, and Inclusion resources as these may pertain to groupwork situations in our class.
 
 ### Use of Electronic Course Materials and Class Recordings
 
