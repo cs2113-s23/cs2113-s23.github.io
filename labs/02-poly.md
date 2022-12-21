@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /lab/6
+permalink: /lab/2
 ---
 
 # Lab 6: I'm a dot thing living in a grid world
