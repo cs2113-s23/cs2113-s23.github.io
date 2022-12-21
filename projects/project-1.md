@@ -312,10 +312,14 @@ You should include this extra creature in the planning stage (Part A of the proj
 
 Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-lab1`. You will be graded on the following:
 
+** Note that we are now switching to deductions only if your git setup is incorrect **
+
 |Item | Points |
-|the name of the repo for this lab matches the pattern  `gitusername-lab1` | 3 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 4 |
-|the repo has been made private | 3 |
+|the name of the repo for this lab matches the pattern  `gitusername-project1` | -3 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| -4 |
+|the repo has been made private | -3 |
+|you met with a TA to go over your UML diagram | 10 |
+|UML diagram submitted that matches your code, using good OOP design | 15 |
 |the test cases pass (11 points each) | 88 |
 |TOTAL | 100 |
 
