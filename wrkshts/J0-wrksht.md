@@ -89,7 +89,7 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 
 |Item | Points |
 |the name of the repo for this lab matches the pattern  `gitusername-worksheetJ0` | 10 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 10 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 10 |
 |the repo has been made private | 10 |
 |the second test case has been adjusted to pass (change `moon` to `Moon`) | 10 |
 |the third test case passes after fixing style issues in `UnitTestExample.java` | 30 |
