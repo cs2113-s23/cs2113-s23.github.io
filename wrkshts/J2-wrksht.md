@@ -1,14 +1,14 @@
 ---
 layout: worksheet
 permalink: /worksheet/j2
-showsolution: true
+showsolution: false
 ---
 
 # Worksheet: J2
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-* Github Classroom Link: [https://classroom.github.com/a/bTsaQruf](https://classroom.github.com/a/bTsaQruf)
+Submit a file called `worksheet-J2.md` in your repo for this assignment.
 
 ## Note
 
@@ -499,3 +499,15 @@ If you were to create an abstract class for a `Car` -- what features could be de
 #### s
 
 Features such as car brand, model, year, and other attributes that would be highly variable would be defined in the class implmentation. Other functions that would be mostly fixed and more deterministic across different class definitions, such as `toString` and functions that get or set values would be defined in the `abstact` class.
+
+# Grading rubric and submission
+
+Use git, as discussed in Lab 0, to submit your work in a repo called `gitusername-worksheetJ2`. You will be graded on the following:
+
+|Item | Points |
+|the name of the repo for this lab matches the pattern  `gitusername-worksheetJ2` | 10 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 10 |
+|the repo has been made private | 10 |
+|the name of the answers file in your repo is  `worksheet-J2.md` | 10 |
+|worksheet questions have been completed | 60 |
+|TOTAL | 100 |
