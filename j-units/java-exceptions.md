@@ -306,12 +306,11 @@ Bad stuff happened!
 ```
 So we've got some errors covered with nice explanations. Others, not so much. Next class we'll use polymorphism and we'll define our own exceptions, all in the name of handling our errors nicely! 
 
-**Note:** can you tell me what would've happened if we'd put the "catch(Throwable e)" first instead of last?
-
+**Note:** can you tell me what would've happened if we'd put the `catch(Throwable e)` first instead of last?
 
 # Java I/O 
 
-A common place where Java programmers first really experience inheritance and polymorphism in action is with I/O (input/output), so let's take a look at it now. Not only is it something you should know as a Java programmer, but it gives us a nice case study in object oriented design. So we're going to first try to understand the problem: what requirements do we really have of an I/O system? Then we'll see how the Java IO package's object oriented design meets those goals. 
+A common place where Java programmers first really experience exception handling in action is with I/O (input/output), so let's take a look at it now. Not only is it something you should know as a Java programmer, but it gives us a nice case study in object oriented design. So we're going to first try to understand the problem: what requirements do we really have of an I/O system? Then we'll see how the Java IO package's object oriented design meets those goals. Finally, in the lab assignment, we'll see how exception handling dovetails with I/O.
 
 ## Reading ... What's the problem?
 
