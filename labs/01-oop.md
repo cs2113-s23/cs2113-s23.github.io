@@ -123,6 +123,19 @@ String result = Comms.run(args);
 // the result would be THE#NATIONAL#ANIMAL#OF#SCOTLAND#IS#THE#UNICORN
 ```
 
+## Junit testing
+
+To run your unit tests -- remember, you need to have the junit jar file in the same directory -- compile and run your code with the following commands on the terminal (depending on your OS):
+
+### Windows
+`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" .\Lab1_Tester.java`
+`java -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
+
+### Mac/Linux
+`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" .\Lab1_Tester.java`
+`java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
+
+
 ## Submission
 
 <div class="requirement">
