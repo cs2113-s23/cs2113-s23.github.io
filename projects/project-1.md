@@ -248,6 +248,7 @@ For Part A, you should complete a UML diagram and discuss ut in a 5-minute meeti
 In your meeting, be prepared for feedback that you should incorporate into your project.
 
 </div>
+<br>
 
 ### Part B: Implementation (75 Points)
 
@@ -260,8 +261,9 @@ There are different levels of implementation you should complete. Note that in `
 Fully implement mice actions such that:
 * After 20 rounds of simulation time, a mouse produces a new baby mouse at the same location 
 * A mouse dies after 30 rounds simulation time
-* A mouse randomly turns, changes directions 20% of the time
-* A mouse is displayed as a blue dot. 
+* A mouse randomly changes directions 20% of the time
+* A mouse is displayed as a blue dot
+* The `Mouse` class must extend the `Creature` class using good OOP practices 
 
 #### Level 1: Mice and Cats (up to 45 points)
 
@@ -274,7 +276,7 @@ Add a cat to the Level 0 simulation:
 
 Additionally, in your simulator, have it such that:
 * Every 100 rounds, a mouse is added to a random location in the city
-* Every 25 round, a cat is added to a random location in the city
+* Every 25 rounds, a cat is added to a random location in the city
 
 #### Level 2: Cats chase mice (up to 55 points)
 
@@ -300,26 +302,21 @@ Now let's define Zombie Cats:
 * A zombie cat *jumps* 3 spaces at time. It does not move through the intervening space. That is, if it is at (5,10) it moves directly to (5,13).
 * A zombie cat that doesn't eat anything within 100 rounds dies. 
 
-#### Level 4: Create a new creature type (up to 75 points)
-
-The final level of the simulation is for you to add a new creature of any type or behavior you want to the simulation. It should fit into the general model of creatures we already have and derive from `Creature`. 
-
-You should include this extra creature in the planning stage (Part A of the project), and fully describe its functionality in the `README.md` file. 
-
 </div>
 
 # Grading rubric and submission
 
 Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-lab1`. You will be graded on the following:
 
-** Note that we are now switching to deductions only if your git setup is incorrect **
-
 |Item | Points |
-|the name of the repo for this lab matches the pattern  `gitusername-project1` | -3 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| -4 |
-|the repo has been made private | -3 |
+|the name of the repo for this lab matches the pattern  `gitusername-project1` | 3 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 4 |
+|the repo has been made private | 3 |
 |you met with a TA to go over your UML diagram | 10 |
 |UML diagram submitted that matches your code, using good OOP design | 15 |
-|the test cases pass (11 points each) | 88 |
+|all `Mouse` functionality implemented as described above (7 pts each)| 35 |
+|all `Cat` functionality implemented as described above (all or nothing) | 10 |
+|all cats-chase-mice functionality implemented as described above (all or nothing) | 10 |
+|all `ZombieCat` functionality implemented as described above (all or nothing) | 10 |
 |TOTAL | 100 |
 
