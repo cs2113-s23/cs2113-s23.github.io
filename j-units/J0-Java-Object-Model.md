@@ -7,249 +7,12 @@ permalink: /j/0
 
 # Object Oriented Programming 
 
-In the second major unit of this class, we will focus on programming in Java because it's an object oriented programming language; C is not. However, the ideas and concepts of the memory model in C will inform both how we think about object oriented programming (or OOP) and kinds of programs we design.
-
-Moreover, as you probably experienced, writing code in C forces you to manage your own memory. Not only does this require extra thinking and coding, but it introduces an entire class of errors that are notoriously difficult to debug. While sometimes C is the best language for the job (as we talked about in class), when possible, it's better to rely on a language like Java with its garbage collection that obviates this manual memory management.
-
-## So, what is object oriented programming?
-
 There is one overarching idea in programming — from small programs, to gigantic systems: **Separation of Interface from Implementation** i.e. separating what you need to know in order to use a tool from how the tool actually works on the inside. This is behind good coding, it's behind good system design, it is behind the design of protocols like TCP, HTTP and DNS, it's behind almost anything that involves computing! This separation allows us to manage the complexity of building big programs. It allows us to reuse in a new program code that was written in some other time and place for some other purpose (and to avoid duplicating code within a program, which is wasteful and leads to errors!). It allows us to make changes to some of our code without having to worry about other parts of the program breaking. It makes collaboration easier and less error-prone. It brings many, many other benefits. In short: separating interface from implementation is a really good thing. 
-
-In procedural programming, which is what we've mostly been doing so far, the language mechanism that supported separating interface from implementation are functions: a function's prototype (plus some documentation, if we're lucky) is the interface; its definition is the implementation. Scoping rules actually prohibit us from accessing the local variables and parameters inside the function's body, so this separation of interface from implementation isn't just conceptual — it's actually enforced by the compiler! However, the function mechanism on its own is by no means enough to achieve the nirvana of full separation of Interface from Implementation. Why? 
-
-1. It doesn't help with structs. You have to understand how the designer of code intends to manipulate structs to store data in order to use that code. That means understanding implementation details! 
-
-2. You can't modify or extend the behavior of existing functions or existing collections of functions and structs without messing with the function/struct definitions, which means you have to understand those implementation details! 
-
-3. You're limited to a single implementation for each interface (a single function definition for each prototype), which is a real problem. As a simple analogy, that would be like saying each kind of light-bulb has to have a different socket, which would be ... difficult. Instead, we live in a world in which the same socket works for 40watt or 60watt bulbs, for incandescent bulbs or for fluorescent bulbs or LED bulbs or black-light bulbs. For many kinds of programming problems we want the same thing: many different implementations of the same interface, just like we want a socket to be compatible with any type of light we might need in a certain room...
-
-Object-oriented programming is a programming paradigm — that means not merely a language but a whole philosophy on what a program is — with the goal of complete separation of interface from implementation. It's basic ideas are:
-
-1. Combine structs and the functions that manipulate those structs into a single entity — such entities are called objects — that offers true separation of the interface to your struct+functions from its implementation. This is said to provide **encapsulation** and **data-hiding**. *Note*: this addresses Point 1 from above. 
-
-2. Use a mechanism called **inheritance** to create new kinds of objects that modify or extend old kinds of objects without having to open up the implementation (in some cases without even having access to the implementation!).
-*Note*: this addresses Point 2 from above. 
-
-3. Use inheritance and a mechanism called **polymorphic function calls** to allow multiple definitions of the same interface.
-*Note*: this addresses Point 3 from above. 
-
-To sum up: The Procedural Programming paradigm sees a program as functions calling functions, with data being passed around as arguments to or return-values from function calls. The Object-Oriented Programming paradigm sees a program as a bunch of data+function bundles (the objects) that communicate by calling each others' member functions. 
-
-
-## Trying (and failing) to Achieve OOP in C
-
-To further motivate this, let's consider the implementation of object-oriented like implementation of an `ArrayList` in C. From that implementation, which is a procedural program, we can observe where procedural programming falls short and where OOP can help us.
-
-In implementing, we need to first define a struct to hold the data of the ArrayList. 
-
-```c
-//data elements
-typedef struct ArrayList {
-  int len; //number of items in the array
-  int size; // current size of array
-  int * array;
-  
-} alist_t;
-```
-
-In many ways we can think of this as object, but it is not *object-oriented*. There are two main reasons for this; 
-
-1. How to use this ArrayList struct, as an data storage object, is separate from the definition. To put it another way: while we know *what* it stores the structure by itself doesn't express *how* to use it.
-
-2. While this may appear to offer a form of *encapsulation* --- it does place related data fields together into a single structure --- it does not provide any *data-hiding*. If I (as a programmer) had access to an `alist_t` I could modify any part of it directly, such as the `len`, making all the data inconsistent. 
-
-
-Continuing on, with the structure of the ArrayList defined, we can now define an API over the array list, like the below function prototypes. 
-
-```c
-#define AL_INIT_SIZE 16
-
-//interface elements
-alist_t * new_al();
-void del(alist_t * al);
-
-//return 0/1 success failure if out of bounds
-int get(alist_t * al, int idx, int * dest); //store what's got at dest
-int set(alist_t * al, int idx, int val); //set al_list[i] to val
-
-//return 0/1 success failure if list is empty
-int pop_tail(alist_t * al, int * dest); //store what's popped at dest
-
-//always adds to the end, and expands as necessary.
-void push_tail(alist_t * al, int val); //add val to the tail
-
-//internal function
-void _expand(alist_t * al); //expand the array
-
-//useful functions
-void print(alist_t * al);
-```
-
-One thing you may notice right away, is that each of the functions that operate over ArrayLists must also take in `alist_t` as its first argument. That's again because we do not have full **encapsulation**. The functions are generic but we must specify *which* ArrayList to operate on. In a object oriented model, the functions implicitly operate over the current instance, as we will see, and thus we do not need to 
-
-Another example of an issue with encapsulation is `_expand` --- this function is called when we run out of space in the array. It's marked, in comments, as an `internal` function, so normal users shouldn't call it. But there are no mechanisms to offer that protection. 
-
-Finally, perhaps the most challenging issue is that this ArrayList is not extensible. It can only store `int`s; it only has these features. If we wanted to expand it to have other features, the entire API would need to change. 
-
-Essentially, while we can do everything in a procedural way, it's unpleasant and potentially not as effective. With OOP we can do better. 
-
-
-
-## Why Java?
-
-For the rest of this class, we'll be transitioning to Java programming because Java, by design, is a completely Object Oriented Programming language. Yes. You may already know Java, but we are going to zoom out and then zoom into Java in new ways, particularly focusing in on the features of objects for encapsulation, data-hiding, inheritance, and polymorphism. 
-
-We'll first start by reviewing some of the basic features of Java (as a refresher) and then quickly dive into Java's object model. 
-
-# Java Review
-
-You already know Java! So let's just quickly go through the basics, as a refresher. Just in case you've forgotten a few things let's go over a basic program.
-
-## Hello World
-
-We start where we always start, at the beginning, with "Hello, world!" With Java, each file represents a *class*. A class is a definition of how to create an object ... more on that later! For now, we want to create a new class that will print "Hello, world!" We name that file `HelloWorld.java`
-
-```java
-
-public class HelloWorld {
-    public static void main(String args[]) {
-        System.out.println("Hello, world");
-    }
-}
-```
-
-We compile that program with the java compiler `javac`
-
-```
-javac HelloWorld.java
-```
-
-This produces a compiled version of our program, a *class file*, called `HelloWorld.class` that contains java bytecode. To execute this byte code, we use the *Java virtual machine* (JVM) which will interpret and execute the program.
-
-```
-$ java HelloWorld
-Hello, world!
-```
-
-Looking back at this program, there is a lot of code going on here. Java is quite a bit heavier than other languages, like C, because everything must be part of the object model. 
-
-This starts with declaring our hello-world program to be a class, that is, we put it in its own file and say it's a publicly accessible class: `public class HelloWorld`. The main *method* (or function) also has a lot of modifiers:
-
-* `public` : allow the method to called outside of the class
-* `static` : allow the method to be called without instantiating the containing object --- that is, you don't need to create a *new* HelloWorld object to call `main`
-* `void`  : it returns no values
-
-And the arguments are also complicated
-
-* `String args[]` : the main method accepts an array of `String` types that represent the command line arguments provided to the exection. 
-
-Finally, the printing statement `System.out.println()` uses the `.` operator as it the method `println()` operates on the `out` object/class which is further found as a member of `System` package. Phew!!! 
-
-## Basic Types
-
-People like to say that everything in Java is really an object, but that's not exactly true. Everything but the *basic types* are objects. The basic types in Java are the same as those you'd find in C, plus two more
-
-| Type      | Domain                                                                                                         |
-|-----------|----------------------------------------------------------------------------------------------------------------|
-| `byte`    | 8-bit integers: -128 to 127                                                                                    |
-| `short`   | 16-bit integers: -32768 to 32767                                                                               |
-| `int`     | 32-bit integers: -2147483648 to 2147483647                                                                     |
-| `long`    | 64-bit integers: -9223372036854775808 to 9223372036854775807                                                   |
-| `float`   | 32-bit floating point numbers: &plusmn; 1.4x10<sup>-45</sup> to &plusmn; 3.4028235x10^<sup>38</sup>            |
-| `double`  | 64-bit floating point numbers: &plusmn; 4.39x10<sup>-322</sup> to &plusmn; 1.7976931348623157x10<sup>308</sup> |
-| `boolean` | true or false                                                                                                  |
-| `char`    | 16-bit characters encoded using Unicode                                                                        |
-
-The key difference between basic types and objects in Java is that basic types can be created on the stack, but objects must be allocated using `new`. For example,
-
-```java
-
-int i = 10; //basic type
-MyObj o =  new Myobj(); //object
-```
-
-That's kind of what makes them basic ... As convention, to further distinguish basic types from objects, classes are given names with upper case letters while basic types are given type names with lower case letters. 
-
-### Operators over basic types
-
-All the basic types are numeric and so the same set of operators as you might expect work on them. This includes, 
-
-* `x + y` : addition
-* `x - y` : subtraction
-* `x * y` : multiplication
-* `x / y` : divisions
-* `x % y` : modulo
-
-Assignment operators
-* `x += y` : add `x` to `y` and store result in `x` 
-* `x -= y` : subtract `y` from `x` and store result in `x`
-* `x *= y` : multiply `x` by `y` and store result in `x`
-* `x /= y` : divided `x` by `y` and store result in `x`
-
-Then there are unary addition and subtraction for adding/subtracting 1:
-
-* `x++` : add one to `x` and return `x`
-* `++x` : add one to `x` and return `x+1`
-* `x--` : subtract one from `x` and return `x`
-* `--x` : subtract one from `x` and return `x-1`
-
-However, when you are working with an object, to perform an operation on that object you must use the `.` operator. 
-
-## String type
-
-The only exception to the rules above about basic types, operators, and assignments are strings. The `String` object---which is clearly an object based on the upper case letter "S" in String---is the only object that can be declared and used much like a basic type, including the operators. This is the only exception, and it was done because strings are so fundamental to programming that the shortcut made enormous practical sense. 
-
-For example, we can declare and operate on a string as if it was a basic type
-```java
-
-String s = "This is a string";
-s = "This is a different string"; //reassign
-s = "One " + " two " + " three ";  //conctenate strings
-s = new String("This is also a string!"); //call the String constructor explicitly
-```
-
-However, strings are still objects. So if you were to do the following below, we'd get that `s` and `t` are different strings. 
-
-```java
-String s = "I am a string";
-String t = new String("I am a string");
-
-if(s == t)
-  System.out.println("s and t are the *same* string");
-else
-  System.out.println("s and t are *different* strings");
-```
-
-This is because `s` and `t` are objects. The `==` operator compares the reference to those objects are the same, as in, does `s` and `t` reference the same object, or two different objects? In this case, it's two different objects that represent the same string because of the explicit `new`. 
-
-Note: if above you had `String t = "I am a string";` on the second line, doing `s == t` can return `true` for reasons that have to do with the special place and [properties](https://en.wikipedia.org/wiki/String_interning) strings occupy in Java.
-
-Instead, we need to use `.` operator to do the compares, and in this case, we get that the two strings are equal using string `.equals()`.
-
-
-```java
-String s = "I am a string";
-String t = new String("I am a string");
-
-if(s.equals(t))
-  System.out.println("s and t are the *same* string");
-else
-  System.out.println("s and t are *different* strings");
-```
-
-If you want to access individual `char`s in a string, we don't use the `[ ]` operators (strings are not arrays!), but rather the `charAt()` method. For example, for the string 
-
-```java
-Strings s = "I love cs2113!";
-System.out.println("The char at index 3 is " + s.charAt(3));
-```
-
-Will print `The char at index 3 is o`
 
 
 # Java Objects 
 
-Java objects are much like `struct`s in C; they are a way to group related data together into a single structure. Unlike a `struct`, a Java object also allows you to associate methods (both public and private) with that object to operate over the data.
+Java objects are a way to group related data together into a single structure. A Java object also allows you to associate methods (both public and private) with that object to operate over the data.
 
 To review this functionality, let's build up a working example of defining shapes and lines in the Cartesian plane. Recall that this the `x`, `y` coordinate system. For example, perhaps we have three points in the plane.
 
@@ -974,7 +737,7 @@ And just for fun  --- Java also have `printf()` :) --- which, in some cases is e
 
 ## Arrays
 
-Just like in C, Java has arrays that store aligned data that is indexable with the `[]` operator. Unlike C, though, Arrays are actually objects; an `Array` object created with a `new` call. Like other objects, they are dynamically allocated.
+Java has arrays that store aligned data that is indexable with the `[]` operator. Arrays are actually objects; an `Array` object created with a `new` call. Like other objects, they are dynamically allocated.
 
 ### Arrays of Basic Types
 
@@ -991,7 +754,7 @@ Then we need to *allocate* the array object of that type. This works much like `
   intArray = new int[10];
 ```
 
-And just like `calloc()`, the new array is zero'ed out. The memory diagram looks like the following.
+The new array is zero'ed out. The memory diagram looks like the following.
 
 ```
   STACK                    HEAP
