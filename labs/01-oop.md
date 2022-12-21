@@ -147,8 +147,6 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 |the test cases pass (11 points each) | 88 |
 |TOTAL | 100 |
 
-</div>
-
 ---
 This lab is adopted from IC211 (spring 2019) at USNA. 
 
