@@ -1,605 +1,323 @@
 ---
-layout: default
-permalink: /project/1
+layout: toc
+permalink: project/1
 ---
 
-*View the videos for this project in this [YouTube playlist](https://youtube.com/playlist?list=PLnVRBITSZMSMdXKuNahum68VgkVT7ZRaf)*
+*View the video for this project on [Youtube](https://youtu.be/s1Q4ioDXMu4)*
 
-# Project 1: Boggle Solver
+# Project 2: It's a cat and mouse game...
 
-## Preliminaries
+This is a two part project. The first part of the project will require you to submit a UML diagram and descriptions of your OOP design to complete the project. The second part of the project is your full submission.
 
-In this project, the goal is to implement a data structure in C (notably a hashmap). 
+## Setup
 
-* Github Classroom Link: [https://classroom.github.com/a/3zBYoC7G](https://classroom.github.com/a/3zBYoC7G)
+Download the [DotChaser.java](./DotChaser.java) file.
 
-### Development Environment
+Download the [Plotter.jar](./Plotter.jar) file.
 
-You should develop using VSCode+SSH.
 
-### Test Script
+### Github setup
 
-To help you complete this project, each part is provided with a test script. The script is not designed to be comprehensive, and you will graded based on a larger array of tests. To execute the test script, run it from anywhere within the lab directory.
+Use git, as discussed in Lab 0, to create a repo called `gitusername-project1`, add these four files to it, and commit and push the changes to github. The timestamp of your invitation of the grader as a collaborator must be from this lab session.
 
-    ./test.sh
+### Testing
 
-Note that when executing the test script, due to using valgrind, it may take many minutes to complete! So you are better served developing some tests on your own rather than relying on the test script.
+There is no test script. There is built in debugging tools that can help you develop your code and perform grading. 
 
-### Compiling your code:
+### Compiling your code
 
-#### Part A
-For part A (C implementation), we have provided you with a `Makefile`. You can compile the spellchecker or boggle solver by typing:
+Your code should compile with `javac`
 
 ```
-make spellcheck
-make onePlayerBoggle
+javac *.java
 ```
 
-If you want to compile everything at once, simply type `make`. This will produce a number of additional `.o` files (or object files), which are compiled C files that are not yet assembled. **Do not add these to your repository as they get overridden on every compilation**. 
+### Window users
 
-To clean up your repository, you can use `make clean` command.
-
-```
-make clean
-```
-
-Cleaning the directory is helpful to remove unwanted files and/or force a recompilation with `make`.
-
-### VScode Building and Debugging
-
-As part of the repo for this assignment, we have provided a diretory `.vscode` that contains a `task.json` and `launch.json` for you to have automatic building and launching of the `gdb` debugger.
-
-To run the debugger, open the debugging panel on vscode and press the `Run and Debug` button. This may prompt you to install an extension in the current container: do so. Then you should see three possible debug launches: (1) `gdb spellcheck` (2) `gdb oneplayer 100` and (3)`gdb oneplayer 200`. Each of these correspond to one of the expected outputs described below. 
-
-Also note, you can use `Ctrl-Shift-b` or `Cmd-Shift-b` to automatically build your code by calling `make` for you. 
+Note, if you are developing this project on a windows machine, you **must** use the github bash terminal in vscode for the pipeline to run properly. 
 
 ---
 
-## Data Structure Implementations
-
-You will be implementing two basic data structures as part of this project: a Linked List and a Hash Table (or Hashmap). 
-
-### Linked List
-
-The Linked List you will complete only requires forward pointers on its nodes, and only the `push()` operation, that is, put a new node on the front of the list. Each node in the list stores a string value. There is no need for the list to be generic. 
-
-### Hashmap
-
-The Hashmap data structure is simply a membership Hash Table --- unlike a truly generic Hashmap that stores key, value pairs, this table returns `true` if an items is stored in the data structure and `false` otherwise. Put another way, it's a Hashmap that maps a value to true. The Hashmap you will implement only needs to store strings. It has the following member functions:
-
-* `add(string) -> void` : add a string to the hashmap
-* `check(string) -> bool` : check to see if a string is in the hashamp, return true if present, else false. 
-
-The Hashmap should be implemented as a hash table with *separate chaining*. You may recall from your data structures class, this means that when two elements collide at an index, you add the item on to that spot, using say Linked List. 
-
-Following that model, your Hashmap should have an array (or buckets) of Linked Lists. We have included a hash function for you in the start code. After achieving the hash value for a given string (modulo the range of buckets), you *push* that string onto the Linked List at that index associated with the hash value. Critically, the performance of the Hashmap depends on the length of the lists of each bucket  --- if the lists get too long, then the look up operation could become O(n)! That would be quite slow ...
-
-The *load* on a hash table is defined as the number of items stored in the table divided by the number of buckets. High loads means longer lists at each bucket and worse performance. To keep performance steady, once the load reaches 0.75, you have to resize the hash table by doubling the number of buckets and reinserting all the items into their new hash locations. **YOU MUST IMPLEMENT A RESIZE ROUTINE -- YOU CANNOT SIMPLY SET YOUR NUMBER OF BUCKETS TO A LARGE VALUE!!** 
-
-> A quick aside: Since the hashmap only maps to true/false we could also describe this as an implementation of a set. That is, we are only concerned with set membership. Is the item in the set, or not?
-
-### Data Structure Implementation
-
-The crucial part of this project is the data structure implementations. In C, you typically divide your data structures between a header file (a `.h` file) and a source file (a `.c` file). The header file contains the structure and function definitions, while the source file contains their implementations. You will primarily work with the source files (`.c`).
-
-#### Linked List
-
-As you can see the `llist.h`, the Linked List defines two strucures:
-
-```c
-//node type stored in lists
-typedef struct ll_node {
-  struct ll_node * next; //next node in list
-  char * val; //string value stored in list
-} ll_node_t;
+## Mice, Cat, ZombieCat Simulation
 
 
+In this project, you will complete a point simulation of a city of mice, cats, and zombie-cats! Once your simulation is visualized, it may look like the animation below. 
 
-//list_t struct to store a list
-typedef struct {
-  ll_node_t * head; //pointer to the node at the head of the list
-  int size; //the number of nodes in the list
-} llist_t;
+<img src="/images/Zombie-Simulator-short.gif" alt="Simulation GIF" width="60%" 
+style="display: block;
+margin-left: auto;
+margin-right: auto;"/>
+
+
+A quick description of this visualization. The blue dots are mice, the yellow/cyan dots are cats, and the red/black zombie-cats. Cats chase mice, and when they catch a mouse, they eat it. If a cat doesn't eat enough, they turn into a zombie-cat. Zombie-cats chase mice and other cats. They can eat a mouse, but if they eat a cat, that cat turns into a zombie-cat! 
+
+You're job in this lab is use good OOP to design this simulation. 
+
+## A tour of the starter code
+
+In the repository, you are provided with the following Java files that you should review. They are heavily commented, and will provide the guide posts for completing this project. Not all details are described here, so I strongly encourage you to read through the entirety of the code provided for you. 
+
+### `Creature.java`
+
+A class that represents a basic creature in the simulation. You'll need to extend this class for your mice, cats, and zombie cats (and more!).
+
+### `City.java` 
+
+This class represents the city/space in which the creatures live. All the creates are stored in the `creatues` list:
+
+```java
+    private List<Creature> creatures; //list of all creatues
 ```
 
-The `ll_node_t` is a node within the linked list, storing the value (a `char *` string) and a pointer to the next node. The `llist_t` is a structure representation of the list, storing a pointer to the head of the list and it's current size (number of nodes).
+The `creatures` is a full list of all the active creatures in the simulation. 
 
-There are three functions that operate over lists, described below. In `llist.c` you implement these methods. 
+Importantly, the `City` class has a method `simulate` that describes the primary routine of each iteration of the simulation. You cannot edit this method, but you should review it carefully because it will dictate how you design your other classes. This routine is provided below:
 
-```c
-// Return a newly initialized, empty linked list
-llist_t * ll_init();
+```java
+   //You need to realize in your code such that simulate works for
+    //**ALL** levels of simulkation, which means you'll need to take
+    //advantage of inheritance and polymorphism.
+    public void simulate() {
+        //DO NOT EDIT!
+        
+        //You get this one for free, but you need to review this to
+        //understand how to implement your various creatures
 
-//delete/deallocate a linked list
-void ll_delete(llist_t * ll);
+        //First, for all creatures ...
+        for(Creature c : creatures) {
+            c.step(); 
+        } //move everyone forward one step in simulation
+        
+        //Second, for all cratures ...
+        for(Creature c : creatures) {
+            c.takeAction(); 
+        }//take some action based on the new positions
 
-//insert the string v (duplicated vis strdup!) onto the front of the list 
-void ll_push(llist_t * ll, char * s);
-```
+        //Third, for all creatures ...
+        LinkedList<Creature> deadCreatures = new LinkedList<Creature>();
+        for(Creature c: creatures) {
+            if(c.isDead()) 
+                deadCreatures.add(c);
+        }//find those that are dead after the action is taken
 
-### Hash Map
+        //Four, for all creatures ...
+        for(Creature c: deadCreatures) {
+            creatures.remove(c);
+        }//remove any creatures that are dead
+        
+        //Five, add in any new creatures that have been added before ...
+        addNewCreatures();
 
-The hashmap data strcucture is defined in `hashmap.h` and you will implemented in `hashmap.c`. The header file containing the structure and functions can be found below (with comments).
-
-```c
-#define HM_INIT_NUM_BUCKETS 16
-#define HM_MAX_LOAD 0.75
-
-typedef struct {
-  llist_t ** buckets; //array of `buckets` each pointing to a list_t (see list.h)
-  int num_buckets; //how many buckets, or lenght of the bucket array (should always be a power of 2)
-  int size; //how many items stored
-} hashmap_t;
-
-
-//initliaze a hashmap with INITIAL_BUCKETS number of buckets
-hashmap_t * hm_init();
-
-//delete/deallocate the hashmap
-void hm_delete(hashmap_t * hm);
-
-//add a string value to the hashmap
-void hm_add(hashmap_t * hm, char * v);
-
-//see if a string value is in the hashmap
-bool hm_check(hashmap_t * hm, char * v);
-```
-
-In the C file you will implement a non-public (as in not in the header file) function `_resize()`
-```c
-void _resize(hashmap_t * hm)
-```
-which is called when the load is greater than 0.75.
-
-
-### Spellchecker (40 points)
-
-To help test your Hashmap and Linked List implementation, we've provided a simple interactive spellchecker program that allows the user to type phrases (without punctuation) and it will spellcheck it. Here's some sample inputs and outputs, along with the compilation. 
-
-```
-$ make
-gcc -Wall -Wno-unused-variable -g -c -o hashmap.o hashmap.c
-gcc -Wall -Wno-unused-variable -g -c -o llist.o llist.c 
-gcc -Wall -Wno-unused-variable -g -o spellcheck spellcheck.c hashmap.o llist.o -lreadline -lm
-gcc -Wall -Wno-unused-variable -g -c -o boggle.o boggle.c
-gcc -Wall -Wno-unused-variable -g -o onePlayerBoggle onePlayerBoggle.c boggle.o hashmap.o llist.o -lreadline -lm
-$ ./spellcheck 
-ERROR: require dictionary file
-$ ./spellcheck dictionary.txt 
-spellcheck > spellcheck all these words at once
-SPELLCHECK -> not a word
-ALL -> WORD
-THESE -> WORD
-WORDS -> WORD
-AT -> WORD
-ONCE -> WORD
-spellcheck > or
-OR -> WORD
-spellcheck > one
-ONE -> WORD
-spellcheck > at
-AT -> WORD
-spellcheck > a
-A -> WORD
-spellcheck > time
-TIME -> WORD
-spellcheck > this adfasdfasdf is not a word
-THIS -> WORD
-ADFASDFASDF -> not a word
-IS -> WORD
-NOT -> WORD
-A -> WORD
-WORD -> WORD
-spellcheck > nor !!! 
-NOR -> WORD
-!!! -> not a word
-spellcheck > 
-$ # type ^D to insert EOF to exit (or ^C)
-```
-
-### Boggle Solver (60 points)
-
-Now that you're Hash Map and Linked List are working, let's use them to do something a bit more interesting --- finding all the words on a boggle board! 
-
-The boggle game structure and functions are defined in `boggle.h` and you will do most of your work in `boggle.c`. A boggle instance is defined as a 5x5 grid of dice, where each dice displays a different character. 
-
-```C
-#define BOGGLE_DIMENSION 5
-
-typedef struct {
-  char board[BOGGLE_DIMENSION][BOGGLE_DIMENSION]; //the boggle board
-  hashmap_t * dict; //dictionary mapping
-} boggle_t;
+        //Five, for all creatures
+        for(Creature c : creatures) {
+            System.out.println(c);
+        }//print out all creatures
 
 ```
 
-When printed the board looks like
-```
-.-----------.
-| S N T A Y |
-| W N T E I |
-| N QuI H I |
-| N F O S U |
-| E E H N L |
-'-----------'
-```
+Reading through the simulate method, you see that first, all the creatures are moved forward by taking a `step` in the simulation. This could move the creature in a direction, determine if it starved, or other general state changes. 
 
-The goal is to find as many words (**at least three letters long**) by traversing from one dice to another in all directions (left, right, up, down, and diagonal) without using a dice more than once. So for example `QUIT` is a word found on the board, and so is  `QUITE`. (You get a free 'u' for your 'Q'.)
+In the `takeAction` method, each creature assess its surroundings, determines if it should eat something, chase something, or do something.
 
-A number of functions are implemented and provided for you in `boggle.c`, your main work will be completing the `bg_all_words()` function, which will search the boggle board for all words 3 letters to 8 letters in length. 
+After all the actions are taken, any creatures that are dead are removed from the `creatures` list. And then any new creatures are added. Note that there is a method `addNewCreatures` that is provided for you, and duplicated below.
 
-This is a recursive method that will explore outwards from a letter tile using **depth first search**. The idea is that you start a tile, like `Qu` and then try all neighbors (via a recursive call), outward, adding letters as you go and checking to see if you found a word. At somepoint you either search off the board or descended too far (checking a 9 letter word), and the recursion returns to explore another path. An algorithmic description is provided in a comment within `boggle.c` --- see there for more details.
-
-Once you complete, you can run the `onePlayerBoggle` program at a given random seed, like the two examples below (warning: you may end up with some inappropriate words if they are in your dictionary and you can see these below, apologies):
-
-```
-vscode ➜ /workspaces/project-1-inst $ ./onePlayerBoggle dictionary.txt 100
-.-----------.
-| R E E M G |
-| N I E D T |
-| O T O W A |
-| K T S H I |
-| C S I I A |
-'-----------'
-SHOW
-WEER
-RIOTED
-AHA
-SHOT
-WHIST
-NIT
-DEW
-TEE
-NOTE
-WHISK
-DEER
-WEED
-TINE
-MEETS
-SHOE
-SHOD
-DEEM
-RITE
-ION
-HOED
-TIER
-TOWED
-SOTS
-TEEN
-TEEM
-SODA
-TIED
-MEOWS
-STEW
-TEED
-AWE
-WETS
-WADE
-STEM
-WHAT
-MEW
-SIT
-SIS
-WHIT
-MET
-WAD
-SHOED
-STONIER
-NOT
-STEER
-HOSTS
-HOST
-TWOS
-TONIER
-STEED
-TOTEM
-WHO
-HAWED
-OHS
-ONTO
-SHOTS
-TOTED
-REIN
-RENTED
-TOWS
-SWAT
-NEED
-HAWS
-NOTED
-ADO
-ITS
-OWED
-MEOW
-HAW
-WOT
-SOW
-HAT
-NITS
-TIN
-SOT
-WEIR
-RIOTS
-TAD
-MEWS
-HIT
-TONE
-HIS
-TIE
-WOE
-HAD
-STOWS
-TIRE
-SOD
-STOWED
-TWEE
-SOIRE
-INTO
-OWE
-RIOT
-SHOWED
-TOED
-SOWED
-AWED
-SITS
-EERIE
-DOTS
-STIR
-SHAT
-MEET
-HOSTED
-WET
-ONE
-STONE
-TWEED
-SHIT
-HITS
-TOW
-IRE
-DOTE
-TOTS
-RENTS
-WOST
-TOT
-RENT
-SHAD
-WEE
-WED
-TON
-HOW
-HOT
-TOTE
-TWO
-HOS
-TOE
-DOT
-STEIN
-DOS
-HOWS
-SHITTIER
-HISS
-TONER
-SHADOW
-HOE
-HOD
-TOST
-TOSS
-DOE
-WHITS
-ITEM
-SHITS
-REED
-ODE
-SHADE
-STOW
-
-Total Points: 205
+```java
+ public void addNewCreatures() {
+        while(!creaturesToAdd.isEmpty()) {
+            creatures.add(creaturesToAdd.remove());
+        }
+    }
 ```
 
-```
-vscode ➜ /workspaces/project-1-inst $ ./onePlayerBoggle dictionary.txt 200
-.-----------.
-| A D O N R |
-| G G R I N |
-| T E R S E |
-| C R A T Qu|
-| E E E O N |
-'-----------'
-INSET
-EAST
-TEN
-CREATE
-QUOTAS
-TREAT
-NOISE
-TENS
-TEE
-NOTE
-TEA
-RARER
-TSAR
-RECREATE
-EASE
-RATS
-EGO
-OATEN
-AGO
-GROIN
-ION
-GORIEST
-EGG
-EATER
-EON
-NINES
-EATEN
-RATE
-TEARIEST
-AGE
-EARS
-CREASE
-TENNIS
-GREATER
-ROGER
-CREATES
-OATS
-DREARIES
-INS
-TOQUES
-IRATER
-INN
-RISE
-IRON
-ADORN
-SAT
-ORE
-QUEST
-OAT
-OAR
-ADORE
-SIR
-SIN
-NOT
-NINE
-NOR
-STEER
-CEASE
-ERRS
-GAG
-INNS
-GAD
-ERECT
-IRATE
-RETREAT
-ROD
-GRATE
-RISEN
-REAR
-GEARS
-NOD
-CRATE
-RARE
-NOTES
-ERAS
-GRIST
-TREE
-TREATS
-ARGON
-ESTER
-OARS
-TARGET
-GEAR
-ASTER
-SINE
-RETREATS
-ADO
-GRATES
-GRATER
-DAGGER
-GROINS
-ARISE
-RINSE
-ARTERIES
-ERASE
-GREATS
-TAR
-NET
-RASTER
-ROISTER
-TRIES
-QUOTES
-NETS
-RATES
-ETA
-ATE
-ARTS
-TEATS
-STARTER
-TART
-TARS
-TERN
-GREAT
-DRIES
-TEAT
-TEAS
-TEAR
-TARE
-EGOIST
-ROGERS
-GOD
-TARTER
-QUOTE
-GREASE
-NEST
-QUOTA
-ERGO
-STAR
-GRIN
-GADGET
-AERIE
-AERIES
-TOQUE
-ERR
-ART
-TEASE
-START
-SET
-SATE
-IRE
-GORSE
-ERG
-ERE
-GAGE
-EAT
-EAR
-GET
-ERA
-ARE
-STARE
-TON
-ARC
-TENSION
-TEARS
-DORIES
-SENIOR
-REARS
-CERISE
-AERIEST
-TOE
-TARRIES
-STEIN
-RETRIES
-TRIO
-DON
-ATES
-RISQU
-DOG
-GORE
-EATS
-TERSE
-NOTARIES
-AGONIES
-CRATES
-OGRE
-DRIEST
-DAGGERS
-SIRE
-RAT
-SARI
-ARISEN
-GRINS
-AEON
+This method clears the `creaturesToAdd` queue. So if you want to add a new creature, you construct it and add it to this queue. There is an example of this in the constructor of the `City`.
 
-Total Points: 393
+### `Simulator.java` 
+
+This class has the main method for the simulation. You may need to do minor modifications to this while editing and to meet the requirements of the assignment.
+
+### `GridPoint.java`
+
+This class implements a row/column pair that can be used as a key in a map. You should read this class, but you will not need to edit it. 
+
+
+## Running, Visualization and debugging your simulation 
+
+Like in Lab 6, we will separate the simulation from visualization. 
+
+
+### Simulating
+
+You can run the simulator with the following arguments:
+
+```                  
+                      .-- Number of rounds to simulate
+                      |    .- The seed of the random number generator
+                      v    v
+java Simulator 8 2 0 1000 42 
+               ^ ^ ^
+               | | '-number of inital zombie cats
+               | '- number of initial cats
+               '- number of initial mice
 ```
 
+The output of the simulator is a series of `x` and `y` coordinates describing the locations of each of the creatures. It may look like below:
 
-> Note that the words are not alphabetical because hash tables are not ordered data structures.
+```
+37 48 r
+74 43 k
+20 32 r
+50 59 r
+5 21 c
+4 24 b
+75 54 b
+49 53 r
+5 46 b
+74 53 c
+done 930
+```
+
+Like in Lab 6, the first two numbers are a coordinate, and the letter is a color. Once complete, the `done` command is given. Different from Lab 6, `done` also outputs a round number. 
 
 
-## Bonus: Ordered Output (15 points)
+Optionally, you can include `--DEBUG` as the final argument, like below, if you want to iterative step through the simulation
 
-> Create a new branch in your repository called `ordered` and work within that branch --- do not make these changes on your `main` branch otherwise it may affect your grading of part B. Once complete push this branch to the github and also open a issue with the title "BONUS Submission Ordered"
+```
+$ java Simulator 8 2 0 1000 42 --DEBUG
+42 10 b
+50 3 b
+38 66 b
+63 13 b
+53 76 b
+55 32 b
+48 23 b
+27 23 b
+43 43 y
+27 20 c
+done 1
+Enter anything to continue: 
+41 10 b
+50 2 b
+38 67 b
+64 13 b
+54 76 b
+54 32 b
+47 23 b
+28 23 b
+45 43 y
+27 22 c
+done 2
+Enter anything to continue: 
+```
 
-Update your data structure (perhaps using a BST?) such that the output of the words from your boggle solver is in alphabetical order.
+> A quick note about the simulation space. It's a *torus*. That means when you go off one edge, you wrap around to the other edge of the board. You can see this in the animation above. Your code should account for that. 
 
+### Visualizing
+
+Like in `Lab 6`, we've provided a plotting tool `Plotter.jar` which you can pipe your output to, like so
+
+```
+java Simulator 8 2 0 1000 42 | java -jar Plotter.jar
+```
+
+This will open a visual, like the animation above. There are two arguments you can provide to the plotter.
+
+* `java -jar Plotter.jar 42` : the 42 indicates how many milliseconds between iterations. Note that the default rate is 500 millis, or half a second.
+
+* `java -jar Plotter.jar --DEBUG` : if the debug flag is set, then the plotter renders additional information about the location of points and the round number. Like below.
+
+<img src="/images/Zombie-Simulator-Debug-Plotter.png" alt="Simulation GIF" width="60%" 
+style="display: block;
+margin-left: auto;
+margin-right: auto;"/>
+
+Note that you can combine these two arguments, but you must set the millis first, and then the debug flag. 
+
+```
+java -jar Plotter.jar 42 --DEBUG
+```
+
+> **DEBUGGING TIP**: If you want to connect your simulator to the plotter, but also print out debug information from your simualor code, use `System.err.println()` methods. Only items printed to `stdout` are passed to the plotter. 
+
+## Requirements
+
+There are two requirements for this project. The first requirement (Part A) involves presenting a UML diagram for your project that describes the `Creature` object relationships as well as how you utilized OOP design. The second requirement (Part B) is to actually implement the code. 
+
+### Part A : UML Diagram and Planning Meeting(25 Points)
+
+<div class=requirement>
+
+**This part of the project must be signed off by a TA or LA by the due date specified**
+
+For Part A, you should complete the following items and discuss them in a 5-minute meeting with a TA or LA during lab or office hours. Both should also be included in your github repo. 
+
+* `UML.png` : Create UML diagram for your simulation code and creatures up to Level 4 (see below). This should include primarily your creatures but also the interaction with other code. 
+* `OOP-design.md` : Complete the markdown file that describes your OOP design and class structure for these creatures. It should be 2-3 sentences per creature that covers the hierarchical relationships.. 
+
+In your meeting, be prepared for feedback that you should incorporate into your project.
+
+</div>
+
+
+
+### Part B: Implementation (75 Points)
+
+<div class=requirement>
+
+There are different levels of implementation you should complete. Note that in `README.md` file, you must indicate which level you reached. You should submit working code up to one level. It is very difficult to provide partial credit for semi-working code that doesn't fully achieve one of the levels. 
+
+#### Level 0: Mice (up to 35 points)
+
+Full implement mice actions such that:
+* After 20 rounds of simulation time, a mouse produces a new baby mouse at the same location 
+* A mouse dies after 30 rounds simulation time
+* A mouse randomly turns, changes directions 20% of the time
+* A mouse is displayed as a blue dot. 
+
+#### Level 1: Mice and Cats (up to 45 points)
+
+Add a cat to the simulation
+* A cat eats a mouse if they end up on the same location. That is, the mouse should die and be removed from the simulation.
+* If a cat doesn't eat a mouse within 50 moves, the cat dies.
+* Cats *jump* two spaces at a time. They do not traverse the grid point they jump over. That is, if they are on space (1,2) they would move to (1,4). 
+* Cats randomly turn, change direction, 5% of the time.
+* Cats are displayed as a yellow dot.
+
+Additionally, in your simulator, have it such that
+* Every 100 rounds, a mouse is added to a random location in the city
+* Every 25 round, a cat is added to a random location in the city
+
+#### Level 2: Cats chase mice (up to 55 points)
+
+In this level, cat's get a bit smarter ...
+* A cat searches up to 20 grid points (as measured by the `GridPoint.distance()` method) for a mouse to chase. 
+* If the cat finds a mouse, it moves towards the mouse and is displayed using the color cyan. (This is to make it easier for you to debug, and for us to grade).
+* If the cat cannot find a mouse, it moves normaly and is displayed in yellow.
+
+#### Level 3: Zombie-Cats chase Cats and Mice (up to 65 points)
+
+Let's add zombie cats to the mix!
+
+First a modification to Cats:
+* If Cat does not eat within 50 rounds, they instead turn into a Zombie Cat. 
+
+Now let's define Zombie Cats:
+* Zombie cats chase both mice and other non-zombie cats
+* Zombie cats can search up to 40 gird squares away (as measured by `GridPoint.distance()`
+* Zombie cats eating a mouse is the same as a normal cat. The mouse dies and is removed from the simulation.
+* When a zombie cat eats a cat, that cat becomes a zombie cat placed at the same location in the grid square
+* A zombie cat when not chasing another creature is displayed as red dot. 
+* A zombie cat chasing another creature is displayed as a black dot
+* A zombie cat *jumps* 3 spaces at time. It does not move through the intervening space. That is, if it is at (5,10) it moves directly to (5,13).
+* A zombie cat that doesn't eat anything within 100 rounds dies. 
+
+#### Level 4: Create a new creature type (up to 75 points)
+
+The final level of the simulation is for you to add a new creature of any type or behavior you want to the simulation. It should fit into the general model of creatures we already have and derive from `Creature`. 
+
+You should include this extra creature in the planning stage (Part A of the project), and fully describe its functionality in the `README.md` file. 
+
+Particularly creative creatures may be subject to bonus points (up to 5), at the description of the grader. 
+
+</div>
 
 
