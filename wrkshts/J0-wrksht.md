@@ -85,7 +85,7 @@ When you're finished, take a screenshot of your terminal that shows you compilin
 
 # Grading rubric and submission
 
-Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-worksheetJ0`. You will be graded on the following:
+Use git, as discussed in Lab 0, to submit your work in a repo called `gitusername-worksheetJ0`. You will be graded on the following:
 
 |Item | Points |
 |the name of the repo for this lab matches the pattern  `gitusername-worksheetJ0` | 10 |
