@@ -136,31 +136,15 @@ To run your unit tests -- remember, you need to have the junit jar file in the s
 `java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
 
 
-## Submission
-
-<div class="requirement">
-You must submit
-
-1. `Enigma.java` : `Enigma` class
-2. `Rotor.java` : `Rotor` class
-3. `README.md` : Answer questions and describe your work in this lab
-
-Your `Enigma.java` and `Rotor.java` must meet the specifications above. 
-
-
 # Grading rubric and submission
 
-Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-worksheetJ0`. You will be graded on the following:
+Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-lab1`. You will be graded on the following:
 
 |Item | Points |
-|the name of the repo for this lab matches the pattern  `gitusername-worksheetJ0` | 10 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 10 |
-|the repo has been made private | 10 |
-|the second test case has been adjusted to pass (change `moon` to `Moon`) | 10 |
-|the third test case passes after fixing style issues in `UnitTestExample.java` | 30 |
-|a screenshot called `screenshot.jpg` has been submitted | 10 |
-|the screenshot shows you successfully compiling `UnitTestExample.java` | 10 |
-|the screenshot shows you successfully passing the three tests in `UnitTestExample.java` | 10 |
+|the name of the repo for this lab matches the pattern  `gitusername-lab1` | 3 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 4 |
+|the repo has been made private | 3 |
+|the test cases pass (11 points each) | 88 |
 |TOTAL | 100 |
 
 </div>
