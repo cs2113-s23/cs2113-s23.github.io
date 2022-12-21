@@ -16,7 +16,7 @@ Download the [Plotter.jar](./Plotter.jar) file.
 
 ### Github setup
 
-Use git, as discussed in Lab 0, to create a repo called `gitusername-lab2`, add these four files to it, and commit and push the changes to github. The timestamp of your invitation of the grader as a collaborator must be from this lab session.
+Use git, as discussed in Lab 0, to create a repo called `gitusername-lab2`, add these two files to it, and commit and push the changes to github. The timestamp of your invitation of the grader as a collaborator must be from this lab session.
 
 ### Running your program
 
