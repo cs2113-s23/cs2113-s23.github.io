@@ -8,7 +8,7 @@ showsolution: false
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-* Github Classroom Link: [https://classroom.github.com/a/e1tWK6V2](https://classroom.github.com/a/e1tWK6V2)
+Submit a file called `worksheet-J1.md` in your repo for this assignment.
 
 ## Note
 
@@ -386,3 +386,15 @@ Additionally, come up with one additional type for this company, describe it and
 Include your UML diagram and explanation with this worksheet. 
 
 #### s
+
+# Grading rubric and submission
+
+Use git, as discussed in Lab 0, to submit your work in a repo called `gitusername-worksheetJ1`. You will be graded on the following:
+
+|Item | Points |
+|the name of the repo for this lab matches the pattern  `gitusername-worksheetJ1` | 10 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 10 |
+|the repo has been made private | 10 |
+|the name of the answers file in your repo is  `worksheet-J1.md` | 10 |
+|worksheet questions have been completed (you can upload an additional image to your repo for the UML diagram if desired) | 60 |
+|TOTAL | 100 |
