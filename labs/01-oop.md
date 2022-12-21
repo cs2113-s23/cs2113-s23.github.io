@@ -21,7 +21,6 @@ Download the [Lab1_Tester.java](./Lab1_Tester.java) file.
 
 Use git, as discussed in Lab 0, to create a repo called `gitusername-lab1`, add these four files to it, and commit and push the changes to github. The timestamp of your invitation of the grader as a collaborator must be from this lab session.
 
-
 ## Enigma Machines (simplified model)
 
 The Enigma machine was used by the Germans in WWII to send encoded messages. At the time, it was a breakthrough in cryptography, and was essentially an extremely advanced substitution cipher. The Enigma machine is also famous for not just being a very advanced cipher, but also because it was broken by none other than Alan Turning, whom many consider the founder of computer science.
@@ -47,7 +46,7 @@ Note that decrypting a message requires following the same steps, only in revers
 
 ### The Task
 
-You will define a class `Rotor` to simulate the workings of a single rotor, and the class `Enigma` to simulate the workings of an Enigma machine using `Rotor` instances. You will be provided a class `Comms` (with a `main` method) as part of the initial material. You should read that file to see how `Enigma` instances are suppose to be used.
+You will define a class `Rotor` to simulate the workings of a single rotor, and the class `Enigma` to simulate the workings of an Enigma machine using `Rotor` instances. You will be provided a class `Comms` (with a `run` method) as part of the initial material. You should read that file to see how `Enigma` instances are suppose to be used.
 
 **You may not alter `Comms.java` in any way.** 
 
@@ -84,39 +83,44 @@ You must also have encrypt and decrypt methods for encrypting and decrypting str
 
 **Note you should not edit the `Comms` class**, but you do need to know how it works. 
 
-This is the program's main class, and it is provided for you. The program takes as input (from the command line) the three rotors and their starting characters. A correct call to the program `Comms` will provide all the information needed to setup enigma for that encryption/decryption session on the command-line, and the actual string to encrypt/decrypt should be input from standard in.
+This is the program's driver class, and it is provided for you. The program takes as input (from the `run` method in `Comms`) the three rotors and their starting characters, and a message. The diagram below describes the meaning of each argument, and then the Java code shows how you can run this program:
 
 ```
                   ,-- inner rotor initially positioned so X is on top
                   |,-- middle rotor initially positioned so # is on top
                   ||  ,-- outer rotor initially positioned so Y is on top
-                  || /
-java Comms 4 2 3 "X#Y" encrypt
+                  || /           ,---- the message to be encrypted/decrypted
+                  |||           /
+           4 2 3 "X#Y" encrypt AAA
            | | |
            | | `-- outer rotor is rotor 3
            | `-- middle rotor is rotor 2
            `-- inner rotor is rotor 4
+
+String[] args = {"4", "2", "3", "X#Y", "encrypt", "AAA"};
+Comms.run(args);
 ```
 
+The `Comms.run()` method returns a string corresponding to the command (in this example, `encrypt`) applied to the incoming message (`AAA` in this example.)
 
 A couple example runs are here. Note that you have to type in the string you want to encrypt/decrypt. You must also make your own tests and fully test your code:
 
 ```
-~/$ java Comms 1 2 3 "###" encrypt
-AAA
-NDU
+String[] args = {"1", "2", "3", "###", "encrypt", "AAA"};
+String result = Comms.run(args);
+// the result would be NDU
 ```
 
 ```
-~/$ java Comms 3 1 2 "SAT" encrypt
-DO#YOUR#BEST#AND#KEEP#ON#KEEPIN#ON
-ACAAFAEOZFWKBQKPXZOGIKXTNPEBDXWQCZ
+String[] args = {"3", "1", "2", "SAT", "encrypt", "DO#YOUR#BEST#AND#KEEP#ON#KEEPIN#ON"};
+String result = Comms.run(args);
+// the result would be ACAAFAEOZFWKBQKPXZOGIKXTNPEBDXWQCZ
 ```
 
 ```
-~/$ java Comms 5 2 4 "EST" decrypt
-CSHIAWDFGDCOE#EZKJHRWAZDDCBCILON#PKUJEXEXSHINZ
-THE#NATIONAL#ANIMAL#OF#SCOTLAND#IS#THE#UNICORN
+String[] args = {"5", "2", "4", "EST", "decrypt", "CSHIAWDFGDCOE#EZKJHRWAZDDCBCILON#PKUJEXEXSHINZ"};
+String result = Comms.run(args);
+// the result would be THE#NATIONAL#ANIMAL#OF#SCOTLAND#IS#THE#UNICORN
 ```
 
 ## Submission
