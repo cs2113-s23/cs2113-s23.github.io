@@ -8,11 +8,11 @@ title: CS2113 Software Egineering - Spring 2023
         <ul class="contact-list">
             <li><b>Dr. Kinga Dobolyi</b></li>
             <li><a href="mailto:kinga@gwu.edu">kinga@gwu.edu</a></li>
-            <li>Office Hours: Wednesdays 1pm-2:30pm
+            <li>Office Hours: Tuesdays/Thursdays 1:30pm-2:45pm
                 <ul>
                 <li>online on <a href="https://gwu-edu.zoom.us/j/6378326351"
                   target="_blank">Zoom</a></li>
-                </ul>
+                </ul>SEH 4655 Tuesdays/Thursdays from 12:45pm-2:00pm
             </li>                
         </ul>
         <ul class="contact-list">
