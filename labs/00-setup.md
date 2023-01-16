@@ -83,7 +83,7 @@ In order to submit code this semester, you will need to create a repository for 
 
 ### Notify us with your github username
 
-Send an email to your grader identifying your github username, so they can associate that account with this course. 
+Please find the thread on Ed titled `git usernames` and make a post there, so the grader knows what your git account will be this semester.
 
 ### Creating a new git repo
 
@@ -95,10 +95,10 @@ Next, select the toggle button below to be `Private`.
 
 Next, press the green `Create repository` button.
 
-The page will load the homepage of your repo. Under the `Settings` tab at the top, click on `Collaborators` on the left hand menu, click the green `Add people` button, and add the following collaborators (the grader):
-`TBA`
+The page will load the homepage of your repo. Under the `Settings` tab at the top, click on `Collaborators` on the left hand menu, click the green `Add people` button, and add the following collaborators (in the future, the grader, but for now, the instructor):
+`kdobolyi`
 
-This will send an invite (that experies in seven days) to your grader(s). They'll be monitoring their inboxes for these items during lab; you must create this repo in your lab session to ensure the grader accepts the invite. This also means you should email the graders first if you have grading questions; the professor is not automatically added to your submissions.
+This will send an invite (that experies in seven days) to your grader(s). They'll be monitoring their inboxes for these items during lab; you must create this repo in your lab session to ensure the grader accepts the invite. This also means you should email the graders first if you have grading questions; the professor is not automatically added to your submissions (in general).
 
 ## Part 2: Checking out your repo
 
@@ -149,9 +149,9 @@ Make sure that when you refresh the browser, you can see your changes there.
 # Grading Rubric
 
 |Item | Points |
-|github username has been emailed to the grader | 10 |
+|github username has been posted to Ed | 10 |
 |the name of the repo for this lab matches the pattern  `gitusername-lab0` | 10 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 10 |
+|the professor has been added as a collaborator to the repo with an invite timestamp during the lab| 10 |
 |the repo has been made private | 10 |
 |there is an initial commit of `HelloWorld.java` | 20 |
 |the initial commit has a useful message | 10 |
