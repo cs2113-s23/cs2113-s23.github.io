@@ -8,21 +8,11 @@ title: CS2113 Software Egineering - Spring 2023
         <ul class="contact-list">
             <li><b>Dr. Kinga Dobolyi</b></li>
             <li><a href="mailto:kinga@gwu.edu">kinga@gwu.edu</a></li>
-            <li>Office Hours: Tuesdays/Thursdays 1:30pm-2:45pm
-                <ul>
-                <li>online on <a href="https://gwu-edu.zoom.us/j/6378326351"
-                  target="_blank">Zoom</a></li>
-                </ul>SEH 4655 Tuesdays/Thursdays from 12:45pm-2:00pm
-            </li>                
-        </ul>
-        <ul class="contact-list">
-            <li><b>TBA</b> (GTA)</li>
-            <li><a href="mailto:TBA@gwu.edu">TBA@gwu.edu</a> </li>
             <li>Office Hours:
                 <ul>
-                <li> TBA</li>
+                <li>SEH 4655 Tuesdays/Thursdays from 12:45pm-2:00pm</li>
                 </ul>
-            </li>
+            </li>                
         </ul>
         <ul class="contact-list">
             <li><b>TBA</b> (GTA - grading)</li>
@@ -31,7 +21,7 @@ title: CS2113 Software Egineering - Spring 2023
     </div>    
     <div class="footer-col two-col-2">
         <ul class="contact-list">
-            <li><b>TBA</b> (UTA)</li>
+            <li><b>Connor Burnett</b> (UTA)</li>
             <li><a href="mailto:"></a></li>
             <li> Office Hours: 
                 <ul>
@@ -40,7 +30,7 @@ title: CS2113 Software Egineering - Spring 2023
             </li>
         </ul>
         <ul class="contact-list">
-            <li><b>TBA</b> (UTA)</li>
+            <li><b>Dania Abdalla</b> (UTA)</li>
             <li><a href="mailto:"></a></li>
             <li> Office Hours:
                 <ul>
@@ -49,7 +39,7 @@ title: CS2113 Software Egineering - Spring 2023
             </li>
         </ul>
         <ul class="contact-list">
-            <li><b>TBA</b> (LA)</li>
+            <li><b>Zachary Rahbar</b> (LA)</li>
             <li> Office Hours:
                 <ul>
                 <li> TBA</li>
@@ -57,7 +47,7 @@ title: CS2113 Software Egineering - Spring 2023
             </li>
         </ul>
         <ul class="contact-list">
-            <li><b>TBA</b> (LA)</li>
+            <li><b>Lauren Schmidt</b> (LA)</li>
             <li> Office Hours:
                 <ul>
                 <li> TBA</li>
