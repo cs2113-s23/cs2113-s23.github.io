@@ -30,7 +30,7 @@ title: CS2113 Software Egineering - Spring 2023
             </li>
         </ul>
         <ul class="contact-list">
-            <li><b>Dania Abdalla</b> (UTA)</li>
+            <li><b>Jett Jacobs</b> (UTA)</li>
             <li><a href="mailto:"></a></li>
             <li> Office Hours:
                 <ul>
