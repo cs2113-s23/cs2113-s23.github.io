@@ -12,7 +12,7 @@ Worksheets are self-guided activities that reinforce lectures. They are not grad
 
 Create a new repo using all the steps in Lab 0 called `yourgitusername-worksheet-J0`. Then, add the following file to it:
 
-Download the [UnitTestExample.java](UnitTestExample)
+Download the [UnitTestExample.java](UnitTestExample.java)
 
 Download the [junit jar file](https://search.maven.org/artifact/org.junit.platform/junit-platform-console-standalone/1.7.0-M1/jar) by clicking the `Downloads` button at the top right of that website and selecting `jar`. Save it in the same directory as your java file. This will allow you to run Junit tests through your terminal; there are also plugins for junit for text editors like VSCode if you want to google how to set that up.
 
