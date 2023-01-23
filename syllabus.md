@@ -30,7 +30,7 @@ aside:
 
 ### Course Description 
 
-In this course, students will learn how to write object-oriented code using Java. Concepts will focus on object-oriented thinking, software composition, inheritance and polymorphism, and design patterns. Programming techniques, assignments and lab exercises will focus on Java, specifically, the language and its core libraries. The course will be conducted lab-style with a mix of lecture, lab assignments and projects. There will also be an open-ended groupwork assignment at the end of the semester.
+In this course, students will learn how to write object-oriented code using Java. Concepts will focus on object-oriented thinking, software composition, inheritance and polymorphism, unit testing, and design patterns. Programming techniques, assignments and lab exercises will focus on Java, specifically, the language and its core libraries. The course will be conducted lab-style with a mix of lecture, lab assignments and projects. There will also be an open-ended groupwork assignment at the end of the semester.
 
 ### Learning Outcomes
 By the end of this course, students will be able to:
@@ -40,6 +40,7 @@ By the end of this course, students will be able to:
 - Experience GUI design and implementation
 - Practice basic networking and IO programming
 - Develop an understanding of software engineering principles
+- Develop an understanding of unit testing
 - Demonstrate skill in problem solving by going from complex word description to implementation.
 
 ## Textbook and Resources
@@ -69,16 +70,17 @@ Having completed the pre-reqs, you are expected to submit well-written code:
 - Comments must be substantive.
 - Select readable variable names and method names.
 - Use consistent indentation (preferred: two or four spaces).
-- Submit code that compiles on the class server (**non-compiling code will not be graded**).
-  - Additionally, your code should be compile in a standard, pre-described way for the class (e.g., javac` without additional libraries, except perhaps the final project)
+- Submit code that compiles (**non-compiling code will not be graded**).
+  - Additionally, your code should be compile in a standard, pre-described way for the class (e.g., `javac` without additional libraries, except perhaps the final project).
 - Be able to describe and answer questions about your code when prompted.
 
 ## Grading 
 
 ### Grading Breakdown
-   * 8%: Self-Guided Worksheets
+   * 7%: Self-Guided Worksheets 1 - 7
    * 1%: Lab 0
-   * 20%: Labs 1+ 
+   * 1%: Worksheet 0
+   * 20%: Labs 1-3 
    * 30%: Projects
    * 40%: Exams (2x 20% each)
    * 1%: Participation/Attendence
@@ -86,7 +88,7 @@ Having completed the pre-reqs, you are expected to submit well-written code:
    
 ### Self-Guided Worksheets
 
-Each lecture will be accompanied by a *self-guided worksheet*. This worksheet is to complement in-class content and to assist you in reviewing the material. **Worksheets are not graded for accuracy; instead, you attest that you have completed the worksheet.** Worksheet completion is expected by the Sunday following Monday lecture. 
+Each lecture will be accompanied by a *self-guided worksheet*. This worksheet is to complement in-class content and to assist you in reviewing the material. **Worksheets are not graded for accuracy; instead, you attest that you have completed the worksheet.** Worksheet completion is expected by the Sunday following Monday lecture. Note that Worksheet zero is an exception; it has a grading rubric that is NOT based on completion.
 
 ### Labs
 
@@ -102,7 +104,7 @@ There are two non-comprehensive exams in this class during the semester, each wo
 
 ### Participation/Attendance
 
-Participation is worth 1% of your grade. You earn participation credit by attending lecture and lab.
+Participation is worth 1% of your grade. You earn participation credit by attending lecture.
 
 ## Submission/Late Work Policy
 
