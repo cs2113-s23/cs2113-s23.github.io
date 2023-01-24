@@ -34,11 +34,11 @@ The third test is running the Java Checkstyle command from the command line, and
 To run your unit tests -- remember, two of them will fail for now -- compile and run your code with the following commands on the terminal (depending on your OS):
 
 ### Windows
-`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" .\UnitTestExample.java`
+`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" UnitTestExample.java`
 `java -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore UnitTestExample`
 
 ### Mac/Linux
-`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" .\UnitTestExample.java`
+`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" UnitTestExample.java`
 `java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore UnitTestExample`
 
 Your output should look something like:
