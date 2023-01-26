@@ -42,7 +42,7 @@ title: CS2113 Software Egineering - Spring 2023
             <li><b>Zachary Rahbar</b> (LA)</li>
             <li> Office Hours: 
                 <ul>
-                <li>Sunday 4-5:30pm and Friday 1-2:30pm in SEH 4th floor lounge</li>
+                <li>Monday 4-5:30pm and Friday 1-2:30pm in SEH 4th floor lounge</li>
                 </ul>
             </li>
         </ul>
