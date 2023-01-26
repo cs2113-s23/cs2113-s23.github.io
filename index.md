@@ -25,7 +25,7 @@ title: CS2113 Software Egineering - Spring 2023
             <li><a href="mailto:"></a></li>
             <li> Office Hours: 
                 <ul>
-                <li> TBA</li>
+                <li>Thursday 12-1:30pm in SEH 4th floor lounge</li>
                 </ul>
             </li>
         </ul>
@@ -34,15 +34,15 @@ title: CS2113 Software Egineering - Spring 2023
             <li><a href="mailto:"></a></li>
             <li> Office Hours:
                 <ul>
-                <li> </li>
+                <li>Wednesdays 12:30pm - 2:30pm in SEH 4040</li>
                 </ul>
             </li>
         </ul>
         <ul class="contact-list">
             <li><b>Zachary Rahbar</b> (LA)</li>
-            <li> Office Hours:
+            <li> Office Hours: 
                 <ul>
-                <li> TBA</li>
+                <li>Sunday 4-5:30pm and Friday 1-2:30pm in SEH 4th floor lounge</li>
                 </ul>
             </li>
         </ul>
@@ -50,7 +50,7 @@ title: CS2113 Software Egineering - Spring 2023
             <li><b>Lauren Schmidt</b> (LA)</li>
             <li> Office Hours:
                 <ul>
-                <li> TBA</li>
+                <li> Tuesdays/Thursdays 5:30-7pm in SEH 4th floor lounge</li>
                 </ul>
             </li>
         </ul>
