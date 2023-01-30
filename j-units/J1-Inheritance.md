@@ -604,7 +604,7 @@ public class CountingQueue extends Queue {
 
 ## Extending Queue for `peek()`
 
-Another common functionality of a queue is to be able to peek at the first element enqueued by returning it but not actually removing it from the queue. We could write this routine in the same way we extended `Queue` for `CountingQueue` to produce `PeekaCountingQueue` (keeping `CountingQueue`'s functionality).
+Another common functionality of a queue is to be able to peek at the first element enqueued by returning it but not actually removing it from the queue. We could write this routine (incorrectly) in the same way we extended `Queue` for `CountingQueue` to produce `PeekaCountingQueue` (keeping `CountingQueue`'s functionality).
 
 ```java
 public class PeekaCountingQueue extends CountingQueue {
@@ -619,7 +619,7 @@ public class PeekaCountingQueue extends CountingQueue {
 }
 ```
 
-But, that is entirely unsatisfying because we are actually dequeing and enqueing when what we really want to do is to write the following version.
+But, that is entirely unsatisfying because we are actually dequeing and enqueing (and so it's not peeking really because it puts the item at the end of the queue rather than leaving it at the start) when what we really want to do is to write the following version.
 
 ```java
 public class PeekaCountingQueue extends CountingQueue {
