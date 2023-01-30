@@ -717,7 +717,7 @@ Finally, the `CEO` is a derived from the `Manager`, but also maintains a list of
 Finally, finally, the public/private/protected fields are not included as it would get quite large quite quickly with having to implement getters and setters. So you can assume all members are protected and have getters/setters.
 </div>
 
-<font color=red><h3>Let's take 10 minutes to go through questions 16 on the J1 worksheet.</h3></font>
+<font color=red><h3>Let's take 10 minutes to go through question 16 on the J1 worksheet.</h3></font>
 
 ---
 Material on this page adopted  with permission from [USNA courses ic211](https://www.usna.edu/Users/cs/nchamber/courses/ic211/s19/index.html), taught by Nate Chambers, Gavin Taylor, Chris Brown, and many others. Thank you. 
