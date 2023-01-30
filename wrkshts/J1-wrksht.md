@@ -385,7 +385,7 @@ Consider the UML diagram [exercise](https://cs2113-s22.github.io/j/1#using-uml-d
 
 Additionally, come up with one additional type for this company, describe it and add it to the UML diagram.
 
-Include your UML diagram and explanation with this worksheet. 
+Include your UML diagram and explanation with this worksheet (in the file you're submitting, or as a screenshot/photo/etc).
 
 #### s
 

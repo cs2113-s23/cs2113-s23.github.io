@@ -7,7 +7,7 @@ permalink: /j/1
 
 # Review from last class: Java basics
 
-<font color=red><h2>Let's take 30 minutes to go through questions 1-7 on the J1 worksheet.</h2></font>
+<font color=red><h3>Let's take 30 minutes to go through questions 1-7 on the J1 worksheet.</h3></font>
 
 # Extending Objects via Inheritance and Subtyping
 
@@ -232,14 +232,14 @@ And it's memory diagram would look like the following for an instance `lp` of `L
                                        '-----'
 ```
 
-This is really ugly for us. Why? Well this is no longer a point, which means that we can't just pass three `LabPoint`s to the `Triangle` constructor anymore so that we can calculate the area, but we constantly have to pull out the "point-part" of the `LabPoint` to pass around. In fact, this class has no methods yet at all, and we'd have to recreate all the methods we already have for `Point` in the new `LabPoint` class. Either that or, we'd need to also write a new `Triangle` constructor --- which we can't because we don't have the source code for that! So instead, we'd also need to write a *new* `LabTriangle` class with new methods to handle `LabPoint`s ... it's a mess! And this is because a LabPoint defined this way *has-a* Point, rather than *is-a* Point.
+This is really ugly for us. Why? Well **this is no longer a point**, which means that we can't just pass three `LabPoint`s to the `Triangle` constructor anymore so that we can calculate the area, but we constantly have to pull out the "point-part" of the `LabPoint` to pass around. In fact, this class has no methods yet at all, and we'd have to recreate all the methods we already have for `Point` in the new `LabPoint` class. Either that or, we'd need to also write a new `Triangle` constructor --- which we can't because we don't have the source code for that! So instead, we'd also need to write a *new* `LabTriangle` class with new methods to handle `LabPoint`s ... it's a mess! And this is because a LabPoint defined this way *has-a* Point, rather than *is-a* Point.
 
 
 ### Deriving a new class with `extends` — adding fields
 
-Instead we can use **inheritance**, as in this new `LabPoint` is a *decedent* of `Point`, or put another way, we define `LabPoint` as *derived* from the class Point. In the Java parlance, `LabPoint` extends `Point` — which means that a `LabPoint` object **is-a** `Point`, but it is a `Point` with some extra features. Thus, all the code that worked for `Point`, all the methods of class `Point` and methods that take `Point`s as arguments, all still works. But we can add more! We are *extending* the class Point. 
+Instead we can use **inheritance**, as in this new `LabPoint` is a *child* of `Point`, or put another way, we define `LabPoint` as *derived* from the class `Point`. In the Java parlance, `LabPoint` extends `Point` — which means that a `LabPoint` object **is-a** `Point`, but it is a `Point` with some extra features. Thus, all the code that worked for `Point`, all the methods of class `Point` and methods that take `Point`s as arguments, all still works. But we can add more! We are *extending* the class Point. 
 
-The existing class `Point` is called the "super-class" and the new class `LabPoint` is called the "sub-class". Sometimes, we'll use "super-type" and "sub-type" as well, but it means the same thing.
+The existing class `Point` is called the "super-class" (or parent class) and the new class `LabPoint` is called the "sub-class" (or child class). Sometimes, we'll use "super-type" and "sub-type" as well, but it means the same thing.
 
 To derive a new class `LabPoint` from class `Point`, and add a `String` label, we would write
 
@@ -291,9 +291,9 @@ public class LabPoint extends Point {
 
 ```
 
-When we try and use `this.x` we would find we get a compiler error because we're access a private field outside the class. While, yes, `LabPoint` is a `Point`, access to private fields *are not* inherited!
+When we try and use `this.x` we would find we get a compiler error because we're access a `private` field outside the class. While, yes, `LabPoint` is a `Point`, **direct access** to `private` fields *are not* inherited! The fields are, however, inhereted (i.e. they can store values), but they're just inaccessible.
 
-We could have declared the fields of `Point` as `protected` instead of `private`, which gives all the protections of `private` outside the class, but allows sub-classes access to the fields/methods (discussed more later). But, **we cannot edit** point, so how do we solve this problem? We need to set the fields in the super-class, or put another way, we need to call the constructor of the super class.  
+We could have declared the fields of `Point` as `protected` instead of `private`, which gives all the protections of `private` outside the class, but allows sub-classes access to the fields/methods (discussed more later). But, **we cannot edit** `Point`, so how do we solve this problem? We need to set the fields in the super-class, or put another way, we need to call the constructor of the super class.  
 
 Java provides a `super` which allows us to refer to the super-class and, in this context, allows us to explicitly call the constructor for  `Point`, initializing the `Point` part of the new object. After, we can initialize the `LabPoint` part. 
 
@@ -469,6 +469,8 @@ public class LargestAreaLab {
 }
 ```
 </div>
+
+<font color=red><h3>Let's take 10 minutes to go through questions 8-10 on the J1 worksheet.</h3></font>
 
 # Private classes 
 
@@ -650,6 +652,8 @@ public class Queue {
 
 This is a case where we **do want to change the original class** and as a programmer and the designing of the API for a class, you need to plan ahead to make these changes. 
 
+<font color=red><h3>Let's take 10 minutes to go through questions 11-15 on the J1 worksheet.</h3></font>
+
 # UML Diagrams
 
 A great tool when you begin to plan out the relationships between classes is to visualize how class depend and extend each other. The **UML** (or **Unified Model Language**) is a standard way to describe classes, their members, and relationships. As a starter, consider the UML diagram for the `Point` `LabPoint` and `Triangle` classes used in the prior example. (Note this was generated by IntelliJ via yworks)
@@ -713,6 +717,7 @@ Finally, the `CEO` is a derived from the `Manager`, but also maintains a list of
 Finally, finally, the public/private/protected fields are not included as it would get quite large quite quickly with having to implement getters and setters. So you can assume all members are protected and have getters/setters.
 </div>
 
+<font color=red><h3>Let's take 10 minutes to go through questions 16 on the J1 worksheet.</h3></font>
 
 ---
 Material on this page adopted  with permission from [USNA courses ic211](https://www.usna.edu/Users/cs/nchamber/courses/ic211/s19/index.html), taught by Nate Chambers, Gavin Taylor, Chris Brown, and many others. Thank you. 
