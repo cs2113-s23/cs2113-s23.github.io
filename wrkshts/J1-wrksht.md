@@ -195,7 +195,7 @@ public class Point {
    public Point(Point other); //construct a point from another point
    public double getX(); //return the x component
    public double getY(); //return the y component
-   public double setXY(double x, double y); //return the x component
+   public double setXY(double x, double y); //sets the x and y fields
    public String toString(); //return the string representation
    private double sum_x_y(); // Returns the sum of X and Y
 }
