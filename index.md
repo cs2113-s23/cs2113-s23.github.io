@@ -50,7 +50,7 @@ title: CS2113 Software Egineering - Spring 2023
             <li><b>Lauren Schmidt</b> (LA)</li>
             <li> Office Hours:
                 <ul>
-                <li> Tuesdays/Thursdays 5:30-7pm in SEH 4th floor lounge</li>
+                <li> Tuesdays 5:30-7pm in SEH 3040 and Thursdays 5:30-7pm in SEH 4th floor lounge</li>
                 </ul>
             </li>
         </ul>
