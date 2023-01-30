@@ -128,11 +128,11 @@ String result = Comms.run(args);
 To run your unit tests -- remember, you need to have the junit jar file in the same directory -- compile and run your code with the following commands on the terminal (depending on your OS):
 
 ### Windows
-`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" .\Lab1_Tester.java`
+`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" Lab1_Tester.java`
 `java -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
 
 ### Mac/Linux
-`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" .\Lab1_Tester.java`
+`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" Lab1_Tester.java`
 `java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
 
 
@@ -141,9 +141,9 @@ To run your unit tests -- remember, you need to have the junit jar file in the s
 Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-lab1`. You will be graded on the following:
 
 |Item | Points |
-|the name of the repo for this lab matches the pattern  `gitusername-lab1` | 3 |
+|the name of the repo for this lab matches the pattern  `gitusername-lab1` | 4 |
 |the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 4 |
-|the repo has been made private | 3 |
+|the repo has been made private | 4 |
 |the test cases pass (11 points each) | 88 |
 |TOTAL | 100 |
 
