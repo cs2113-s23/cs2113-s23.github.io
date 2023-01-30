@@ -20,43 +20,13 @@ public class Enigma{
 
 
     public String decrypt(String message){        
-        String output = "";
-        for(int i=0;i<message.length();i++){
-            output += decryptChar(message.charAt(i));
-        }
-        return output;
-
+        //TODO
     }
 
-    
-    private char decryptChar(char c){
-        int outer = rotors[2].indexOf(c);
-        char middle = rotors[1].charAt(outer);
-        int inner = rotors[2].indexOf(middle);
-        char output = rotors[0].charAt(inner);
-
-        rotate();
-        return output;
-    }
 
     
     public String encrypt(String message){
-        String output = "";
-        for(int i=0;i<message.length();i++){
-            output += encryptChar(message.charAt(i));
-        }
-        return output;
-    }
-
-    private char encryptChar(char c){
-        int inner = rotors[0].indexOf(c);
-        char outer = rotors[2].charAt(inner);
-        int middle = rotors[1].indexOf(outer);
-        char output = rotors[2].charAt(middle);
-
-        rotate();
-        return output;
-    }
+        //TODO
 
     
     private void rotate(){

@@ -77,7 +77,7 @@ This we leave partly up to you. We expect your Engima to have 5 possible rotors,
 4. `#NWDKHGXZVRIFJBLMAOPSCYUTQE`
 5. `#TGOWHLIFMCSZYRVXQABUPEJKND`
 
-You must also have encrypt and decrypt methods for encrypting and decrypting strings. These must be compatible with the Comms.java file that we give you. The behavior in these methods must follow the enigma procedure described above in "Our Simple Model of the Enigma". 
+You must also have encrypt and decrypt methods for encrypting and decrypting strings. These must be compatible with the Comms.java file that we give you. The behavior in these methods must follow the enigma procedure described above in "Our Simple Model of the Enigma". You may also choose to write additional helper methods as necessary.
 
 ### The `Comms` Class
 
