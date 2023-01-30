@@ -5,6 +5,10 @@ permalink: /j/1
 
 *View all the videos from this unit a [single playlist on youtube](https://youtube.com/playlist?list=PLnVRBITSZMSM_TFdOK8AZYIvMESjxolI6)*
 
+# Review from last class: Java basics
+
+<font color=red><h2>Let's take 30 minutes to go through questions 1-7 on the J1 worksheet.</h2></font>
+
 # Extending Objects via Inheritance and Subtyping
 
 ## Public Interface of a Class
