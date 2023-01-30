@@ -35,7 +35,7 @@ your solution here
 
 ### q
 
-Write a Java program `Q2.java` that asks the user to enter the size of an array, then fills it with
+Write a Java class `Q2` that asks the user to enter the size of an array, then fills it with
 multiples of two. Finally, it generates a string representation of the array, i.e. `{2, 4, 6, 8, ...}`
 
 #### s
