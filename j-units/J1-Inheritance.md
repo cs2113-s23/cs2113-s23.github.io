@@ -705,7 +705,7 @@ Take a moment to try and draw out this diagram. When you're finished, click belo
 
 <div class="company-uml" style="display:none">
 <div style="text-align:center">
-![Company UML](/images/company-uml.jpg)
+![Company UML](/images/uml_employee.jpg)
 </div>
 
 As a brief explanation of this UML diagram, we should start with the base `Employee` class. This stores all the core employee information, and from this we can derive the `Manager` class. The `Manager` also need to track their direct reports, in addition to being a normal employee. These employees can be stored in an `EmployeeList`, which we must define. In this example, that list is a linked list.
