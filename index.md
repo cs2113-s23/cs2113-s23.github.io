@@ -25,7 +25,7 @@ title: CS2113 Software Egineering - Spring 2023
             <li><a href="mailto:"></a></li>
             <li> Office Hours: 
                 <ul>
-                <li>Thursday 12-1:30pm in SEH 4th floor lounge</li>
+                <li>Thursday 12-1:30pm on <a href="https://us05web.zoom.us/j/9549554796?pwd=YXpqd3JZTWhBaUx5NlBHZURUb3hMZz09">zoom</a></li>
                 </ul>
             </li>
         </ul>
