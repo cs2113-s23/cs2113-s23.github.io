@@ -83,7 +83,7 @@ public class Ex1 {
 ```
 Hopefully you see that what this program does is instantiate two points [(3,4) and (5,2)], and then randomly choose one of the two and assign reference `u` to point to it. You run this program and you might see `3 4` printed out. Run it again, and you might see `5 2` instead. It's random. 
 
-Now, recall that inheritance is supposed to give us an "is-a" relationship, as in "an object of type `LabPoint` is-a `Point`. If that's true, then the variable `u` should be able to point to a `LabPoint` just as much as it can point to a `Poin`. So let's try it. The following program, `Ex2.java`, is just like the earlier program, except that the second `Point` `w` we instantiate is actually the `LabPoint` (5,2) with label "A", rather than just the plain-ol' `Point` (5,2). The code compiles, which certainly proves that the compiler is at peace with the prospect of the variable `u` referencing a `LabPoint` rather than a plain-ol' `Point`. 
+Now, recall that inheritance is supposed to give us an "is-a" relationship, as in "an object of type `LabPoint` is-a `Point`. If that's true, then the variable `u` should be able to point to a `LabPoint` just as much as it can point to a `Point`. So let's try it. The following program, `Ex2.java`, is just like the earlier program, except that the second `Point` `w` we instantiate is actually the `LabPoint` (5,2) with label "A", rather than just the plain-ol' `Point` (5,2). The code compiles, which certainly proves that the compiler is at peace with the prospect of the variable `u` referencing a `LabPoint` rather than a plain-ol' `Point`. 
 
 ```java
 import java.util.*;
@@ -361,7 +361,7 @@ With this new class, let's consider two things:
 1. `PerItemExpense` is-a `Expense` in the sense that it inherits from `Expense` and thus can be used *anywhere* that `Expense` is used.
 2. `PerItemExpense` has overwritten the functionality of `Expense` but keeps the same API, as in, it's a different implementation of how expenses are recorded and calculated, but it uses the same interface of calling `ask()` and encoding values in the description and the amount is retrievable via `getAmount()`.
 
-What this means, is that we **DO NOT** have to overwrite any new code in `ReportGenerator` to handle this new expense type. It already takes as input an array of `Expense`s -- `PerItemExpense` is an `Expense`. In the method, it uses `ask()` and `getAmmount()` to generator a report --- if it's a per-item expense, at the method call site, the per-item functionality will be used, and if it's a normal expense, the normal functionality will be used. In other words, the computer can know, at runtime, which is the correct method to call, based on the runtime type of the object as opposed to the compile time type of the object.
+What this means, is that we **DO NOT** have to overwrite any new code in `ReportGenerator` to handle this new expense type. It already takes as input an array of `Expense`s -- `PerItemExpense` is an `Expense`. In the method, it uses `ask()` and `getAmount()` to generator a report --- if it's a per-item expense, at the method call site, the per-item functionality will be used, and if it's a normal expense, the normal functionality will be used. In other words, the computer can know, at runtime, which is the correct method to call, based on the runtime type of the object as opposed to the compile time type of the object.
 
 We achieve the Nirvana of OOP in quite a simple non-trivial program. The `main()` method only changes like so
 
@@ -409,6 +409,8 @@ Enter amount of miles: 302
 ---------
  $0679.82  total
  ```
+
+<font color=red><h3>Let's take 10-15 minutes to go through questions 1-5 on the J2 worksheet.</h3></font>
 
 # Casting, Polymorphism and `instanceof`
 
@@ -467,7 +469,7 @@ But let's think about this for a second; would we ever instantiate a `GWPerson` 
 
 Moreover, there is going to be some functionality that doesn't make sense to implement in the `GWPerson` class because it will have to be overwritten in the sub-class. For example, consider a method `email()` which returns the person's email. This is wholy dependent on if the person is a student or a professor. 
 
-> Note that a student's email address is `@gwmail.gwu.edu` and a faculty email address is ``@email.gwu.edu`. 
+> Note that a student's email address is `@gwmail.gwu.edu` and a faculty email address is `@email.gwu.edu`. 
 
 There is no reason to then implement `email()` at all at the `GWPerson` level, but instead it must be implemented in the subtype, specific to students or professors. We don't know the domain of the email until we know which sub-class of `GWPerson` (either student of faculty). 
 
@@ -648,9 +650,8 @@ public class GWFaculty extends GWPerson {
 }
 ```
 
-```
 
-```
+<font color=red><h3>Let's take 10 minutes to go through questions 6-7 on the J2 worksheet.</h3></font>
 
 ## Leveraging Abstract Class
 
@@ -740,6 +741,8 @@ Styles, Harry (G120345,styles) -- Class of 2026 -- styles@gwmail.gwu.edu
 
 ```
 
+<font color=red><h3>Let's take 10 minutes to go through questions 8-10 on the J2 worksheet.</h3></font>
+
 # OOP Design Activity
 
 Let's take a moment and look at a sample program and try and develop a design for a program using our OOP skills of encapsulation, inheritance, and (now!) polymorphism.  In particular we are going to consider a family household simulation. There are both regular expenses and payments. 
@@ -813,7 +816,7 @@ And once all that is loaded in, the simulation runs indicating income and expens
 ...
 ```
 
-Take a moment to think of a class hierarchy structure that would make sense for this simulator. You can either draw a UML diagram, or write out your classes members and methods (withou implementation). I do the later below, and click <a href="javascript:void(0)" onclick="$('.exercise').toggle('slow')">REVEAL</a> to see my solution. 
+Take a moment to think of a class hierarchy structure that would make sense for this simulator. You can either draw a UML diagram, or write out your classes members and methods (withou implementation). I do the latter below, and click <a href="javascript:void(0)" onclick="$('.exercise').toggle('slow')">REVEAL</a> to see my solution. 
 
 <div class="exercise" style="display:none">
 ```java
@@ -942,6 +945,8 @@ public class Simulator {
     }
 }
 ```
+
+<font color=red><h3>Let's finish questions 11-14 on the J2 worksheet.</h3></font>
 
 </div>
 
