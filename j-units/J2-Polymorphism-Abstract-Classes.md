@@ -818,6 +818,9 @@ And once all that is loaded in, the simulation runs indicating income and expens
 
 Take a moment to think of a class hierarchy structure that would make sense for this simulator. You can either draw a UML diagram, or write out your classes members and methods (withou implementation). I do the latter below, and click <a href="javascript:void(0)" onclick="$('.exercise').toggle('slow')">REVEAL</a> to see my solution. 
 
+
+<font color=red><h3>Let's finish questions 11-14 on the J2 worksheet.</h3></font>
+
 <div class="exercise" style="display:none">
 ```java
 import java.util.*;
@@ -946,7 +949,6 @@ public class Simulator {
 }
 ```
 
-<font color=red><h3>Let's finish questions 11-14 on the J2 worksheet.</h3></font>
 
 </div>
 
