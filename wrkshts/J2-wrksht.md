@@ -173,8 +173,7 @@ public class LetterPrinter {
 * Note that `class B` does not have a `toString()` method, which means calling `letterB.toString()` will result in the `toString()` method of `class A` since `class B extends A`. Similarly, although `A letterA = letterB` morphed `letterA` to `class B`, it still uses the `toString()` method of `class A`.
 
 ### q
-Consider the first two class declarations. What is the output of the program below? You should be able to do this without running the program!
-
+Consider the first two class declarations. What is the output of compiling the program below? 
 ```java
 abstract class Letter {
     protected boolean uppercase;
