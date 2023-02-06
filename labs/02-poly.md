@@ -110,12 +110,12 @@ The original `DotChaser` had two types of Things: `typeA`, which randomly choses
 
 
 <div class="requirement">
-Create a third `Thing` type that must have.
+Create a third `ThingC` type that must have.
 
-1. Ensure that the orignal `DotChaser` still works the same as before, even after you've added your new type of `Thing`. That is, the red and blue dots act normally.
-2. The new type of `Thing` must move in a *new* way different than `typeA` or `typeB`. 
+1. Ensure that the orignal `DotChaser` still works the same as before, even after you've added your new type of `ThingC`. That is, the red and blue dots act normally.
+2. The new type of `ThingC` must move in a *new* way different than `typeA` or `typeB`. 
 3. In your `README.md` indicate the name of the new type and the Java file used to program it. **Be sure to add that file to your repo for submission :)**
-4. Add a paragraph to the `README.md` file that explains how your new OOP design makes adding new types of `Thing`s easy.
+4. Add a paragraph to the `README.md` file that explains how your new OOP design makes adding new types of `ThingCS`s easy.
 5. Add a final paragraph to the `README.md` that explains exactly where in your program there is a polymorphic function call, and how that plays an essential role in the program functioning properly.
 
 *Be sure to add all your new Java files to the repo for submission.*
