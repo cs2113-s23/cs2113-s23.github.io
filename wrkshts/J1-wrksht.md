@@ -1,7 +1,7 @@
 ---
 layout: worksheet
 permalink: /worksheet/j1
-showsolution: false
+showsolution: true
 ---
 
 # Worksheet: J1
@@ -31,15 +31,54 @@ String s = "Hello World";
 ```
 
 #### s
-your solution here
+* In the first two lines, `int` and `double` are basic types.
+* In the last two lines, array and `String` are objects.
 
 ### q
 
 Write a Java class `Q2` that asks the user to enter the size of an array, then fills it with
 multiples of two. Finally, it generates a string representation of the array, i.e. `{2, 4, 6, 8, ...}`
 
+
 #### s
-your solution here
+```java
+import java.util.Scanner;
+
+public class Q2 {
+    public static void main(String args[]) {
+        int c;
+        System.out.println("Enter an array length greater than 0 and less than or equal to 15:");
+        
+        Scanner sc = new Scanner(System.in);
+        c = sc.nextInt();
+        sc.close();
+
+        if(c < 0 || c > 15) {
+            System.err.printf("ERROR: Invalid length %d\n",c);
+            System.exit(1);
+        }
+
+        double a[] = new double[c];
+
+        for(int i = 0; i < c; i++) {
+            if(i > 0) {
+                a[i] = (a[i - 1] + 2) *3.15;
+            }else {
+                a[i] = 10.8;
+            }
+        }
+
+        String str = "{ ";
+
+        for(int i = 0; i < c; i++){
+            str += "" + ((int)a[i]) + " ";
+        }
+        str += "}";
+
+        System.out.println(str);
+    }
+}
+```
 
 ### q
 
@@ -58,7 +97,8 @@ public class Hello {
 ```
 
 #### s
-your solution here
+* Static methods are called directly, or statically, without the need of an object instance.
+* `main` methods need to be static because it needs to be called without instantiating an object of the class.
 
 ### q
 
@@ -73,7 +113,7 @@ public static void main(String args[]) {
 ```
 
 #### s
-your solution here
+The output is `Java is my favorite language! and python is my second`.
 
 ### q
 
@@ -106,7 +146,8 @@ public static void main(final String args[]) {
 ```
 
 #### s
-your solution here
+* Program 1's output is `Wrong` and Program 2's output is `Correct`.
+* Similar to the case in C, `String` is an object type where `String choice` will make `choice` have the address of the string on the heap. Thus, in Program 1, the if statement is comparing a memory address to a string; while in Program 2, the `.equals()` method will compare the content `choice` is pointing at to the string `"A"`.
 
 ### q
 
@@ -125,7 +166,8 @@ public static void main(final String args[]) {
 ```
 
 #### s
-your solution here
+The program does not change the season, because the original season variable, which is a pointer to
+`Winter` is reassigned to a new string, `Spring`, inside the method. That breaks the link with the original season in `main`.
 
 ### q
 
@@ -151,14 +193,14 @@ public static void main(final String args[]) {
 ```
 
 #### s
-your solution here
+The output of the main method is `X: 0.0 Y: 0.0`. The reason is in the `Point` class, the constructor does not pass the parameters `x` and `y` onto `x` and `y` of the `Point` class.
 
 ### q
 
 What principle of OOP does the `private` declaration for variable and functions achieve? Explain.
 
 #### s
-your solution here
+The priciple of Encapsulation is achieved by `private` declaration of variable and functions. The reason is `private` variable and functions cannot be accessed by other objects.
 
 ### q
 
@@ -183,7 +225,8 @@ public class Point {
 ```
 
 #### s
-your solution here
+Java chooses between the two constructors by checking the type of the argument passed in. When a new `Point` is called with two `double`s, it will use the constructor `public Point(double x, double y)`; in contrast, when a new `Point` is called with a `Point` passed in, it will use the constructor `public Point(Point other)`.
+
 ### q
 
 For the below questions, when the class `Point` is referenced, we are talking about the below class, which you can assume is fully implemented and working as described:
@@ -248,7 +291,7 @@ Which of the following implementations achieves this?
 Explain why. 
 
 #### s
-your solution here
+Option 4 achieves the goal of reflecting the point. None of the other options compiles because `x` and `y` in `CustomPoint` is inheritted from `Point` and cannot be read/written to directly in `CustomPoint` since they are declared private in `Point`.
 
 ### q
 
@@ -271,14 +314,15 @@ If we add this constructor to `CustomPoint`:
 ```
 
 #### s
-your solution here
+The program does not compile because the constructor call on `Line 2` must be called before anything else inside the constructor for `CustomPoint`.
+
 
 ### q
 
 What if we switch line 1 and 2 in the previous question?
 
 #### s
-your solution here
+Now the program compiles and the output is `(10.0, 10.0)`.
 
 ### q
 
@@ -311,10 +355,11 @@ If we want to re-implement `sum_x_y` in our custom point, but first reflect the 
 
 ```
 
-Explain your answer?
+Explain your answer.
 
 #### s
-your solution here
+Option 2 is valid. Option 1 and 3 does not compile because `sum_x_y()` is a private method that cannot be accessed by `CustomPoint` class. Option 4 has the correct implementation of the method but does not override `sum_x_y` as it has a different function name.
+
 
 ### q
 
@@ -354,7 +399,25 @@ public class FormulaOne extends Racecar {
 ```
 
 #### s
-your solution here
+```java
+
+public class FormulaOne extends Racecar {
+
+    private String make;
+    public FormulaOne( int n, Driver name, String car_make) {
+        super(n, name);
+        make = car_make;
+
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +" Make: " + this.make;
+    }
+    
+}
+
+```
 
 ### q 
 
@@ -377,7 +440,8 @@ public static void main(String args[]) {
 Does the code work at mark `A` or mark `B` or neither? Explain.
 
 #### s
-your solution here
+The code works at both marks. Each mark is adding a sponsor to two different objects, so there is not a conflict of overwriting the other. Since `F1` inherits from `Racecar`, it also has access to the `addSponsor` function even though it was not explicitly defined in the F1 class.
+
 
 ### q
 
@@ -387,6 +451,3 @@ Additionally, come up with one additional type for this company, describe it and
 
 Include your UML diagram and explanation with this worksheet (in the file you're submitting, or as a screenshot/photo/etc).
 
-#### s
-
-your solution here
