@@ -3,315 +3,273 @@ layout: toc
 permalink: project/2
 ---
 
-*View the video for this project on [Youtube](https://youtu.be/s1Q4ioDXMu4)*
-
-# Project 2: It's a cat and mouse game...
-
-This is a two part project. The first part of the project will require you to submit a UML diagram and descriptions of your OOP design to complete the project. The second part of the project is your full submission.
-
-## Preliminaries
-
-Github Classroom Link: [https://classroom.github.com/a/pclsHP_r](https://classroom.github.com/a/pclsHP_r)
 
 
-### Testing
+# Project 2: GWack (GW Slack Simulator)
 
-There is no test script. There is built in debugging tools that can help you develop your code and perform grading. 
+*Watch the videos for this project on this [YouTube Playlist](https://youtube.com/playlist?list=PLnVRBITSZMSM94iAdy9Mig5cRMLBFnzKf)*
 
-### Compiling your code
+In this project, you will be write a client and server that implements a chat room, similar to Slack (or GWack!). Your client software should be GUI based, and your server software will be command line based. 
 
-Your code should compile with `javac`
+
+## Setup
+
+You should create at least the two files below -- note that they have different due dates, and two different grading rubric requirements below:
+* `GWackClientGUI.java`: the client code and GUI for interacting with a server.
+* `GWackChannel.java`: the server code to host a channel/chatroom
+
+### Github setup
+
+Use git, as discussed in Lab 0, to create a repo called `gitusername-project2`, add these two files to it, and commit and push the changes to github. The timestamp of your invitation of the grader as a collaborator must be from the lab first session for this project.
+
+### Testing/Grading
+
+There are no test scripts. You will be graded based on functionality and OOP design.
+
+
+### Compiling and Running your Code
+
+While you may submit other code, we should be able to compile and run your programs using the following commands. This is how the grader can test the different components of the project independently.
+
+For the client GUI, it is run as such. 
 
 ```
-javac *.java
+javac GWackClientGUI.java
+java GwackCliengGUI
+```
+And for the server:
+
+```
+javac GWackChannel.java
+java GwackChannel port
 ```
 
-### Window users
+Where `port` is replaced by the port for the server to bind to.  
 
-Note, if you are developing this project on a windows machine, you **must** use the github bash terminal in vscode for the pipeline to run properly. 
+>  While there is no starter code, and you may design as you see fit, you MAY NOT USE any packages other than what ships with Java. We will not install any third party packages to compile/run your code. 
+
 
 ---
 
-## Mice, Cat, ZombieCat Simulation
+## GWack Slack Protocol
+
+GWack, the GW Slack simulation, is a chat room where multiple clients can message each other. **Any message posted to the chatroom will be sent to the server and then relayed to all connected clients.** As part of this project, you will be implement both a client GUI that connect to a server and the server that hosts the chat room, or GWack channel. 
+
+### Public channels for testing
+
+To facilitate testing, we are hosting three channels you can connect to and interact with:
+
+```
+host: ssh-cs2113.adamaviv.com port: 8886
+host: ssh-cs2113.adamaviv.com port: 8887
+host: ssh-cs2113.adamaviv.com port: 8888
+```
+
+You can use this server to design and test your GUI, before you actually implement the server yourself later.
+
+> IMPORTANT: These channels are shared for the entire class. We will monitor the connections and what is posted to these channels. Any behavior considered hateful (broadly defined) may result in disciplinary and academic actions.
 
 
-In this project, you will complete a point simulation of a city of mice, cats, and zombie-cats! Once your simulation is visualized, it may look like the animation below. 
+### Client/Server Protocol
 
-<img src="/images/Zombie-Simulator-short.gif" alt="Simulation GIF" width="60%" 
+So that everyone's GWack client to can interact with each other and the public channels, we must define a standard protocol. 
+
+#### Initial Handshake
+
+When a client first connects, it sends the following information to the server. 
+
+```
+SECRET
+3c3c4ac618656ae32b7f3431e75f7b26b1a14a87
+NAME
+username
+```
+
+> Note that there are newlines `\n` here. It is important for parsing you send each as a complete line. So your server can read a line, then expect the next line, and so on.
+
+> Note that `username` should be replace with whatever this client chooses as a username. Like if they were named `george` it would be `george` instead of `username`
+
+If successful, the server responds with the member list (see below), otherwise, the server will simply close the connection. The server must check that the SECRET sent by the user matches that expected value on the server side.
+
+
+#### Member List Updates
+
+One feature of the GWack channel is that you can view all the members of the channel. This is done by the server regularly distributing a list of members in the channel. These messages are always of the following form:
+
+```
+START_CLIENT_LIST
+username1
+username2
+...
+END_CLIENT_LIST
+```
+
+> Note that `username1` ... will be the names chosen by the users.
+
+> `...` is indicate that all the clients should be listed here, and is not part of the protocol.
+
+
+
+#### Sending/Receiving Messages
+
+
+All other communications are considered as channel messages. A client simply sends one line a message at a time to the server. For example, supposer `username` send the following message to the server
+
+```
+GWack is so much better than slack
+```
+
+When the server receives that message, it then distributes it to all the clients, including the client that just sent the message inset in `[]`
+
+```
+[username] GWack is so much better than slack
+```
+
+When a client receives a message from the server, it will display that it in the display panel. 
+
+
+## GWack Client 
+
+You will implemented a threaded, GUI GWack client. Here's a visual of my implementation of the GWack Client. Yours can have different design and features, as long as the major features are there.
+
+It's a visual of a connected client mid-message:
+
+<img src="/images/project-3/gui-client.png" alt="GUI Display"
+style="display: block;
+margin-left: auto;
+margin-right: auto;"/>
+
+### Connecting and Disconnecting
+
+You should have a mechanism for clients to set a name, a host/ip address and a port to connect to. There should also be a button for connecting and disconnecting. There also needs to be visuals for when the user is connected vs. not connected.
+
+For example, here are the menu options for connected clients
+
+<img src="/images/project-3/gui-client-connected.png" alt="GUI Display Connected"
+style="display: block;
+margin-left: auto;
+margin-right: auto;"/>
+
+and disconnected clients
+
+<img src="/images/project-3/gui-client-not-connected.png" alt="GUI Display Disconnected"
+style="display: block;
+margin-left: auto;
+margin-right: auto;"/>
+
+You should also consider making the text-areas non-editable once connected as well.
+
+### ERROR reporting
+
+You should have some mechanism for reporting errors with connections. I choose to use [message dialogs](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html), like the following. You can use something else, but you have to have something. 
+
+<img src="/images/project-3/gui-client-connected-error.png" alt="GUI Display Error" width="50%"
+style="display: block;
+margin-left: auto;
+margin-right: auto;"/>
+
+Some errors to consider:
+* Cannot connect to server
+* Invalid host
+* Invalid port
+* Server disconnected
+
+### Message Sending and Display
+
+You have should have two text display areas. 
+
+The first is to display all the messages that have been received. This text area should not be editable. 
+
+
+<img src="/images/project-3/gui-client-display.png" alt="GUI Display messages" width="75%"
 style="display: block;
 margin-left: auto;
 margin-right: auto;"/>
 
 
-A quick description of this visualization. The blue dots are mice, the yellow/cyan dots are cats, and the red/black zombie-cats. Cats chase mice, and when they catch a mouse, they eat it. If a cat doesn't eat enough, they turn into a zombie-cat. Zombie-cats chase mice and other cats. They can eat a mouse, but if they eat a cat, that cat turns into a zombie-cat! 
+The second display should be used to draft messages, this should be editable. There should be some sort of button to initiate a send. 
 
-You're job in this lab is use good OOP to design this simulation. 
-
-## A tour of the starter code
-
-In the repository, you are provided with the following Java files that you should review. They are heavily commented, and will provide the guide posts for completing this project. Not all details are described here, so I strongly encourage you to read through the entirety of the code provided for you. 
-
-### `Creature.java`
-
-A class that represents a basic creature in the simulation. You'll need to extend this class for your mice, cats, and zombie cats (and more!).
-
-### `City.java` 
-
-This class represents the city/space in which the creatures live. All the creates are stored in the `creatues` list:
-
-```java
-    private List<Creature> creatures; //list of all creatues
-```
-
-The `creatures` is a full list of all the active creatures in the simulation. 
-
-Importantly, the `City` class has a method `simulate` that describes the primary routine of each iteration of the simulation. You cannot edit this method, but you should review it carefully because it will dictate how you design your other classes. This routine is provided below:
-
-```java
-   //You need to realize in your code such that simulate works for
-    //**ALL** levels of simulkation, which means you'll need to take
-    //advantage of inheritance and polymorphism.
-    public void simulate() {
-        //DO NOT EDIT!
-        
-        //You get this one for free, but you need to review this to
-        //understand how to implement your various creatures
-
-        //First, for all creatures ...
-        for(Creature c : creatures) {
-            c.step(); 
-        } //move everyone forward one step in simulation
-        
-        //Second, for all cratures ...
-        for(Creature c : creatures) {
-            c.takeAction(); 
-        }//take some action based on the new positions
-
-        //Third, for all creatures ...
-        LinkedList<Creature> deadCreatures = new LinkedList<Creature>();
-        for(Creature c: creatures) {
-            if(c.isDead()) 
-                deadCreatures.add(c);
-        }//find those that are dead after the action is taken
-
-        //Four, for all creatures ...
-        for(Creature c: deadCreatures) {
-            creatures.remove(c);
-        }//remove any creatures that are dead
-        
-        //Five, add in any new creatures that have been added before ...
-        addNewCreatures();
-
-        //Five, for all creatures
-        for(Creature c : creatures) {
-            System.out.println(c);
-        }//print out all creatures
-
-```
-
-Reading through the simulate method, you see that first, all the creatures are moved forward by taking a `step` in the simulation. This could move the creature in a direction, determine if it starved, or other general state changes. 
-
-In the `takeAction` method, each creature assess its surroundings, determines if it should eat something, chase something, or do something.
-
-After all the actions are taken, any creatures that are dead are removed from the `creatures` list. And then any new creatures are added. Note that there is a method `addNewCreatures` that is provided for you, and duplicated below.
-
-```java
- public void addNewCreatures() {
-        while(!creaturesToAdd.isEmpty()) {
-            creatures.add(creaturesToAdd.remove());
-        }
-    }
-```
-
-This method clears the `creaturesToAdd` queue. So if you want to add a new creature, you construct it and add it to this queue. There is an example of this in the constructor of the `City`.
-
-### `Simulator.java` 
-
-This class has the main method for the simulation. You may need to do minor modifications to this while editing and to meet the requirements of the assignment.
-
-### `GridPoint.java`
-
-This class implements a row/column pair that can be used as a key in a map. You should read this class, but you will not need to edit it. 
-
-
-## Running, Visualization and debugging your simulation 
-
-Like in Lab 6, we will separate the simulation from visualization. 
-
-
-### Simulating
-
-You can run the simulator with the following arguments:
-
-```                  
-                      .-- Number of rounds to simulate
-                      |    .- The seed of the random number generator
-                      v    v
-java Simulator 8 2 0 1000 42 
-               ^ ^ ^
-               | | '-number of inital zombie cats
-               | '- number of initial cats
-               '- number of initial mice
-```
-
-The output of the simulator is a series of `x` and `y` coordinates describing the locations of each of the creatures. It may look like below:
-
-```
-37 48 r
-74 43 k
-20 32 r
-50 59 r
-5 21 c
-4 24 b
-75 54 b
-49 53 r
-5 46 b
-74 53 c
-done 930
-```
-
-Like in Lab 6, the first two numbers are a coordinate, and the letter is a color. Once complete, the `done` command is given. Different from Lab 6, `done` also outputs a round number. 
-
-
-Optionally, you can include `--DEBUG` as the final argument, like below, if you want to iterative step through the simulation
-
-```
-$ java Simulator 8 2 0 1000 42 --DEBUG
-42 10 b
-50 3 b
-38 66 b
-63 13 b
-53 76 b
-55 32 b
-48 23 b
-27 23 b
-43 43 y
-27 20 c
-done 1
-Enter anything to continue: 
-41 10 b
-50 2 b
-38 67 b
-64 13 b
-54 76 b
-54 32 b
-47 23 b
-28 23 b
-45 43 y
-27 22 c
-done 2
-Enter anything to continue: 
-```
-
-> A quick note about the simulation space. It's a *torus*. That means when you go off one edge, you wrap around to the other edge of the board. You can see this in the animation above. Your code should account for that. 
-
-### Visualizing
-
-Like in `Lab 6`, we've provided a plotting tool `Plotter.jar` which you can pipe your output to, like so
-
-```
-java Simulator 8 2 0 1000 42 | java -jar Plotter.jar
-```
-
-This will open a visual, like the animation above. There are two arguments you can provide to the plotter.
-
-* `java -jar Plotter.jar 42` : the 42 indicates how many milliseconds between iterations. Note that the default rate is 500 millis, or half a second.
-
-* `java -jar Plotter.jar --DEBUG` : if the debug flag is set, then the plotter renders additional information about the location of points and the round number. Like below.
-
-<img src="/images/Zombie-Simulator-Debug-Plotter.png" alt="Simulation GIF" width="60%" 
+<img src="/images/project-3/gui-client-send.png" alt="GUI send messages" width="75%"
 style="display: block;
 margin-left: auto;
 margin-right: auto;"/>
 
-Note that you can combine these two arguments, but you must set the millis first, and then the debug flag. 
 
+Additionally, you should have a key listener so that messages send when the user hits ENTER:
+
+```msgTextArea.addKeyListener(new KeyListener(){
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if(e.getKeyChar() == '\n'){
+                    sendMessage();
+                }                
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {}
+            @Override
+            public void keyReleased(KeyEvent e) {}
+
+        }); 
 ```
-java -jar Plotter.jar 42 --DEBUG
-```
 
-> **DEBUGGING TIP**: If you want to connect your simulator to the plotter, but also print out debug information from your simualor code, use `System.err.println()` methods. Only items printed to `stdout` are passed to the plotter. 
+> Important: the user can either send a message by hitting "ENTER" or clicking the button. 
 
-## Requirements
+### Members in the channel
 
-There are two requirements for this project. The first requirement (Part A) involves presenting a UML diagram for your project that describes the `Creature` object relationships as well as how you utilized OOP design. The second requirement (Part B) is to actually implement the code. 
+There should be a display for the current members in the channel. This should update as the members come and go, but it should not be editable by the user. 
 
-### Part A : UML Diagram and Planning Meeting(25 Points)
+<img src="/images/project-3/gui-client-members.png" alt="GUI members display" width="15%"
+style="display: block;
+margin-left: auto;
+margin-right: auto;"/>
 
-<div class=requirement>
+### Grading and submission for the GWack Client/GUI
 
-**This part of the project must be signed off by a TA or LA by the due date specified**
+See the bottom of this page.
 
-For Part A, you should complete the following items and discuss them in a 5-minute meeting with a TA or LA during lab or office hours. Both should also be included in your github repo. 
+## GWack Server 
 
-* `UML.png` : Create UML diagram for your simulation code and creatures up to Level 4 (see below). This should include primarily your creatures but also the interaction with other code. 
-* `OOP-design.md` : Complete the markdown file that describes your OOP design and class structure for these creatures. It should be 2-3 sentences per creature that covers the hierarchical relationships.. 
+Your GWack server (`GWackChannel`) should host a single chatroom or channel at a specified port, provided as a command line argument. The remaining requirements of the server are as follows:
 
-In your meeting, be prepared for feedback that you should incorporate into your project.
-
-</div>
-
-
-
-### Part B: Implementation (75 Points)
-
-<div class=requirement>
-
-There are different levels of implementation you should complete. Note that in `README.md` file, you must indicate which level you reached. You should submit working code up to one level. It is very difficult to provide partial credit for semi-working code that doesn't fully achieve one of the levels. 
-
-#### Level 0: Mice (up to 35 points)
-
-Full implement mice actions such that:
-* After 20 rounds of simulation time, a mouse produces a new baby mouse at the same location 
-* A mouse dies after 30 rounds simulation time
-* A mouse randomly turns, changes directions 20% of the time
-* A mouse is displayed as a blue dot. 
-
-#### Level 1: Mice and Cats (up to 45 points)
-
-Add a cat to the simulation
-* A cat eats a mouse if they end up on the same location. That is, the mouse should die and be removed from the simulation.
-* If a cat doesn't eat a mouse within 50 moves, the cat dies.
-* Cats *jump* two spaces at a time. They do not traverse the grid point they jump over. That is, if they are on space (1,2) they would move to (1,4). 
-* Cats randomly turn, change direction, 5% of the time.
-* Cats are displayed as a yellow dot.
-
-Additionally, in your simulator, have it such that
-* Every 100 rounds, a mouse is added to a random location in the city
-* Every 25 round, a cat is added to a random location in the city
-
-#### Level 2: Cats chase mice (up to 55 points)
-
-In this level, cat's get a bit smarter ...
-* A cat searches up to 20 grid points (as measured by the `GridPoint.distance()` method) for a mouse to chase. 
-* If the cat finds a mouse, it moves towards the mouse and is displayed using the color cyan. (This is to make it easier for you to debug, and for us to grade).
-* If the cat cannot find a mouse, it moves normaly and is displayed in yellow.
-
-#### Level 3: Zombie-Cats chase Cats and Mice (up to 65 points)
-
-Let's add zombie cats to the mix!
-
-First a modification to Cats:
-* If Cat does not eat within 50 rounds, they instead turn into a Zombie Cat. 
-
-Now let's define Zombie Cats:
-* Zombie cats chase both mice and other non-zombie cats
-* Zombie cats can search up to 40 gird squares away (as measured by `GridPoint.distance()`
-* Zombie cats eating a mouse is the same as a normal cat. The mouse dies and is removed from the simulation.
-* When a zombie cat eats a cat, that cat becomes a zombie cat placed at the same location in the grid square
-* A zombie cat when not chasing another creature is displayed as red dot. 
-* A zombie cat chasing another creature is displayed as a black dot
-* A zombie cat *jumps* 3 spaces at time. It does not move through the intervening space. That is, if it is at (5,10) it moves directly to (5,13).
-* A zombie cat that doesn't eat anything within 100 rounds dies. 
-
-#### Level 4: Create a new creature type (up to 75 points)
-
-The final level of the simulation is for you to add a new creature of any type or behavior you want to the simulation. It should fit into the general model of creatures we already have and derive from `Creature`. 
-
-You should include this extra creature in the planning stage (Part A of the project), and fully describe its functionality in the `README.md` file. 
-
-Particularly creative creatures may be subject to bonus points (up to 5), at the description of the grader. 
-
-</div>
+* The server should be able to handle multiple connected clients
+* All incoming messages should be distributed to all connected clients
+* Clients should be able to connect and disconnect gracefully
+* The current client list should be distributed and updated when clients leave
+* The protocol for client interaction (as described above) should be observed
 
 
+# Grading rubric and submission
+
+Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-lab4`. You will be graded on the following:
+
+## GWackClientGUI grading
+
+|Item | Points |
+|The name of the repo for this lab matches the pattern  `gitusername-project2` | 3 |
+|The grader has been added as a collaborator to the repo with an invite timestamp during the lab noted on the schedule| 4 |
+|The repo has been made private | 3 |
+|There is a single button to connect/disconnect, who's label toggles correctly | 8 |
+|Three labelled fields except a name, host, and port | 8 |
+|The connect button allows the GUI to connect to one of the sample servers successfully | 8 |
+|The members list is updated correctly within a second of the connection being made | 8 |
+|The members list is updated regularly through the use of a `Thread` | 8 |
+|There is a field to type in a message | 8 |
+|There is a button to send a message, with correct functionality | 8 |
+|There is an event listener that allows the user to send a message by hitting the enter key | 8 |
+|The messages update regularly with named-associated messages from all clients | 8 |
+|One or more `JPanel`s has been used to create a visually-pleasing layout like in the example image | 8 |
+|An error window is raised when the GUI cannot connect to an invalid server | 10 |
+|TOTAL | 100 |
+
+## GWackServer grading
+
+|Item | Points |
+|The `GWackChannel` constructor opens a `ServerSocket` to the incoming port | 10 |
+|The `serve` method runs continuously to accept incoming client connections| 10 |
+|Clients on the server are implemented as objects that extend the `Thread` class correctly | 10 |
+|The `serve` method stores successfully connected clients in a list of appropriate generic type specification | 10 |
+|The server as a method `removeClients` that removes all non-connected clients and updates the members list correctly | 10 |
+|The server uses the `synchronized` keyword correctly in all places necessary | 10 |
+|The server updates all clients with any new message coming from any of the connected clients | 10 |
+|TOTAL | 70 |
