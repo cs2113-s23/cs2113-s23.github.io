@@ -23,7 +23,7 @@ You will be writing two additional files from scratch, so you should create them
 Use git, as discussed in Lab 0, to create a repo called `gitusername-lab4`, add these six files to it, and commit and push the changes to github. The timestamp of your invitation of the grader as a collaborator must be from this lab session.
 ### Running your program
 
-Run your lab on the command line by executing the following pipeline after compiling all your files
+Run your lab on the command line by executing the following pipeline after compiling all your files:
 
 ```
 java EnigmaGUI
@@ -31,8 +31,7 @@ java EnigmaGUI
 
 ### Testing your lab
 
-There is no test script for this lab. Your grade is based on running your GUI and testing different input/outputs as well as additional functionality. We will also read your code for object-oriented design principles. 
-
+There is no test script for this lab. Your grade is based on running your GUI and testing different input/outputs. 
 
 # Enigma GUI
 
@@ -99,7 +98,7 @@ You must use the following GUI elements in completing this lab
 * `JButton` : for selecting encrypt or decrypt
 * `JLabel` : for including other text references, such as "Inner" or "Middle"
 
-You can use any layout scheme you want for including these elements, but it should look something similar to the screenshot and be obvious in how to use it. For reference, I only used the `BorderLayout`, but you may find other layouts effective here.  (*Hint: you may also find it useful to create additional `JPanels` which organize different parts of your GUI, like the settings and the input/output areas.*)
+You can use any layout scheme you want for including these elements, but it should look something similar to the screenshot and be obvious in how to use it. For reference, I only used the `BorderLayout`, but you may find other layouts effective here.  (*Hint: you may also find it useful to create additional `JPanel`s which organize different parts of your GUI, like the settings and the input/output areas.*)
 
 ## Requirements
 
@@ -127,11 +126,12 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 |the name of the repo for this lab matches the pattern  `gitusername-lab4` | 3 |
 |the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 4 |
 |the repo has been made private | 3 |
-|three `JComboBox`s are used to select the roto numbers | 12 |
-|a `JTextField ` is used to input the three starting characters | 12 |
-|two `JTextArea `s are used to provide input/output to the GUI for the encrypt/decrypt tasks | 12 |
-|two `JButton `s are used to select encrypt vs decrypt | 12 |
-|five `JLabel `s are used to label all the fields shown in the example | 12 |
+|three `JComboBox`s are used to select the roto numbers | 10 |
+|a `JTextField ` is used to input the three starting characters | 10 |
+|two `JTextArea `s are used to provide input/output to the GUI for the encrypt/decrypt tasks | 10 |
+|two `JButton `s are used to select encrypt vs decrypt | 10 |
+|five `JLabel `s are used to label all the fields shown in the example | 10 |
+|one or more `JPanel`s has been used to create a visually-pleasing layout like in the example image | 10 |
 |the functionality from the command-line version of this lab is preserved identically in the GUI (i.e. it works for all inputs) | 30 |
 |TOTAL | 100 |
 
