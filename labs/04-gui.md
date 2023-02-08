@@ -110,7 +110,7 @@ You must submit *at least* two classes
 
 You may also create additional classes as you see fit to complete this assignment. 
 
-You should use your completed Enigma code from [lab-1](/lab/1), but if you did not fully finish that assignment, you can use the following class files to complete this assignment. (Note that only compiled version of `Enigma` and `Rotor` are provided, but the full src of `Comms` is available.)
+You should use your completed Enigma code from [lab-1](/lab/1), but if you did not fully finish that assignment, you can use the following class files to complete this assignment. (Note that only compiled version of `Enigma` and `Rotor` are provided, but the full source of `Comms` is available.)
 * [Enigma.class](/src/Enigma.class)
 * [Rotor.class](/src/Rotor.class)
 * [Comms.java](/src/Comms.java) 
