@@ -3,26 +3,27 @@ layout: default
 permalink: lab/7
 ---
 
-# Lab 7: GUI Enigma (Replacement)
+# Lab 4: GUI Enigma (Replacement)
 
 *View the video for this lab on [YouTube](https://youtu.be/XLK8MnmXqmw)*
 
-**This lab is not required. If you choose to complete it, you can earn up to 5 bonus points on the Java exam.**
+## Setup
 
-## Preliminaries
+Use your solutions from Lab 1 for this assignment (or see the `.class` files at the bottom of these instructions if you did not receive full credit for that lab):
+* Comms.java
+* Rotor.java
+* Enigma.java
 
-### Github Link
+You will be writing two additional files from scratch, so you should create them now:
+* EnigmaGUI.java
+* EnigmaFrame.java
 
+### Github setup
 
-Accept this assignment here: [https://classroom.github.com/a/-Mqb12F3](https://classroom.github.com/a/-Mqb12F3)
-
-### Development Environment
-
-This lab can be developed locally on your machine using any java installation.
-
+Use git, as discussed in Lab 0, to create a repo called `gitusername-lab4`, add these six files to it, and commit and push the changes to github. The timestamp of your invitation of the grader as a collaborator must be from this lab session.
 ### Running your program
 
-Run your lab on the command line by executing the following pipeline
+Run your lab on the command line by executing the following pipeline after compiling all your files
 
 ```
 java EnigmaGUI
@@ -35,7 +36,7 @@ There is no test script for this lab. Your grade is based on running your GUI an
 
 # Enigma GUI
 
-In this lab, you are going to write a GUI wrapper around the Enigma program you wrote as part of [lab-5](/lab/5). 
+In this lab, you are going to write a GUI wrapper around the Enigma program you wrote as part of [lab-1](/lab/1). 
 
 ## Reviewing how Engima worked
 
@@ -110,10 +111,28 @@ You must submit *at least* two classes
 
 You may also create additional classes as you see fit to complete this assignment. 
 
-You should use your completed Enigma code from [lab-5](/lab/5), but if you did not fully finish that assignment, you can use the following class files to complete this assignment. (Note that only compiled version of `Enigma` and `Rotor` are provided, but the full src of `Comms` is available.)
+You should use your completed Enigma code from [lab-1](/lab/1), but if you did not fully finish that assignment, you can use the following class files to complete this assignment. (Note that only compiled version of `Enigma` and `Rotor` are provided, but the full src of `Comms` is available.)
 * [Enigma.class](/src/Enigma.class)
 * [Rotor.class](/src/Rotor.class)
 * [Comms.java](/src/Comms.java) 
 
 These class files are included in the starter code for your repository. If you want to use your own version, copy over your `Enigma.java` and `Rotor.java` file and compiles those, which will replace the existing class files. 
 </div>
+
+# Grading rubric and submission
+
+Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-lab4`. You will be graded on the following:
+
+|Item | Points |
+|the name of the repo for this lab matches the pattern  `gitusername-lab4` | 3 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 4 |
+|the repo has been made private | 3 |
+|three `JComboBox`s are used to select the roto numbers | 12 |
+|a `JTextField ` is used to input the three starting characters | 12 |
+|two `JTextArea `s are used to provide input/output to the GUI for the encrypt/decrypt tasks | 12 |
+|two `JButton `s are used to select encrypt vs decrypt | 12 |
+|five `JLabel `s are used to label all the fields shown in the example | 12 |
+|the functionality from the command-line version of this lab is preserved identically in the GUI (i.e. it works for all inputs) | 30 |
+|TOTAL | 100 |
+
+---
