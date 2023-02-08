@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: lab/7
+permalink: lab/4
 ---
 
 # Lab 4: GUI Enigma (Replacement)
