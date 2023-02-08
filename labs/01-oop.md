@@ -128,11 +128,11 @@ String result = Comms.run(args);
 To run your unit tests -- remember, you need to have the junit jar file in the same directory -- compile and run your code with the following commands on the terminal (depending on your OS):
 
 ### Windows
-`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" Lab1_Tester.java`
+`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" *.java`
 `java -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
 
 ### Mac/Linux
-`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" Lab1_Tester.java`
+`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" *.java`
 `java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
 
 
