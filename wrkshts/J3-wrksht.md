@@ -412,30 +412,6 @@ We see this program then erases to:
         System.out.println(s);
     }
 ```
-### q
-
-Why is the following code invalid in Java? Use the erasure to show why it fails after the generic is erased. 
-
-```java
-public class FooBarBaz<T> {
-   T array[];
-   public FooBarBaz {
-      array = new T[];
-   }
-}
-```
-
-#### s
-The code erases to:
-
-```java
-public class FooBarBaz {
-   Object array[];
-   public FooBarBaz {
-      array = new Object[];
-   }
-}
-```
 
 We see this code won't work as the array doesn't have a size.
 ### q
