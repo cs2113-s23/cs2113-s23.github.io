@@ -95,7 +95,7 @@ margin-right: auto;"/>
 
 Here the solid line with solid arrowheads indicate classes that inerit from another, like `GWStudent` inherits from `GWPerson`. A dotted line with a solid arrowhead indicates a class that *realizes* an interface, like `GWFaculty` realizing `GWStaff`. Finally, an interface is annotaed with `<<>>` markers in its name. 
 
-<font color="red"><b>PAUSE: Let's do exercises 1-3 on the J3 worksheet now.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercises 1-3 on the J3 worksheet now for the next ten minutes.<br></b></font>
 
 ## Using interfaces
 
@@ -220,7 +220,6 @@ public void reverseStack(IntStack s) {
 ```
 The programmer is making a strong assumption about the nature of `s`, specifically it the `IntStack` is realized via an `IntLinkedList` and so it can be directly cast. This may not be the case. `IntStack` could be realized by an `IntArrayList` or some other class that can realize an `IntStack` that is yet to be written. 
 
-<font color="red"><b>PAUSE: Let's do exercise 4 on the J3 worksheet now.<br></b></font>
 
 # Java Generics and Interface
 
@@ -302,6 +301,8 @@ And if we tried to insert a non `String` to `l`, we would get a compiler error:
 ```java
 l.addToHead(Integer(10)); //<-- this will cause a compiler error
 ```
+
+<font color="red"><b>PAUSE: Let's do exercise 4 on the J3 worksheet now.<br></b></font>
 
 ## Generics as an Erasure to Object
 
