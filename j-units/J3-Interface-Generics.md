@@ -302,7 +302,7 @@ And if we tried to insert a non `String` to `l`, we would get a compiler error:
 l.addToHead(Integer(10)); //<-- this will cause a compiler error
 ```
 
-<font color="red"><b>PAUSE: Let's do exercise 4 on the J3 worksheet now.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercise 4 on the J3 worksheet now for the next five minutes.<br></b></font>
 
 ## Generics as an Erasure to Object
 
@@ -432,7 +432,7 @@ While you can do some fancy casting with arrays of `Objects`, best practice is t
 
 <!-- Unfortunately, this may not work in all situations, for example, if you want to write a list that can be generic to any type, not just subtypes of one type.  -->
 
-<font color="red"><b>PAUSE: Let's do exercises 5-11 on the J3 worksheet now.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercises 5-11 on the J3 worksheet now for the next 20 minutes.<br></b></font>
 
 # Exploring Common Java Interfaces and their Realizations
 
@@ -598,7 +598,7 @@ while(iter.hasNext()) { //Iterator interface
 }
 ```
 
-<font color="red"><b>PAUSE: Let's do exercises 12-16 on the J3 worksheet now.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercises 12-16 on the J3 worksheet now for the next 20 minutes.<br></b></font>
 
 ## Java Collections
 
@@ -615,11 +615,11 @@ margin-right: auto;"/>
 
 A `Collection` takes a single generic type argument, `Collection<E>`, where `E` is the class of the *elements* in the collection. To highlight a few important implementations and which interfaces they realize.
 
-* `LinkedList<E>` : implements a `List`, `Queue` and also a `Deque` (which has the same features as a `Stack`
-* `ArrayList<E>` : implements a `List` and used for random access lists, and has subtypes `Vector<E>` and `Stack<T>` (although, you should probably use a `Deque`).
+* `LinkedList<E>` : implements a `List`, `Queue` and also a `Deque` (which has the same features as a `Stack`)
+* `ArrayList<E>` : implements a `List` and used for random access lists, and has subtypes `Vector<E>` and `Stack<T>` 
 * `HashSet<E>` : implements a `Set`
 * `TreeSet<E>` : also implements a `Set` but is navigable in sorted ordered (`SortedSet` and `NavigableSet` interfaces)
-* `PriorityQueue<E>`: A queue where items are removed with some priority (usually implemented uesing a Heap)
+* `PriorityQueue<E>`: A queue where items are removed with some priority (usually implemented using a `Heap`)
 
 Finally, while not technically a `Collection`, classes implementing the `Map` interface are also included in "java collections". A `Map` is generic on two type arguments, `Map<K,V>` as this a key-value store with `K` the type of the keys and `V` the type of the value. The full family is shown below in the UML diagram:
 
