@@ -135,6 +135,10 @@ This class implements a row/column pair that can be used as a key in a map. You 
 
 Like in Lab 2, we will separate the simulation from visualization. 
 
+To compile all your files at once, use  
+```javac -classpath ".;./Plotter.jar *.java``` for Windows 
+
+```javac -classpath ".:./Plotter.jar *.java``` for Mac 
 
 ### Simulating
 
