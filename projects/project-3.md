@@ -19,14 +19,10 @@ tool of your creation and choosing. The objectives of this project are:
 All group members must:
 * Divide the work equally
 * Always submit their contributions regularly through git (this is how we will grade)
-* Treat eachother respectfully, fairly, and professionally at all times [see the CS Dept JEDI website](https://www.cs.seas.gwu.edu/justice-equity-diversity-and-inclusion-resources) for more details)
+* Treat eachother respectfully, fairly, and professionally at all times ([see the CS Dept JEDI website](https://www.cs.seas.gwu.edu/justice-equity-diversity-and-inclusion-resources) for more details)
 * Select a team manager who is responsible for organizing the project as a part of their duties
 
-You may choose your own group (or subset of a group); we will then pair remaining students randomly with any group that needs more members. 
-We reserve the right to change group assignments and/or separate group members (which may involve students working alone) at any point during
-the semester. It is possible that there may be a group with either 2 or 4 members (based on the number of students enrolled); we will adjust
-the requirements for such a group. However, students will be expected to work in groups of 3 otherwise (and may NOT select to be in a smaller
-or larger group on their own).
+You may choose your own group (or subset of a group); we will then pair remaining students randomly with any group that needs more members. We reserve the right to change group assignments and/or separate group members (which may involve students working alone) at any point during the semester. It is possible that there may be a group with either 2 or 4 members (based on the number of students enrolled); we will adjust the requirements for such a group. However, students will be expected to work in groups of 3 otherwise (and may NOT select to be in a smaller or larger group on their own).
 
 Please use the post on Ed to let the professor know who you would like to be in your group (if anyone).
 
@@ -59,13 +55,11 @@ It is often the case that it's better to have a single manager, than no manager 
 * coordinating group meetings inside and outside of class. These meetings should be held in public spaces (like the library) as opposed to private spaces (like someone's dorm)
 * coordinating the completion of deliverables, and their timely submission
 
-Note that the manager must work with all the group members on these deliverables; they do not get to just 'dictate.' All group members must agree to all the timelines, division of labor, and due dates made collectively with the manager. The manager is also responsible for designing/coding/testing/etc the project with the rest of the group (though their workload can be adjusted due to the additional
-demands of coordination in their role).
+Note that the manager must work with all the group members on these deliverables; they do not get to just 'dictate.' All group members must agree to all the timelines, division of labor, and due dates made collectively with the manager. The manager is also responsible for designing/coding/testing/etc the project with the rest of the group (though their workload can be adjusted due to the additional demands of coordination in their role).
 
 ### Setting up bi-weekly meetings
 
-The manager should work with the group to identify two times each week (until the end of the semester) to meet outside of class for at least 1-2 hours (more might be needed individually) to work on the project together. A an excel file should be created an submitted to list all these meeting
-days and times, and to note attendance.
+The manager should work with the group to identify two times each week (until the end of the semester) to meet outside of class for at least 1-2 hours (more might be needed individually) to work on the project together. A an excel file should be created an submitted to list all these meeting days and times, and to note attendance.
 
 ### Creating a github repo
 
@@ -131,9 +125,9 @@ use cases your software will have, and use these to make a list of actions your 
 as well as at least one constraint (non-functional requirement), such as "it must take less than ten seconds to connect."
 
 Create a table for your requirements with the following columns (shows an example using GWack below, which you can delete):
-| number | description | functional or non-functional | testing input | testing expected output | PASS |
-| 1 | Allows the user to connect to a server using an IP address | functional | Tester will enter a hostname, IP address, and port. Then, the tester will press the Connect button | The server messages the client that they are connected | |
-| 2 | The client is able to connect to the server within ten seconds | non-functional | see input for (1) | The connection message is displayed within ten seconds | |
+| `number` | `description` | `functional or non-functional` | `testing input` | `testing expected output` | `PASS` |
+| 1 | Allows the user to connect to a server using an IP address | functional | Tester will enter a hostname, IP address, and port. Then, the tester will press the Connect button | The server messages the client that they are connected | no |
+| 2 | The client is able to connect to the server within ten seconds | non-functional | see input for (1) | The connection message is displayed within ten seconds | no |
 
 You will use the `PASS` column in later parts of this project; for now, leave it empty.
 
