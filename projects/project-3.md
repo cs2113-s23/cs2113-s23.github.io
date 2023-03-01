@@ -172,7 +172,7 @@ The coding portion of this project will be graded after the last day of lecture,
 
 You will need to present your project prototype demo to both a TA during lab, as well as the class on the last lecture of the semester. Any feedback given by the TAs must be incorporated by your second presentation for full credit.
 
-You will also be required to fill out a [groupwork evaluation form](./projects/groupwork_eval.csv) for each of your team members. We reserve the right to retroactively deduct points from any and all team members that are found to not be participating sufficiently/equally in any part of the project. These forms will be automatically processed, so please follow the instructions carefully -- forms that are malformed will not be graded.
+You will also be required to fill out a [groupwork evaluation form](./groupwork_eval.csv) for each of your team members. We reserve the right to retroactively deduct points from any and all team members that are found to not be participating sufficiently/equally in any part of the project. These forms will be automatically processed, so please follow the instructions carefully -- forms that are malformed will not be graded.
 
 ### Grading Rubric for Prototype Presentations and Group Evals
 
