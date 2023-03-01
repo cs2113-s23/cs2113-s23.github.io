@@ -131,8 +131,7 @@ Create a table for your requirements with the following columns (shows an exampl
 
 You will use the `PASS` column in later parts of this project; for now, leave it empty.
 
-Once you have an outline of what features and functionality your software will have, you will need to plan out what classes you will 
-need, as well as their relationships, fields, and methods. Prepare a UML diagram that meets the grading rubric below.
+Once you have an outline of what features and functionality your software will have, you will need to plan out what classes you will  need, as well as their relationships, fields, and methods. Prepare a UML diagram that meets the grading rubric below.
 
 Your design must incorporate the feedback on the proposal from the professor.
 
@@ -155,17 +154,13 @@ Your design must incorporate the feedback on the proposal from the professor.
 
 ## Project Implementation and Testing (week 2 and week 3)
 
-Once you have completed your UML diagram, you can move on to coding up and testing your software. You will have a chance to 
-receive feedback from the TAs, your classmates, and your professor before you submit the final version of the code.
+Once you have completed your UML diagram, you can move on to coding up and testing your software. You will have a chance to  receive feedback from the TAs, your classmates, and your professor before you submit the final version of the code.
 
-Once your prototype is complete, you need to test it using the testing plan in your requirements, and report correctly on which
-requirements were met, versus which failed. Resubmit your requirements (with any updates based on graded feedback) indicating 
-whether or not your test cases passed or failed.
+Once your prototype is complete, you need to test it using the testing plan in your requirements, and report correctly on which requirements were met, versus which failed. Resubmit your requirements (with any updates based on graded feedback) indicating whether or not your test cases passed or failed.
 
 ### Grading Rubric for Project Code
 
-The coding portion of this project will be graded after the last day of lecture, after your final presentations. Partial credit will be 
-given below.
+The coding portion of this project will be graded after the last day of lecture, after your final presentations. Partial credit will be given below.
 
 |Item | Points |
 |your code implements all of the functionality you outlined in your proposal and/or requirements | 100 |
@@ -177,9 +172,7 @@ given below.
 
 You will need to present your project prototype demo to both a TA during lab, as well as the class on the last lecture of the semester. Any feedback given by the TAs must be incorporated by your second presentation for full credit.
 
-You will also be required to fill out a [groupwork evaluation form](./groupwork_eval.csv) for each of your team members. We reserve the right to retroactively deduct
-points from any and all team members that are found to not be participating sufficiently/equally in any part of the project. These forms will be automatically
-processed, so please follow the instructions carefully -- forms that are malformed will not be graded.
+You will also be required to fill out a [groupwork evaluation form](./projects/groupwork_eval.csv) for each of your team members. We reserve the right to retroactively deduct points from any and all team members that are found to not be participating sufficiently/equally in any part of the project. These forms will be automatically processed, so please follow the instructions carefully -- forms that are malformed will not be graded.
 
 ### Grading Rubric for Prototype Presentations and Group Evals
 
