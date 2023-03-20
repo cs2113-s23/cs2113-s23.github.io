@@ -24,11 +24,11 @@ title: Schedule
 | 8   | Mar 27: [J5 - Threading and Concurrency](j/5) <br>&bull; [J5 Worksheet](worksheet/j5) (Due Sun Apr 2)                      | Mar 29: [Project 2 -- GWack GUI Simulator](project/2) (Due Tue Apr 4)    |
 | 9   | Apr 3: [J6 - Java IO and Networking](j/6) <br>&bull; J6 Worksheet  (Due Sun Apr 9)                             | Apr 5: [Project 2 -- GWack Channel Simulator](project/2) (Due Tue Apr 11) <br>&bull; [final project](project/3) team assignments handed out                                                             |
 | 10   | Apr 10: S1 - Software Testing<br> [Final Project](project/3) Organization and Proposal (in class attendance required) <br>&bull; [Final Project](project/3) proposal brainstorm  (Due Tues Apr 11)                        | Apr 12: [Final Project](project/3) Meetings -- prototype requirements, UML design (Due Tue Apr 18)
-| 11   | Apr 17: S2 - Software Engineering Development<br>S3 - Design Patterns and Unit Testing <br>&bull; J7 Worksheet -- Unit Testing (Due Sun Apr 23)             | Apr 19: [Final Project](project/3) Meetings -- prototype coding (Due Tue Apr 25)                                                                    |
+| 11   | Apr 17: S2 - Software Engineering Development<br>&bull; J7 Worksheet -- Unit Testing (Due Sun Apr 23)             | Apr 19: [Final Project](project/3) Meetings -- prototype coding (Due Tue Apr 25)                                                                    |
 | 12   | Apr 24:  [Final Project](project/3) Meetings (in class, attendance required)                                                                                         |  Apr 26: [final project](project/3) prototype presentations to TAs (graded)                                                                                                                         | 
 | 13   | May 1:  [Final Project](project/3) presentations (must address TA feedback), code submission, groupswork evals, turned in by end of the day                                                             | *no lab this week*                                                                                                                             |
-|  14  | Final Exam week:  see the regularly scheduled GW date and time for our final (non-cumulative) exam                                                                          |                                                                                                                             |
-
+|  14  | May 3 (designated Monday): S3 - Design Patterns and Unit Testing <br> review for final exam                                                                          |                                                                                                                             |
+|  15  | Final Exam week:  see the regularly scheduled GW date and time for our final (non-cumulative) exam   
 
 
 
