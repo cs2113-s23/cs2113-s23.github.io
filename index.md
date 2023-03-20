@@ -10,7 +10,8 @@ title: CS2113 Software Egineering - Spring 2023
             <li><a href="mailto:kinga@gwu.edu">kinga@gwu.edu</a></li>
             <li>Office Hours:
                 <ul>
-                <li>SEH 4655 Tuesdays/Thursdays from 12:45pm-2:00pm</li>
+                <li>SEH 4655 Tuesdays from 12:45pm-2:00pm</li>
+                <li><a href="https://gwu-edu.zoom.us/j/6378326351">Zoom</a> Wednesdays from 8:45am-10am</li>
                 </ul>
             </li>                
         </ul>
