@@ -8,7 +8,6 @@ showsolution: false
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-* Github Classroom Link: [https://classroom.github.com/a/_Q-r6-OP](https://classroom.github.com/a/_Q-r6-OP)
 
 ## Note
 
