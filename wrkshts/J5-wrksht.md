@@ -8,8 +8,6 @@ showsolution: false
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-* Github Classroom Link: [https://classroom.github.com/a/jc_HAKru](https://classroom.github.com/a/jc_HAKru)
-
 ## Note
 
 Attempt to answer these questions before running the code. This will improve your ability to analyize and reason about code without an IDE or compiler. This skill we be helpful on the exams.
