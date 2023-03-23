@@ -120,8 +120,6 @@ Mutation testing is automated, in the sense that it solves the *oracle problem*:
 Convert your `DriverJava1_sample.java` file from the previous lecture into a Junit test file with the following elements:
 
 * a single unit test for every input class (give it the name of that input partition)
-* a setup method that runs before each test that prints out `running setup`
-* a teardown method for the entire test suite that prints out `finished all tests`
 
 Assume that the method under test is called `checkCode` that takes a string as an argument and returns a boolean value whether or not the input was a valid code.
 
@@ -132,20 +130,10 @@ Answers will vary, but here is a template for your tests:
 ```java
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import java.io.*;
 
-public class UnitTestExample {
-
-    @Before
-    public void before() {
-        System.out.println("running setup");
-    }
-
-    @AfterClass
-    public void after() {
-        System.out.println("finished all tests");
-    }
+public class CheckCodeTester {
 
     @Test
     public void valid_inputs() {

@@ -333,3 +333,30 @@ some examples of syntactic structures you could mutate are:
 * etc.
 
 Typically, developers would mutate one line of code at a time, re-run the entire test suite, and verify that the seeded bug was detected in the tests. While this process is fully automated, it is resouce-intensive, especially if test suites and programs are large.
+
+## Junit Testing
+
+Java, like many/most other languages, has unit testing frameworks that make is easy for developers to define assertions and other behavior, and re-run automated test suites. `Junit` is such a unit testing framework for Java; recall, that unit testing is often meant to test specific methods and/or classes. The basic idea is to write *assertions* about what results are expected for certain inputs to specific methods. In Junit, this is all just java code; the test harness then knows what to consider a test case when the developer adds an `@Test` annotation to the top of any such method:
+
+```java
+    @Test
+    public void valid_inputs() {
+        assertEquals(true, checkCode("Hi9_jf5D3r"));
+    }   
+```
+
+In the example above, a test method (with the `@Test` annotation) called `valid_inputs` (the name can be anything you want, but it is useful to make them meaningful) is calling `checkCode()` which is the method we want to unit test (presumably it lives in some other class). We can see the assrtion, `assertEquals`, that is checking that the `checkCode()` method returns `true` with the input of `Hi9_jf5D3r`. 
+
+There is really nothing special with the code above, other than the `assertEquals` is a method that Junit knows to check for when running this test; if the `checkCode` method under test doesn't return the expected value `true` (or it raises an exception), this test would fail. You can have multiple assertions in a single test method.
+
+### Types of assertions
+
+The Junit features above must be imported into your file in order for the test harness to run; we've seen this in the examples this semester. For example, assertions can be found in the `org.junit.Assert` package, which is typically imported.
+
+Currently, [Junit5](https://junit.org/junit5/docs/current/user-guide/) is the most recent version of Junit people are using. In this lecture, we'll stick with Junit4 because it's a bit easier to setup and understand (and we're only going to cover the basics), but feel free to migrate to the newer version in the future.
+
+Let's take a look at the [different flavors of Junit assertions](https://github.com/junit-team/junit4/wiki/Assertions) that you could use in your code.
+
+### Other Junit options
+
+Besides different flavors of assertions, Junit allowd developers fine-grained control over what is tested, and how it is tested. We won't cover these topics in the lecture here, but you can get a sense of the range, flexibility, and granularity of these options through the [Junit4 wiki](https://github.com/junit-team/junit4/wiki).
