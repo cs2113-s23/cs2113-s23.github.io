@@ -274,7 +274,7 @@ Let's work in groups on an exercise that will ask you to generate test cases for
 First, download the [DriverJava1_sample](./DriverJava1_sample.java) file to your machine; you will be writing your test cases into this file.
 Also download this [python file for testing your solutions](./tester.py) (you'll need to [install python](https://www.python.org/downloads/) if you don't have it already)
 
-Then, check out the [problem description](./assessment1_sample.htm), and write your tests in the Java file. When you're ready, have both files above in the same folder, and run the python testing script from the terminal with:
+Then, check out the [problem description](./assessment1_sample.html), and write your tests in the Java file. When you're ready, have both files above in the same folder, and run the python testing script from the terminal with:
 `python tester.py`
 It will tell you whether or not you found the seeded bug inside the `checkCode` method. Keep adding tests until you find the bug :-)
 
