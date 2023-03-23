@@ -300,7 +300,7 @@ While testing logical expressions is a nice complement to input domain partition
 
 Consider the graph below:
 
-[control flow graph](./flow_graph.png)
+![control flow graph](./flow_graph.png)
 
 This could represent program statements as well as branches (conditionals). We could then generate test cases that might:
 * cover every unique path through the code (i.e., 12567, 1257, 13567, etc.)
