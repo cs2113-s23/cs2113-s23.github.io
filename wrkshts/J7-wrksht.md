@@ -139,12 +139,12 @@ public class UnitTestExample {
 
     @Before
     public void before() {
-        System.out.println();
+        System.out.println("running setup");
     }
 
     @AfterClass
     public void after() {
-        System.out.println();
+        System.out.println("finished all tests");
     }
 
     @Test
