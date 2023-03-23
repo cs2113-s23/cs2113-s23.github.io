@@ -91,7 +91,7 @@ Finally, we should take a look at the smallest and largest possible integer valu
 * largest and smallest valid Java integers: `Integer.MIN_VALUE`, `Integer.MAX_VALUE`
 
 Now that we have all of our test inputs, we manually specify the expected outputs:
-```
+```java
 (-2, invalid)
 (122, invalid)
 (9, child)
@@ -139,23 +139,25 @@ And we should also consider the range of possible values for integers:
 * negative, zero, and positive integers
 
 Given all these different partitions, we can now combine them into the following tests across those partitions and their edge cases:
-* ([1], 1) // lists of size 1
-* ([1,2], 1) // lists of size 2, min at start
-* ([2,1], 1) // lists if size 2, min at end
-* ([1,1], 1) <--- added another one note above, realizing there could be more than one minimum
-* ([1,2,3,4], 1) // lists of size 3+, min at start
-* ([4,2,3,1], 1) // lists of size 3+, min at end
-* ([3,2,1,4], 1) // lists of size 3+, min in middle
-* ([1,2,3], 1) // smallest edge case of lists of size 3+, min at start
-* ([2,3,1], 1) // smallest edge case of lists of size 3+, min at end
-* ([2,1,4], 1) // smallest lists of size 3+, min in middle
-* ([1,3,4,.....], 1) // whatever the longest list is of size 3+, min at start
-* ([5,3,4,....7], 1) // whatever the longest list is of size 3+, min at end
-* ([2,3,4,..1..], 1) // whatever the longest list is of size 3+, min in middle
-* Copy all tests above, and set 1 to be INTEGER.MIN
-* ([INTEGER.MAX], INTEGER.MAX)
-* Copy all tests above, and set 1 to be -1
-* Copy all tests above, and set 1 to be 0
+```java
+ ([1], 1) // lists of size 1
+ ([1,2], 1) // lists of size 2, min at start
+ ([2,1], 1) // lists if size 2, min at end
+ ([1,1], 1) // <--- added another one note above, realizing there could be more than one minimum
+ ([1,2,3,4], 1) // lists of size 3+, min at start
+ ([4,2,3,1], 1) // lists of size 3+, min at end
+ ([3,2,1,4], 1) // lists of size 3+, min in middle
+ ([1,2,3], 1) // smallest edge case of lists of size 3+, min at start
+ ([2,3,1], 1) // smallest edge case of lists of size 3+, min at end
+ ([2,1,4], 1) // smallest lists of size 3+, min in middle
+ ([1,3,4,.....], 1) // whatever the longest list is of size 3+, min at start
+ ([5,3,4,....7], 1) // whatever the longest list is of size 3+, min at end
+ ([2,3,4,..1..], 1) // whatever the longest list is of size 3+, min in middle
+ //Copy all tests above, and set 1 to be INTEGER.MIN
+ ([INTEGER.MAX], INTEGER.MAX)
+ //Copy all tests above, and set 1 to be -1
+ //Copy all tests above, and set 1 to be 0
+```
 
 #### Partitioning the output
 
@@ -172,34 +174,42 @@ We can think of the world of triangles partitioned as follows:
 * every other triangle that doesn't fall into one of the three categories above is a valid other triangle
 
 Applying the techniques above, we can generate the following inputs and expected outputs:
-* ([3, 3, 3], equilaterial)
-* ([5, 5, 3], isosceles)
-* ([3, 4, 9], invalid)
-* ([4, 5, 6], other)
+```java
+ ([3, 3, 3], equilaterial)
+ ([5, 5, 3], isosceles)
+ ([3, 4, 9], invalid)
+ ([4, 5, 6], other)
+ ```
 
 We also want to add a few more "flavors" of each of these sets as follows:
-* ([5, 5, 3], isosceles) // original iscosceles
-* ([5, 3, 5], isosceles) // move the sides around from above to have the smaller side in each of the three slots
-* ([3, 5, 5], isosceles) // move the sides around from above to have the smaller side in each of the three slots
-* ([3, 4, 9], invalid)	//original invalid
-* ([3, 9, 4], invalid) // move the sides around from above to have the smaller sides in each of the three slots
-* ([4, 3, 9], invalid) // move the sides around from above to have the smaller sides in each of the three slots
-* ([4, 9, 3], invalid) // move the sides around from above to have the smaller sides in each of the three slots
-* ([9, 3, 4], invalid) // move the sides around from above to have the smaller sides in each of the three slots
-* ([9, 4, 3], invalid) // move the sides around from above to have the smaller sides in each of the three slots
-* ([4, 5, 6], other) // complete the same as above for the invalid types
+```java
+ ([5, 5, 3], isosceles) // original iscosceles
+ ([5, 3, 5], isosceles) // move the sides around from above to have the smaller side in each of the three slots
+ ([3, 5, 5], isosceles) // move the sides around from above to have the smaller side in each of the three slots
+ ([3, 4, 9], invalid)	//original invalid
+ ([3, 9, 4], invalid) // move the sides around from above to have the smaller sides in each of the three slots
+ ([4, 3, 9], invalid) // move the sides around from above to have the smaller sides in each of the three slots
+ ([4, 9, 3], invalid) // move the sides around from above to have the smaller sides in each of the three slots
+ ([9, 3, 4], invalid) // move the sides around from above to have the smaller sides in each of the three slots
+ ([9, 4, 3], invalid) // move the sides around from above to have the smaller sides in each of the three slots
+ ([4, 5, 6], other) // complete the same as above for the invalid types
+```
 
 Now, we can define triangles that are conceptually edge cases between these four classes. We won't show it here, but to be complete we would apply all the different "flavors" of each of these test cases below, like we did in the bullets above, to ensure that we're testing all possible orderings of the sides.
-* ([3, 3, 2], isosceles) // edge case between equilateral and isosceles; would need all "flavors" here for where the largest side is as well
-* ([3, 3, 4], isosceles) // edge case between equilateral and isosceles; would need all "flavors" here for where the largest side is as well
-* ([3, 3, 6], isosceles) // edge case between invalid and isosceles; would need all "flavors" here for where the largest side is as well
-* ([4, 5, 9], invalid) // edge case between invalid and other; would need all "flavors" here for where the largest side is as well
-* ([3, 4, 6], other) // edge case between invalid and other; would need all "flavors" here for where the largest side is as well
+```java
+ ([3, 3, 2], isosceles) // edge case between equilateral and isosceles; would need all "flavors" here for where the largest side is as well
+ ([3, 3, 4], isosceles) // edge case between equilateral and isosceles; would need all "flavors" here for where the largest side is as well
+ ([3, 3, 6], isosceles) // edge case between invalid and isosceles; would need all "flavors" here for where the largest side is as well
+ ([4, 5, 9], invalid) // edge case between invalid and other; would need all "flavors" here for where the largest side is as well
+ ([3, 4, 6], other) // edge case between invalid and other; would need all "flavors" here for where the largest side is as well
+```
 
 And we could also test the smallest and largest possible triangles:
-* ([1, 1, 1], equilateral)
-* ([Integer.MAX, Integer.MAX, Integer.MAX], equilateral)
-* maybe some more here for other classes of triangles?
+```java
+ ([1, 1, 1], equilateral)
+ ([Integer.MAX, Integer.MAX, Integer.MAX], equilateral)
+ // maybe some more here for other classes of triangles?
+```
 
 You can see this process generates a lot of test cases. It is somewhat tedious (boring), but not hard to come up with these test cases systematically. The end result, with just a few more minutes of extra time spent, is a test suite that is much more likely to catch bugs, than if you came up with a few test cases by hand.,
 
@@ -218,41 +228,44 @@ Although a test case here will only be a string, we still want to check all poss
 (`Hi9_jf5D3r`, valid) 
 
 Now, let's modify it for each of the conditions above:
+```java
+ ("Hi_jf5Dr", valid)  //edge case, contains only one number in middle
+ ("5Hi_jfDr", valid)  //edge case, contains only one number at start
+ ("Hi_jfDr5", valid)  //edge case, contains only one number at end
+ ("Hi_jfDr", invalid)  //edge case, missing a number only
 
-* (`Hi_jf5Dr`, valid)  //edge case, contains only one number in middle
-* (`5Hi_jfDr`, valid)  //edge case, contains only one number at start
-* (`Hi_jfDr5`, valid)  //edge case, contains only one number at end
-* (`Hi_jfDr`, invalid)  //edge case, missing a number only
+ ("i9_jf5D3r", valid) //edge case, contains only one uppercase letter in middle
+ ("Di9_jf53r", valid) //edge case, contains only one uppercase letter at start
+ ("i9_jf53rD", valid) //edge case, contains only one uppercase letter at end
+ ("i9_jf53r", invalid) //edge case, missing an uppercase letter only
 
-* (`i9_jf5D3r`, valid) //edge case, contains only one uppercase letter in middle
-* (`Di9_jf53r`, valid) //edge case, contains only one uppercase letter at start
-* (`i9_jf53rD`, valid) //edge case, contains only one uppercase letter at end
-* (`i9_jf53r`, invalid) //edge case, missing an uppercase letter only
+ ("I9_jF5D3R", valid) //edge case, contains only one lowercase letter in middle
+ ("jI9_F5D3R", valid) //edge case, contains only one lowercase letter at start
+ ("I9_F5D3Rj", valid) //edge case, contains only one lowercase letter at end
+ ("I9_F5D3R", invalid) //edge case, missing a lowercase letter only
 
-* (`I9_jF5D3R`, valid) //edge case, contains only one lowercase letter in middle
-* (`jI9_F5D3R`, valid) //edge case, contains only one lowercase letter at start
-* (`I9_F5D3Rj`, valid) //edge case, contains only one lowercase letter at end
-* (`I9_F5D3R`, invalid) //edge case, missing a lowercase letter only
+ ("Hi9_jgmailf5D3r", invalid)  //edge case, contains "gmail" in middle
+ ("gmailHi9_jf5D3r", invalid)  //edge case, contains "gmail" at start
+ ("Hi9_jf5D3rgmail", invalid)  //edge case, contains "gmail" at end
+ ("Hi9_jgomailf5D3r", valid)  //edge case, does not contain "gmail" (but almost did)
 
-* (`Hi9_jgmailf5D3r`, invalid)  //edge case, contains `gmail` in middle
-* (`gmailHi9_jf5D3r`, invalid)  //edge case, contains `gmail` at start
-* (`Hi9_jf5D3rgmail`, invalid)  //edge case, contains `gmail` at end
-* (`Hi9_jgomailf5D3r`, valid)  //edge case, does not contain `gmail` (but almost did)
+ ("Hi9_jf!5D3r", invalid) //edge case, one not-allowed character in middle 
+ ("!Hi9_jf5D3r", invalid) //edge case, one not-allowed character at start
+ ("Hi9_jf5D3r!", invalid) //edge case, one not-allowed character at end 
 
-* (`Hi9_jf!5D3r`, invalid) //edge case, one not-allowed character in middle 
-* (`!Hi9_jf5D3r`, invalid) //edge case, one not-allowed character at start
-* (`Hi9_jf5D3r!`, invalid) //edge case, one not-allowed character at end 
-
-* (`Hi9_jf-5D3r`, invalid) //edge case, one not-allowed character in middle (that looks close to an allowed character)
-* (`-Hi9_jf5D3r`, invalid) //edge case, one not-allowed character at start (that looks close to an allowed character)
-* (`Hi9_jf5D3r-`, invalid) //edge case, one not-allowed character at end (that looks close to an allowed character)
+ ("Hi9_jf-5D3r", invalid) //edge case, one not-allowed character in middle (that looks close to an allowed character)
+ ("-Hi9_jf5D3r", invalid) //edge case, one not-allowed character at start (that looks close to an allowed character)
+ ("Hi9_jf5D3r-", invalid) //edge case, one not-allowed character at end (that looks close to an allowed character)
+```
 
 You can see the symmetry between this style of test generation and when we used lists, where we put the "interesting number" in different locations in the array. 
 
 Finally, let's look at the smallest and longest valid and invalid tests:
-* (`Hi9`, valid) //shortest valid case, would need all six possible orderings
-* (``, invalid) //shortest invalid test case
-* (`Hi9_jf5D3r` + String.[MAX-10], valid) //longest valid test case
+```java
+ ("Hi9", valid) //shortest valid case, would need all six possible orderings
+ ("", invalid) //shortest invalid test case
+ ("Hi9_jf5D3r" + String.[MAX-10], valid) //longest valid test case
+```
 
 #### In-class exercise: putting it all together
 
