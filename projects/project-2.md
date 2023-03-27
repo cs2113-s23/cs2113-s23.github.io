@@ -249,22 +249,25 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 |The name of the repo for this lab matches the pattern  `gitusername-project2` | 3 |
 |The grader has been added as a collaborator to the repo with an invite timestamp during the lab noted on the schedule| 4 |
 |The repo has been made private | 3 |
-|There is a single button to connect/disconnect, who's label toggles correctly | 8 |
+|There is a single button to connect/disconnect, who's label toggles when the button is pressed | 8 |
 |Three labelled fields except a name, host, and port | 8 |
-|The connect button allows the GUI to connect to one of the sample servers successfully | 8 |
-|The members list is updated correctly within a second of the connection being made | 8 |
-|The members list is updated regularly through the use of a `Thread` | 8 |
+|The connect button allows the GUI to connect to one of the sample servers successfully | 1 |
+|The members list has a place to be displayed | 1 |
 |There is a field to type in a message | 8 |
-|There is a button to send a message, with correct functionality | 8 |
+|There is a button to send a message, with correct functionality | 1 |
 |There is an event listener that allows the user to send a message by hitting the enter key | 8 |
-|The messages update regularly with named-associated messages from all clients | 8 |
 |One or more `JPanel`s has been used to create a visually-pleasing layout like in the example image | 8 |
-|An error window is raised when the GUI cannot connect to an invalid server | 10 |
-|TOTAL | 100 |
+|TOTAL | 53 |
 
 ## GWackServer grading
 
 |Item | Points |
+|The connect button allows the GUI to connect to one of the sample servers successfully | 7 |
+|The members list is updated correctly within a second of the connection being made | 7 |
+|The members list is updated regularly through the use of a `Thread` | 8 |
+|There is a button to send a message, with correct functionality | 7 |
+|An error window is raised when the GUI cannot connect to an invalid server | 10 |
+|The messages update regularly with named-associated messages from all clients | 8 |
 |The `GWackChannel` constructor opens a `ServerSocket` to the incoming port | 10 |
 |The `serve` method runs continuously to accept incoming client connections| 10 |
 |Clients on the server are implemented as objects that extend the `Thread` class correctly | 10 |
@@ -272,4 +275,4 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 |The server as a method `removeClients` that removes all non-connected clients and updates the members list correctly | 10 |
 |The server uses the `synchronized` keyword correctly in all places necessary | 10 |
 |The server updates all clients with any new message coming from any of the connected clients | 10 |
-|TOTAL | 70 |
+|TOTAL | 117 |
