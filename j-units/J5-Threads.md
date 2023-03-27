@@ -197,7 +197,7 @@ try {
 
 this code will force the `main` thread (where we started `t`) to wait for five seconds, potentially allowing the `run()` method of `t` to finish. You can also call `join()` without any argument to force the wait until `t` finishes completely.
 
-Note that the `join()` must be called inside a try-catch block; this is known as a checked exception because the method was declared (in the library) as possibly raising an exception; the developer is forced to write code to handle this case (even if, as on the worksheet, the exception never occurs). If something interrupts the thread, catching the exception allows you to handle it elegantly. We will talk about exceptions in the next module.
+Note that the `join()` must be called inside a try-catch block; this is known as a checked exception because the method was declared (in the library) as possibly raising an exception; the developer is forced to write code to handle this case (even if, as on the worksheet, the exception never occurs). If something interrupts the thread, catching the exception allows you to handle it elegantly. 
 
 ## The `isAlive()` method
 
@@ -364,7 +364,7 @@ private volatile Node head = null, tail = null;
 
 ## Synchronization in general, and the `synchronized` keyword in particular
 
-While for the most part we want threads to process independently, in parallel, what we just saw is that there are times when we need to coordinate, or synchronize the execution of separate threads in order to avoid race conditions. To the previous example, we need to ensure that the two threads don't simultaneously execute enqueue's - they need to take turns.
+While for the most part we want threads to process independently, in parallel, what we just saw is that there are times when we need to coordinate, or synchronize the execution of separate threads in order to avoid race conditions. To the previous example, we need to ensure that the two threads don't simultaneously execute enqueue's - they need to take turns. Our problem was that two threads could interleave their executions inside of the `enqueue` method (on the same linked list object): we want a way to make sure that if one thread is inside the `enqueue` method, the other is now allowed to enter it (which would solve our race condition above).
 
 Perhaps the simplest of the many mechanisms Java provides for synchronizing the execution of threads are synchronized methods. **Declaring one or more methods in a class with the `synchronized` modifier causes the Java virtual machine to ensure that no two threads execute overlapping calls of synchronized methods on the same object**. It does this by temporarily delaying threads as needed. To be clear, suppose we have a class Foo: 
 
@@ -380,7 +380,7 @@ public class Foo {
 
 If `var1` and `var2 `are references to distinct objects of type `Foo` then `Thread x` could call `var1.bar()` and `Thread y` could call `var2.bar()`, and the two methods could execute simultaneously. However, if both threads called `var1.bar()` at the same time **(note: we calling `bar()` on the same object this time!)**, then one `Thread` would execute `bar()` while the other `Thread` was delayed, and only after the first thread had completed its call to `bar()` could the second thread start executing its call.
 
-So, to fix our bug, all we need to do is declare `enqueue` (and `dequeue`, though it doesn't really matter in our test program) with the synchronized modifier. 
+So, to fix our bug, all we need to do is declare `enqueue` (and `dequeue`) with the synchronized modifier. 
 
 ```java
 public class Queue {
@@ -431,8 +431,7 @@ Here is another example, slightly contrived, but that illustrates further how `s
 
 The program below takes file paths as arguments, and creates a `CountThread` for each one. The threads share a single `SafeCounter` object which simply counts how many lines are in the files. Each thread increments the counter. This is a classic race condition. There is a single value `int` to update as the counter that is shared across all threads. As the threads grab the value, in between reading its value and then sending the `++` updated value, another thread might read the value as well and miss the new update.
 
-**Sharing memory between threads is dangerous, but often necessary.** This is why we have the `synchronized` keyword; although it is used with methods, it forces the method to be an 'atomic transaction' -- that is, you can't break it down into smaller statements. Either the whole method runs,
-or it doesn't (because it is waiting for another call to the same method to finish).
+**Sharing memory between threads is dangerous, but often necessary.** This is why we have the `synchronized` keyword; although it is used with methods, it forces the method to be an 'atomic transaction' -- that is, you can't break it down into smaller statements. Either the whole method runs, or it doesn't (because it is waiting for another call to the same method to finish).
 
 Try running this on a couple large files, and remove the `synchronized` keyword from the methods. You'll see different counts output from different runs. With the `synchronized` keyword, it will always be the same (correct) value. 
 
@@ -534,7 +533,7 @@ public class MyRunnable implements Runnable {
 }
 ```
 
-and then, where you would have had tf.setText("0.0"); you would write: 
+and then, where you would have had `tf.setText("0.0");` you would write: 
 
 ```
 java.awt.EventQueue.invokeLater(new myRunnable(tf));

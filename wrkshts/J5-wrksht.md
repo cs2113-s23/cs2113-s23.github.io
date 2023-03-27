@@ -248,7 +248,7 @@ The output becomes more consistent than previous implementations. The join for 5
 What does `join()` do compared to `join(10)`?
 
 #### s
-`join()` will make the current thread wait until the referenced thread terminates; it may wait 0 seconds (if the referenced thread already terminated), or infinitly long (if the referenced thread never terminates). `join(10)` will make the current thread wait for a maximum of 10 milliseconds.
+`join()` will make the current thread wait until the referenced thread terminates; it may wait 0 seconds (if the referenced thread already terminated), or infinitely long (if the referenced thread never terminates). `join(10)` will make the current thread wait for a maximum of 10 milliseconds.
 
 ### q
 
