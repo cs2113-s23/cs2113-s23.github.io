@@ -1,7 +1,7 @@
 ---
 layout: worksheet
 permalink: /worksheet/j4
-showsolution: false
+showsolution: true
 ---
 
 # Worksheet: J4
