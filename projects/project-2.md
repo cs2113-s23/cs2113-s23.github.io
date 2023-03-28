@@ -251,10 +251,10 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 |The repo has been made private | 3 |
 |There is a single button to connect/disconnect, who's label toggles when the button is pressed | 8 |
 |Three labelled fields except a name, host, and port | 8 |
-|The connect button allows the GUI to connect to one of the sample servers successfully | 1 |
+|The connect button allows the GUI to connect to one of the sample servers (doesn't have work)| 1 |
 |The members list has a place to be displayed | 1 |
 |There is a field to type in a message | 8 |
-|There is a button to send a message, with correct functionality | 1 |
+|There is a button to send a message | 1 |
 |There is an event listener that allows the user to send a message by hitting the enter key | 8 |
 |One or more `JPanel`s has been used to create a visually-pleasing layout like in the example image | 8 |
 |TOTAL | 53 |
