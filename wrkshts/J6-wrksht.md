@@ -4,8 +4,6 @@ permalink: /worksheet/j6
 showsolution: false
 ---
 
-> This worksheet is out of date and will need to be updated
-
 # Worksheet: J6
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
