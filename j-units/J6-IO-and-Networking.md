@@ -178,79 +178,7 @@ margin-right: auto;"/>
 
 You might be wondering when would this ever be useful? UDP is quite common for a number of applications; for example, live audio streams. There is no need for audio streams to be reliable, if you miss a packet, so what, you'll just get the next one and keep playing the music. However, if you were to do this reliably, you'd have to stop the music while missed data was retransmitted, and the result is you might keep getting further and further behind in the live stream. 
 
-# Networking Command Line Tool: `netcat`
 
-Before we start to write programs to use sockets, it is useful to learn how to test these programs using the "swiss army knife" of networking command line tools, `netcat`. Also, you can use a tool called netstat to monitor your open socket connections. As a programmer, these tools are often indispensable for debugging and understanding the functionality of your program.
-
-Later we'll use this to test the programs we are writing
-
-> Note that on a mac `netcat` command is run by using `nc`. Windows does not have `netcat`, so if you want to play around with it, connect to the SEAS cluster instead (to avoid having to download a program) using something like `ssh kinga@ubuntu-vlab01.seas.gwu.edu`.
-
-### `netcat` client
-
-When working as a client, `netcat` takes two arguments: 
-
-```
-netcat dest port
-```
-
-The dest is a destination address, which can either be a IP address as a dotted quad or a domain name. The port is a number representing the port address. This is all we need to make netcat act like a web client, so let's connect to a web server 
-
-```
-#> netcat www.cnn.com 80
-GET /index.html 
-
-
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-<title>CNN.com - Breaking News, U.S., World, Weather, Entertainment &amp; Video News</title>
-<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-<meta http-equiv="last-modified" content="2014-04-03T13:48:56Z"/>
-<meta http-equiv="refresh" content="1800;url=http://www.cnn.com/?refresh=1"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="robots" content="index,follow"/>
-(...)
-```
-
-What we've just done is establish a TCP connection on port 80, the HTTP port for web traffic, and make a request to the HTTP server to send us the main page for cnn.com. And it works! 
-
-### `netcat` Server
-
-`netcat` can also act as a sever by listening for incoming connections on a given port. You do this with the `-l` option:
-
-```
-#> netcat -l 1845
-```
-
-There is now a service running on 1845, netcat, and we can connect to it using another netcat client. 
-
-<div class="side-by-side"> <div class="side-by-side-a">
-```
-#> netcat -l 1845
-Hello
-What's your name?
-adam
-me too, how strange.
-strange ......
-#>
-```
-</div>
-</div> <div class="side-by-side-b">
-```
-#> netcat localhost 1845
-Hello
-What's your name?
-adam
-me too, how strange.
-strange ......
-^C
-#>
-```
-</div>
-</div>
-
-The domain name `localhost` refers to the current computer, this way we don't always have to remember the IP address. In the above example, information is typed back and forth between the netcat servers and clients. 
 
 ## Socket Programming in Java
 
@@ -312,22 +240,7 @@ public class HelloSocket{
 }
 ```
 
-Note that we need the try/catch blocks because there are a number of errors that can occur when dealing with I/O. If we were to run this program, we first can start a `netcat` server to receive the connection on our localmachine and then run the java program.
-
-<div class="side-by-side">
-<div class="side-by-side-a">
-```
-$ netcat -l 2021
-HelloWorld 
-```
-</div>
-<div class="side-by-side-b">
-```
-$ java HelloSocket
-```
-</div>
-</div>
-
+Note that we need the try/catch blocks because there are a number of errors that can occur when dealing with I/O. 
 The socket is two-way, so we can also "read" for input after having written to the socket. This is a small expansion of the above program 
 
 ```java
@@ -356,21 +269,6 @@ The socket is two-way, so we can also "read" for input after having written to t
 
 Now when we run the program, we can type input after "HelloWorld" which get's written to our client. 
 
-<div class="side-by-side">
-<div class="side-by-side-a">
-```
-$ netcat -l 2021
-HelloWorld
-Goodbye cruel world
-```
-</div>
-<div class="side-by-side-b">
-```
-$ java HelloSocket
-Server said: Goodbye cruel world
-```
-</div>
-</div>
 
 ### The `ServerSocket` class
 
@@ -433,28 +331,7 @@ public class HelloServer{
 }
 ```
 
-Note that we can easily see who is connecting to the server by retrieving the remote socket address and print that out. This gives us the following output, where we continually connect to the server via netcat.  
-
-<div class="side-by-side">
-<div class="side-by-side-a">
-```
-$ netcat localhost 2021
-Hello World
-$ netcat localhost 2021
-Hello World
-$ netcat localhost 2021
-Hello World
-```
-</div>
-<div class="side-by-side-b">
-```
-$ java HelloServer
-Connection from: /127.0.0.1:62800
-Connection from: /127.0.0.1:62801
-Connection from: /127.0.0.1:62802
-```
-</div>
-</div>
+Note that we can easily see who is connecting to the server by retrieving the remote socket address and print that out. 
 
 Each connection comes from `127.0.0.1`, which is the IP address used when connecting within a single localhost computer. Also note that the port changes each time, that's because once the connection is established, the server is still listening on the original port `2021`, so this new connection should use a different port
 
