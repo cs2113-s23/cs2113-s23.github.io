@@ -37,8 +37,9 @@ Please note the due dates in the schedule of the following items:
 * coding, testing, and debugging project prototype (work on in lab week 2 and lecture week 3, due day after that lecture)
 * prototype presentation to TAs (due/present in lab week 3)
 * updated prototype presentation based on TA feedback to class (due/present in lecture week 4)
-* final project code, presentation, and groupwork evals due (last day of lecture)
+* final project code, presentation, and groupwork evals due (last Monday day of lecture)
 
+Up to 30 points extra credit can be earned for choosing challenging projects (see grading rubric below)
 
 ## Team setup (week 0)
 
@@ -183,5 +184,6 @@ You will also be required to fill out a [groupwork evaluation form](./groupwork_
 | the team member participated equally in the presentation | up to minus 40 points for not presenting|
 | the project was sufficiently hard and challenging for the group size | 30 |
 | group evaluation submitted for each team member, following the instructions correctly | 15 | 
+| extra credit for challenging projects | up to 50 | 
 | TOTAL | 68 |
 
