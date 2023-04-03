@@ -28,7 +28,7 @@ The purpose of the internet layer is to inter-connect networks; for examplee GW 
 You need to specify the IP address of a machine at this layer in order to interact with it.
 
 ### q
-What is the purpose of an internet layer in the TCP/IP protocol? What do you, as a client, need to specify in this protocol?
+What is the purpose of the transport layer in the TCP/IP protocol? What do you, as a client, need to specify in this protocol?
 
 #### s
 The transport layer provides an abstraction for those two process to apear as if they are communicating directly with each other. 
