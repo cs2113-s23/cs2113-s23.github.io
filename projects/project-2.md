@@ -197,7 +197,8 @@ margin-right: auto;"/>
 
 Additionally, you should have a key listener so that messages send when the user hits ENTER:
 
-```msgTextArea.addKeyListener(new KeyListener(){
+```java
+msgTextArea.addKeyListener(new KeyListener(){
 
             @Override
             public void keyTyped(KeyEvent e) {
