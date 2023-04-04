@@ -60,9 +60,7 @@ GWack, the GW Slack simulation, is a chat room where multiple clients can messag
 To facilitate testing, we are hosting three channels you can connect to and interact with:
 
 ```
-host: ssh-cs2113.adamaviv.com port: 8886
-host: ssh-cs2113.adamaviv.com port: 8887
-host: ssh-cs2113.adamaviv.com port: 8888
+host: 135.181.248.23 port: 8080
 ```
 
 You can use this server to design and test your GUI, before you actually implement the server yourself later.
