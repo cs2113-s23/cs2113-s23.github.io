@@ -171,7 +171,7 @@ The coding portion of this project will be graded after the last day of lecture,
 
 ## Project Prototype Presentations and Group Evals (week 3 and week 4)
 
-You will need to present your project prototype demo to both a TA during lab, as well as the class on the last lecture of the semester. Any feedback given by the TAs must be incorporated by your second presentation for full credit.
+You will need to present your project prototype demo to both a TA during lab, as well as the class on the last lecture of the semester. Any feedback given by the TAs must be incorporated by your second presentation for full credit. The presentation should be 8-10 minutes.
 
 You will also be required to fill out a [groupwork evaluation form](./groupwork_eval.csv) for each of your team members. We reserve the right to retroactively deduct points from any and all team members that are found to not be participating sufficiently/equally in any part of the project. These forms will be automatically processed, so please follow the instructions carefully -- forms that are malformed will not be graded.
 
@@ -180,10 +180,11 @@ You will also be required to fill out a [groupwork evaluation form](./groupwork_
 | Item | Points |
 | a TA has been added to your repo and they have uploaded a bulleted set of changes requested in a file called `ta_feedback.txt` | 10 |
 | the presentation outlines the proposal motivation | 3 |
+| the presentation was at least 8 minutes long | 10 |
 | the presentation includes a working demo that incorporates all TA feedback | 10 |
 | the team member participated equally in the presentation | up to minus 40 points for not presenting|
 | the project was sufficiently hard and challenging for the group size | 30 |
 | group evaluation submitted for each team member, following the instructions correctly | 15 | 
 | extra credit for challenging projects | up to 50 | 
-| TOTAL | 68 |
+| TOTAL | 78 |
 
