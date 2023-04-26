@@ -178,7 +178,7 @@ You will also be required to fill out a [groupwork evaluation form](./groupwork_
 ### Grading Rubric for Prototype Presentations and Group Evals
 
 | Item | Points |
-| a TA has been added to your repo and they have uploaded a bulleted set of changes requested in a file called `ta_feedback.txt` | 10 |
+| the students have uploaded a bulleted set of changes requested in a file called `ta_feedback.txt` | 10 |
 | the presentation outlines the proposal motivation | 3 |
 | the presentation was at least 8 minutes long | 10 |
 | the presentation includes a working demo that incorporates all TA feedback | 10 |
