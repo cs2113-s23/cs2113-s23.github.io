@@ -80,7 +80,7 @@ Having completed the pre-reqs, you are expected to submit well-written code:
    * 7%: Self-Guided Worksheets 1 - 7
    * 1%: Lab 0
    * 1%: Worksheet 0
-   * 20%: Labs 1-3 
+   * 20%: Labs 1-4 
    * 30%: Projects
    * 40%: Exams (2x 20% each)
    * 1%: Participation/Attendence
